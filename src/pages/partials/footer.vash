@@ -1,0 +1,6 @@
+@*********************
+  Partial: _footer
+*********************@
+<footer>
+  <p>footer</p>
+</footer>

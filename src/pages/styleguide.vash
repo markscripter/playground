@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project Title | Style Guide</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="/css/stylesheet.min.css">
+  </head>
+  <body>
+    <article class="content">
+      <h1>Style Guide</h1>
+      <section class="item">
+        <h2 class="heading">Typography</h2>
+        <div class="content"></div>
+      </section>
+      <section class="item">
+        <h2 class="heading">Colors</h2>
+        <div class="content"></div>
+      </section>
+      <section class="item">
+        <h2 class="heading">Headings</h2>
+        <div class="content">
+          <h1>Heading One</h1>
+          <h2>Heading Two</h2>
+          <h3>Heading Three</h3>
+          <h4>Heading Four</h4>
+          <h5>Heading Five</h5>
+          <h6>Heading Six</h6>
+        </div>
+      </section>
+      <section class="item">
+        <h2 class="heading">Paragraph</h2>
+        <div class="content">
+          <p>This is how a standard paragraph will look.</p>
+        </div>
+      </section>
+      <section class="item">
+        <h2 class="heading">Links</h2>
+        <div class="content">
+          <a href="#">Standard Link</a>
+        </div>
+      </section>
+      <section class="item">
+        <h2 class="heading">Buttons</h2>
+        <div class="content">
+          <button>Button Element</button>
+          <a class="btn">Button Link</a>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>

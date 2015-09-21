@@ -1,0 +1,9 @@
+@*********************
+  Page: homepage
+*********************@
+
+@html.extend('pages/layouts/layout', function(model){
+  @html.block('content', function(model){
+    <h1>Hi</h1>
+  })
+})

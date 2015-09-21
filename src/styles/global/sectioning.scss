@@ -1,0 +1,19 @@
+/*****************
+  Sectioning Elements
+******************/
+
+address {}
+article {}
+body {
+  background-color: $white;
+  color:$gray--dark;
+  font-family: $sans-serif;
+  font-size: $font-size;
+  line-height: 1.5em;
+  margin: 0px;
+  padding: 0px;
+}
+footer {}
+header {}
+nav {}
+section {}

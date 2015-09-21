@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>@model.pageTitle</title>
+
+    @html.block('meta', function(model){
+      <meta charset="utf-8">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+    })
+
+    @html.block('links', function(model){
+      <link rel="shortcut icon" href="/static/misc/favicon.ico">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link type="text/css" rel="stylesheet" media="all" href="/css/stylesheet.css">
+    })
+  </head>
+  <body>
+
+  @html.include('pages/partials/header', model)
+
+  @html.block('content')
+
+  @html.include('pages/partials/footer', model)
+
+  @html.block('scripts', function(model){
+    <script type="text/javascript" src="/js/libs.min.js"></script>
+    <script type="text/javascript" src="/js/main.min.js"></script>
+  })
+  </body>
+</html>

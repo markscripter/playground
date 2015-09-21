@@ -1,0 +1,79 @@
+/*****************
+  Form Elements
+******************/
+
+// unstyled items so far
+datalist {}
+fieldset {}
+keygen {}
+legend {}
+meter {}
+optgroup {}
+option {}
+output {}
+progress {}
+textarea {}
+
+// styled items
+button{
+  background-color: $bkg-blue;
+  border:none;
+  box-sizing:border-box;
+  color: $white;
+  font-family: $sans-serif;
+  padding: 13px 0px;
+  text-transform: uppercase;
+  width:100%;
+  outline: none;
+}
+
+form {}
+input {
+  -webkit-appearance: none;
+  border:none;
+  box-sizing:border-box;
+  display: block;
+  font-family: $sans-serif;
+  font-size: $font-size;
+  line-height: 1.25em;
+  margin: 15px auto;
+  padding: 0px 10px;
+  width:100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type="button"] {}
+  &[type="checkbox"] {}
+  &[type="color"] {}
+  &[type="date"] {}
+  &[type="datetime"] {}
+  &[type="date-time-local"] {}
+  &[type="email"] {}
+  &[type="file"] {}
+  &[type="hidden"] {}
+  &[type="image"] {}
+  &[type="month"] {}
+  &[type="number"] {}
+  &[type="password"] {}
+  &[type="radio"] {}
+  &[type="range"] {}
+  &[type="reset"] {}
+  &[type="search"] {}
+  &[type="submit"] {}
+  &[type="tel"] {}
+  &[type="text"] {}
+  &[type="time"] {}
+  &[type="url"] {}
+  &[type="week"] {}
+}
+label {
+  font-family:$sans-serif;
+  font-size:$font-size;
+  color: $gray;
+  display: block;
+  text-transform: uppercase;
+}
+
+select {}
