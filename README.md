@@ -1,5 +1,5 @@
-#  test
-This repository is for any Front End Development Team. It's purpose is to facilitate the development of the new websites or applications.
+#  Playground
+This is a playground.
 
 ## Setup
 First, you will need some items installed in order to build, run and serve this project locally. You will need:
