@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project Title | Style Guide</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" media="all" href="/css/styleguide.css">
+  </head>
+  <body>
+    <div class="svg-store">
+      @html.include('svg/svg.min.vash')
+    </div>
+    <header class="container">
+      <nav class="navigation">
+        <ul>
+          <li>
+            <a href="/styleguide/">Styleguide</a>
+          </li>
+          <li>
+            <a href="/jsDocs">Documentation</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    @html.block('content')
+    <footer class="container">
+      <p class="legal">&copy; Mark Scripter 2015</p>
+    </footer>
+  </body>
+</html>

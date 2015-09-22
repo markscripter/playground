@@ -1,10 +1,20 @@
 @import "main.scss";
 
+article {
+
+  &.container {
+    white-space: nowrap;
+  }
+}
 header {
   border-bottom: 1px solid $gray-dark;
 }
 .content {
   padding: $padding-vertical 0px;
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
 }
 .item {
   margin: 0px 0px $margin-vertical;
@@ -44,6 +54,12 @@ header {
       padding-left: 0px;
     }
   }
+}
+.sidebar {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
 }
 .title {
   margin: $margin-vertical 0px;

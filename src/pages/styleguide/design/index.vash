@@ -1,48 +1,69 @@
 @*********************
-  Page: Styleguide -> Design
+  Page: Styleguide - Design
 *********************@
 
-@html.extend('pages/styleguide/index', function(model){
+@html.extend('pages/layouts/styleguide', function(model){
   @html.block('content', function(model){
-    <section class="item">
-      <h2 class="heading">Typography</h2>
-      <div class="content">
-        <p class="serif">
-          <strong>Font:</strong> Noto <br /> This is your '$serif' font. This is a paragraph that shows how your serif font will look.
-          <div class="code-name">$serif;</div>
-        </p>
-        <p class="sans-serif">
-          <strong>Font:</strong> Poppins <br /> This is your '$sans-serif' font. This is a paragraph that shows how your sans-serif font will look.
-          <div class="code-name">$sans-serif</div>
-        </p>
-        <p class="monospace">
-          <strong>Font:</strong> AnonymousPro <br /> This is your '$monospace' font. This is a paragraph that shows how your monospace font will look.
-          <div class="code-name">$monospace</div>
-        </p>
-      </div>
-    </section>
-    <section class="item">
-      <h2 class="heading">Colors</h2>
-      <div class="content">
-        <div class="color">
-          <div class="code-name">$</div>
-        </div>
-        <div class="color">
-          <div class="code-name">$</div>
-        </div>
-      </div>
-    </section>
-    <section class="item">
-      <h2 class="heading">Headings</h2>
-      <div class="content">
-        <h1>Heading One</h1>
-        <h2>Heading Two</h2>
-        <h3>Heading Three</h3>
-        <h4>Heading Four</h4>
-        <h5>Heading Five</h5>
-        <h6>Heading Six</h6>
-      </div>
-    </section>
-    <aside class="sidebar right"></aside>
+    <article class="container">
+      <section class="content">
+        <h1 class="title">Style Guide - Design</h1>
+        <section class="item">
+          <h2 class="heading">Typography</h2>
+          <div class="content">
+            <p class="serif">
+              <strong>Font:</strong> Noto <br /> This is your '$serif' font. This is a paragraph that shows how your serif font will look.
+              <div class="code-name">$serif;</div>
+            </p>
+            <p class="sans-serif">
+              <strong>Font:</strong> Poppins <br /> This is your '$sans-serif' font. This is a paragraph that shows how your sans-serif font will look.
+              <div class="code-name">$sans-serif</div>
+            </p>
+            <p class="monospace">
+              <strong>Font:</strong> AnonymousPro <br /> This is your '$monospace' font. This is a paragraph that shows how your monospace font will look.
+              <div class="code-name">$monospace</div>
+            </p>
+          </div>
+        </section>
+        <section class="item">
+          <h2 class="heading">Colors</h2>
+          <div class="content">
+            <div class="color">
+              <div class="code-name">$</div>
+            </div>
+            <div class="color">
+              <div class="code-name">$</div>
+            </div>
+          </div>
+        </section>
+        <section class="item">
+          <h2 class="heading">Headings</h2>
+          <div class="content">
+            <h1>Heading One</h1>
+            <h2>Heading Two</h2>
+            <h3>Heading Three</h3>
+            <h4>Heading Four</h4>
+            <h5>Heading Five</h5>
+            <h6>Heading Six</h6>
+          </div>
+        </section>
+      </section>
+      <aside class="sidebar right">
+        <h4>Section Items</h4>
+        <ul>
+          <li>
+            <a href="/styleguide/design/">Design</a>
+          </li>
+          <li>
+            <a href="/styleguide/js-components">JS Components</a>
+          </li>
+          <li>
+            <a href="/styleguide/ui-components">UI Components</a>
+          </li>
+          <li>
+            <a href="/styleguide/widgets">Widgets</a>
+          </li>
+        </ul>
+      </aside>
+    </article>
   })
 })
