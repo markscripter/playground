@@ -11,4 +11,4 @@ app.register(Modal);
 app.register(Carousel);
 
 // test events
-app.publish('destroy', 'hi');
+// app.publish('destroy', 'hi');

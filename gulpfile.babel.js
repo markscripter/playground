@@ -20,7 +20,7 @@ import svgstore from 'gulp-svgstore';
 import svgmin from 'gulp-svgmin';
 import templates  from './helpers/gulp-vash';
 import uglify from 'gulp-uglify';
-import webpack from 'webpack';
+import webpack from 'gulp-webpack';
 import wrapper from 'gulp-wrapper';
 
 const PATHS = require('./config.json').paths;
@@ -63,55 +63,53 @@ gulp.task('templates', () => {
     });
   });
 
-  return;
+  return gulp.src(path.join(__dirname, PATHS.index))
+    .pipe(templates())
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public)));
 });
 
 gulp.task('styles', () => {
   const globalCSS = PATHS.cssLibraries.map((filePath) => {
     return path.join(__dirname, filePath);
   });
-
-  return gulp.src([
-    ...globalCSS,
+  return gulp.src([...globalCSS,
     path.join(__dirname, PATHS.components, '**/*.scss'),
-    path.join(__dirname, PATHS.styles, 'main.scss'),
-  ])
-  .pipe(sourcemaps.init())
-  .pipe(sass({
-    includePaths: [path.join(__dirname, PATHS.styles)],
-  }))
-  .pipe(concat('stylesheet.css'))
-  .pipe(prefix({
-    browsers: ['last 4 versions'],
-    cascade: 'false',
-  }))
-  .pipe(cssMinify())
-  .pipe(rename('stylesheet.css'))
-  .pipe(sourcemaps.write('./maps'))
-  .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
+    path.join(__dirname, PATHS.styles, 'main.scss')]
+  )
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      includePaths: [path.join(__dirname, PATHS.styles)],
+    }))
+    .pipe(concat('stylesheet.css'))
+    .pipe(prefix({
+      browsers: ['last 4 versions'],
+      cascade: 'false',
+    }))
+    .pipe(cssMinify())
+    .pipe(rename('stylesheet.css'))
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
 });
 
 gulp.task('styleguide', () => {
-  return combiner.obj([
-    gulp.src(path.join(__dirname, PATHS.styleguide.pages))
-      .pipe(templates({
-        locals: {},
-      }))
-      .pipe(gulp.dest(path.join(__dirname, PATHS.public))),
-    gulp.src(path.join(__dirname, PATHS.styleguide.styles))
-      .pipe(sourcemaps.init())
-      .pipe(sass())
-      .pipe(sourcemaps.write())
-      .pipe(rename('styleguide.css'))
-      .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css'))),
-  ]);
+  gulp.src(path.join(__dirname, PATHS.styleguide.styles))
+    .pipe(sass({
+      includePaths: [path.join(__dirname, PATHS.styles)],
+    }))
+    .pipe(rename('styleguide.css'))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
+  gulp.src(path.join(__dirname, PATHS.styleguide.templates))
+    .pipe(templates())
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public)));
+  return;
 });
 
 gulp.task('js-global', () => {
   const combined = combiner.obj([
     gulp.src([
-      path.join(__dirname, PATHS.javascript, '*.js'),
+      path.join(__dirname, PATHS.javascript, 'main.js'),
     ]),
+    webpack(require('./webpack.config.js')),
     eslint(),
     babel(),
     wrapper({
@@ -200,16 +198,15 @@ gulp.task('watch', () => {
     path.join(__dirname, PATHS.components, '**/less/**.less'),
   ], ['styles', 'styleguide']).on('change', browserSync.reload);
   gulp.watch([
-    path.join(__dirname, PATHS.pages),
+    path.join(__dirname, PATHS.templates),
     path.join(__dirname, '/pages/**/*.jade'),
     path.join(__dirname, PATHS.components, '/**/markup/**.jade'),
-    path.join(__dirname, PATHS.partials),
     path.join(__dirname, PATHS.componentsData),
     path.join(__dirname, PATHS.data),
-  ], ['jade']).on('change', browserSync.reload);
+  ], ['templates']).on('change', browserSync.reload);
   gulp.watch([
     path.join(__dirname, PATHS.styleguide.styles),
-    path.join(__dirname, PATHS.styleguide.pages),
+    path.join(__dirname, PATHS.styleguide.templates),
   ], ['styleguide']).on('change', browserSync.reload);
   gulp.watch([
     path.join(__dirname, PATHS.javascript, '*.js'),

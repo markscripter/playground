@@ -9,7 +9,8 @@
     ],
     "data" : "/src/siteData.json",
     "fonts" : "/src/styles/global/fonts/*.*",
-    "javascript": "/src/javascript/",
+    "index" : "/src/pages/index.vash",
+    "javascript": "/src/scripts/",
     "jsLibraries" : [
       "/node_modules/ramda/dist/ramda.min.js",
       "/bower_components/scrollReveal.js/dist/scrollReveal.min.js",
@@ -27,7 +28,7 @@
     "public": "/public/",
     "styleguide": {
       "styles": "/src/styles/styleguide.scss",
-      "pages": "/src/pages/styleguide.vash"
+      "templates": "/src/pages/styleguide.vash"
     },
     "styles": "/src/styles/",
     "svg": "/src/svg/"
