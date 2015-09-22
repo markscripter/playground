@@ -29,7 +29,10 @@
     "public": "/public/",
     "styleguide": {
       "styles": "/src/styles/styleguide.scss",
-      "templates": "/src/pages/styleguide.vash"
+      "templates": [
+        "/src/pages/styleguide/styleguide.vash",
+        "/src/pages/styleguide/**/index.vash"
+      ]
     },
     "styles": "/src/styles/",
     "svg": "/src/svg/"

@@ -1,32 +1,60 @@
 @import "main.scss";
 
-.item {
-  margin: $margin-vertical 0px;
-  padding: $padding-vertical $padding-horizontal;
-
-  .heading {
-    color: $white;
-    background-color: $gray-dark;
-    width: 100%;
-    margin-left: -$margin-horizontal;
-    margin-right: $margin-horizontal;
-    padding-left: $padding-horizontal;
-    padding-right: $padding-horizontal;
-  }
+header {
+  border-bottom: 1px solid $gray-dark;
 }
-
+.content {
+  padding: $padding-vertical 0px;
+}
+.item {
+  margin: 0px 0px $margin-vertical;
+  padding: 0px $padding-horizontal;
+}
+.heading {
+  color: $white;
+  background-color: $gray-dark;
+  width: 100%;
+  margin-left: -$margin-horizontal;
+  margin-right: $margin-horizontal;
+  padding-left: $padding-horizontal;
+  padding-right: $padding-horizontal;
+}
 .legal {
   float:right;
 }
+.navigation {
+  ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+  li {
+    display: inline;
+  }
+  a {
+    color: $gray-dark;
+    padding: 0px $padding-horizontal--small;
+    text-transform: uppercase;
+    text-decoration: none;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:first-child {
+      padding-left: 0px;
+    }
+  }
+}
+.title {
+  margin: $margin-vertical 0px;
+}
+// Font Stuff
 .serif {
   font-family: $serif;
 }
-
 .sans-serif {
   font-family: $sans-serif;
 }
-
 .monospace {
   font-family: $monospace;
 }

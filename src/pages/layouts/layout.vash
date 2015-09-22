@@ -17,18 +17,20 @@
     })
   </head>
   <body>
-  @html.include('svg/svg.min.vash')
-  @html.include('pages/partials/header', model)
+    <div class="svg-store">
+      @html.include('svg/svg.min.vash')
+    </div>
+    @html.include('pages/partials/header', model)
 
-  <!-- CONTENT -->
-  @html.block('content')
-  <!-- /CONTENT -->
+    <!-- CONTENT -->
+    @html.block('content')
+    <!-- /CONTENT -->
 
-  @html.include('pages/partials/footer', model)
+    @html.include('pages/partials/footer', model)
 
-  @html.block('scripts', function(model){
-    <script type="text/javascript" src="/js/libs.min.js"></script>
-    <script type="text/javascript" src="/js/main.min.js"></script>
-  })
+    @html.block('scripts', function(model){
+      <script type="text/javascript" src="/js/libs.min.js"></script>
+      <script type="text/javascript" src="/js/main.min.js"></script>
+    })
   </body>
 </html>

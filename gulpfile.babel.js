@@ -9,7 +9,7 @@ import cssMinify from 'gulp-minify-css';
 import eslint from 'gulp-eslint';
 import glob from 'glob';
 import gulp from 'gulp';
-import jsdoc from 'gulp-jsdoc';
+import esdoc from 'gulp-esdoc';
 import path from 'path';
 import prefix from 'gulp-autoprefixer';
 import R from 'ramda';
@@ -43,7 +43,8 @@ function pageData(root, comps) {
 
 gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
 gulp.task('serve', ['build', 'watch', 'server']);
-gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps']);
+gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-jsdoc']);
+gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup']);
 
 gulp.task('templates', ['svg'], () => {
   // get glob of pages
@@ -91,17 +92,23 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
 });
 
-gulp.task('styleguide', () => {
-  gulp.src(path.join(__dirname, PATHS.styleguide.styles))
+gulp.task('styleguide-styles', ['svg'], () => {
+  return gulp.src(path.join(__dirname, PATHS.styleguide.styles))
     .pipe(sass({
       includePaths: [path.join(__dirname, PATHS.styles)],
     }))
     .pipe(rename('styleguide.css'))
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
-  gulp.src(path.join(__dirname, PATHS.styleguide.templates))
+});
+
+gulp.task('styleguide-markup', ['svg'], () => {
+  const styleguideItems = PATHS.styleguide.templates.map((filePath) => {
+    return path.join(__dirname, filePath);
+  });
+
+  return gulp.src(styleguideItems)
     .pipe(templates())
-    .pipe(gulp.dest(path.join(__dirname, PATHS.public)));
-  return;
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'styleguide/')));
 });
 
 gulp.task('js-global', () => {
@@ -148,8 +155,10 @@ gulp.task('js-libraries', () => {
 });
 
 gulp.task('js-jsdoc', () => {
-  return gulp.src(path.join(__dirname, PATHS.components, '**/*.js'))
-    .pipe(jsdoc(path.join(__dirname, PATHS.public, 'jsdocs/')));
+  return gulp.src(path.join(__dirname, PATHS.javascript))
+    .pipe(esdoc({
+      destination: path.join(__dirname, PATHS.public, 'jsdocs/'),
+    }));
 });
 
 gulp.task('js-maps', () => {
@@ -199,15 +208,13 @@ gulp.task('watch', () => {
   ], ['styles', 'styleguide']).on('change', browserSync.reload);
   gulp.watch([
     path.join(__dirname, PATHS.templates),
-    path.join(__dirname, '/pages/**/*.jade'),
-    path.join(__dirname, PATHS.components, '/**/markup/**.jade'),
+    path.join(__dirname, '/pages/**/*.vash'),
+    path.join(__dirname, PATHS.components, '/**/markup/**.vash'),
     path.join(__dirname, PATHS.componentsData),
     path.join(__dirname, PATHS.data),
   ], ['templates']).on('change', browserSync.reload);
-  gulp.watch([
-    path.join(__dirname, PATHS.styleguide.styles),
-    path.join(__dirname, PATHS.styleguide.templates),
-  ], ['styleguide']).on('change', browserSync.reload);
+  gulp.watch(R.append(path.join(__dirname, PATHS.styleguide.styles), PATHS.styleguide.templates),
+  ['styleguide']).on('change', browserSync.reload);
   gulp.watch([
     path.join(__dirname, PATHS.javascript, '*.js'),
     path.join(__dirname, PATHS.components, '**/javascript/*.js'),

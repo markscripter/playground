@@ -9,20 +9,19 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0px;
 }
 h1{
-  font-size: ceil($font-size * 3);
-  line-height: 1.75em;
-}
-h2 {
   font-size: ceil($font-size * 2.5);
 }
-h3 {
+h2 {
   font-size: ceil($font-size * 2);
 }
-h4 {
+h3 {
   font-size: ceil($font-size * 1.5);
 }
-h5 {
+h4 {
   font-size: ceil($font-size * 1.25);
+}
+h5 {
+  font-size: ceil($font-size * 1.125);
 }
 h6 {
   font-size: ceil($font-size * 1.1);

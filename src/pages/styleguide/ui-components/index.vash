@@ -1,0 +1,10 @@
+@*********************
+  Page: Styleguide -> UI-Components
+*********************@
+
+@html.extend('pages/styleguide/index', function(model){
+  @html.block('content', function(model){
+    <section class="item"></section>
+    <aside class="sidebar right"></aside>
+  })
+})
