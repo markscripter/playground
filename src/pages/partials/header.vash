@@ -1,6 +1,9 @@
 @*********************
   Partial: header
 *********************@
-<header>
-  <h1>header</h1>
+<!-- HEADER -->
+<header class="container">
+  <!-- LOGO -->
+  <!-- /LOGO -->
 </header>
+<!-- /HEADER -->

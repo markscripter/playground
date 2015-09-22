@@ -4,39 +4,20 @@
 $white:            white;
 $black:            black;
 $gray:             lighten($black, 50%); // #808080
-$gray--light:      lighten($black, 75%); // #bfbfbf
-$gray--lighter:    lighten($black, 85%); // #d9d9d9
-$gray--dark:       lighten($black, 25%); // #404040
-$gray--darker:     lighten($black, 15%); // #262626
-
-//= Themed Colors
+$gray-light:       lighten($black, 75%); // #bfbfbf
+$gray-lighter:     lighten($black, 85%); // #d9d9d9
+$gray-dark:        lighten($black, 25%); // #404040
+$gray-darker:      lighten($black, 15%); // #262626
 $primary:          #00bce7;
-$primary-light:    #00b5e2;
-$primary-dark:     #00667d;
-$blue:             #0077c8;
-$blue-light:       #268cd0;
 $secondary:        red;
 $accent:           yellow;
-
-//= Themed Background Colors
-$bkg-blue:         #14bbe4;
-$bkg-dark-blue:    #147389;
-$bkg-darker-blue:  #207a8f;
-$bkg-gray:         #e2e2e2;
-$bkg-gray--active: #909090;
-
-//= Error States
-$error: #e33b29;
 
 /*****************
   Typography
 ******************/
-//= FONTS
-$serif:        AnonymousPro, Georgia, "Times New Roman", Times, serif;
-$sans-serif:   Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$mono:         Slabo, "Courier New", Courier, monospace;
-
-//= SIZES
+$serif:            Noto, Georgia, "Times New Roman", Times, serif;
+$sans-serif:       Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$monospace:        AnonymousPro, "Courier New", Courier, monospace;
 $font-size:        16px;
 $font-size--small: ceil(($font-size * 0.85)); // 14px;
 $font-size--large: ceil(($font-size * 1.5)); // 24px
@@ -70,6 +51,9 @@ $margin-horizontal--smaller:   ceil($margin-horizontal * 0.25); // 0.6255%
 $margin-horizontal--large:     ceil($margin-horizontal * 1.5); // 3.75%
 $margin-horizontal--larger:    ceil($margin-horizontal * 2.5); // 6.25%
 
+/*****************
+  Breakpoints
+******************/
 $screen-xs:  480px;
 $screen-sm:  768px;
 $screen-md:  992px;

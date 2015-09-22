@@ -3,8 +3,10 @@
 ******************/
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans-serif;
-  line-height: 1.5em;
+  line-height: 2em;
   vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
 }
 h1{
   font-size: ceil($font-size * 3);
@@ -26,4 +28,7 @@ h6 {
   font-size: ceil($font-size * 1.1);
 }
 
-hgroup {}
+hgroup {
+  margin: 0px;
+  padding: 0px;
+}

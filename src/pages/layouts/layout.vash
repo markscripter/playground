@@ -17,10 +17,12 @@
     })
   </head>
   <body>
-
+  @html.include('svg/svg.min.vash')
   @html.include('pages/partials/header', model)
 
+  <!-- CONTENT -->
   @html.block('content')
+  <!-- /CONTENT -->
 
   @html.include('pages/partials/footer', model)
 

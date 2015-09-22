@@ -1,1 +1,32 @@
 @import "main.scss";
+
+.item {
+  margin: $margin-vertical 0px;
+  padding: $padding-vertical $padding-horizontal;
+
+  .heading {
+    color: $white;
+    background-color: $gray-dark;
+    width: 100%;
+    margin-left: -$margin-horizontal;
+    margin-right: $margin-horizontal;
+    padding-left: $padding-horizontal;
+    padding-right: $padding-horizontal;
+  }
+}
+
+.legal {
+  float:right;
+}
+
+.serif {
+  font-family: $serif;
+}
+
+.sans-serif {
+  font-family: $sans-serif;
+}
+
+.monospace {
+  font-family: $monospace;
+}

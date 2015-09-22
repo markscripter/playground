@@ -2,7 +2,7 @@
   Text Elements
 ******************/
 
-a {}
+// unstyled elements
 abbr {}
 cite {}
 code {}
@@ -13,8 +13,6 @@ div {}
 dl {}
 dt {}
 em {}
-figcaption {}
-figure {}
 hr {}
 i {}
 main {}
@@ -26,3 +24,18 @@ rt {}
 span {}
 sup {}
 time {}
+
+// styled elements
+a {
+  color: $primary;
+  text-decoration: underline;
+
+  &:hover {
+    color: darken($primary, 25%);
+  }
+
+  &:active,
+  &:focus {
+    color: lighten($primary, 25%);
+  }
+}

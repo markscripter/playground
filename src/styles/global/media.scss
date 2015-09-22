@@ -1,9 +1,21 @@
 /*****************
   Multimedia Elements
 ******************/
+
+// unstyled elements
 area {}
 audio {}
-img {}
+figcaption {}
 map {}
 track {}
 video {}
+
+// styled elements
+figure {
+  position: relative;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}

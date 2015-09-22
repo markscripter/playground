@@ -1,6 +1,12 @@
 /*****************
   List Elements
 ******************/
-ul{}
+
+// unstyled elements
+ul {}
 ol {}
-li {}
+
+// styled elements
+li {
+  line-height: 1.5em;
+}

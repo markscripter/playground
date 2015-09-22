@@ -41,11 +41,11 @@ function pageData(root, comps) {
   return R.merge(tempData, data);
 }
 
-gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'svg', 'templates']);
+gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
 gulp.task('serve', ['build', 'watch', 'server']);
 gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps']);
 
-gulp.task('templates', () => {
+gulp.task('templates', ['svg'], () => {
   // get glob of pages
   glob(path.join(__dirname, PATHS.templates), {}, (err, pages) => {
     if (err) {
@@ -174,7 +174,7 @@ gulp.task('svg', () => {
     .pipe(svgmin())
     .pipe(svgstore())
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'svg/')))
-    .pipe(rename('svg.min.jade'))
+    .pipe(rename('svg.min.vash'))
     .pipe(gulp.dest(path.join(__dirname, PATHS.svg)));
 });
 
@@ -193,9 +193,9 @@ gulp.task('watch', () => {
     path.join(__dirname, PATHS.assets),
   ], ['assets']).on('change', browserSync.reload);
   gulp.watch([
-    path.join(__dirname, PATHS.styles, '**.less'),
-    path.join(__dirname, PATHS.styles, '**/**.less'),
-    path.join(__dirname, PATHS.components, '**/less/**.less'),
+    path.join(__dirname, PATHS.styles, '**.scss'),
+    path.join(__dirname, PATHS.styles, '**/**.scss'),
+    path.join(__dirname, PATHS.components, '**/**.scss'),
   ], ['styles', 'styleguide']).on('change', browserSync.reload);
   gulp.watch([
     path.join(__dirname, PATHS.templates),
@@ -214,5 +214,5 @@ gulp.task('watch', () => {
   ], ['javascript']).on('change', browserSync.reload);
   gulp.watch([
     path.join(__dirname, PATHS.svg, '*.svg'),
-  ], ['svg', 'jade']).on('change', browserSync.reload);
+  ], ['templates']).on('change', browserSync.reload);
 });

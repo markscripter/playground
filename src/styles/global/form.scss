@@ -2,9 +2,10 @@
   Form Elements
 ******************/
 
-// unstyled items so far
+// unstyled elements
 datalist {}
 fieldset {}
+form {}
 keygen {}
 legend {}
 meter {}
@@ -13,10 +14,11 @@ option {}
 output {}
 progress {}
 textarea {}
+select {}
 
-// styled items
+// styled elements
 button{
-  background-color: $bkg-blue;
+  background-color: $gray-darker;
   border:none;
   box-sizing:border-box;
   color: $white;
@@ -27,7 +29,6 @@ button{
   outline: none;
 }
 
-form {}
 input {
   -webkit-appearance: none;
   border:none;
@@ -75,5 +76,3 @@ label {
   display: block;
   text-transform: uppercase;
 }
-
-select {}
