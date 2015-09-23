@@ -30,7 +30,7 @@
     "styleguide": {
       "styles": "/src/styles/styleguide.scss",
       "templates": [
-        "/src/pages/styleguide/styleguide.vash",
+        "/src/pages/styleguide/index.vash",
         "/src/pages/styleguide/**/index.vash"
       ]
     },

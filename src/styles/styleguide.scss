@@ -6,40 +6,48 @@ article {
     white-space: nowrap;
   }
 }
+
 header {
   border-bottom: 1px solid $gray-dark;
 }
-.content {
-  padding: $padding-vertical 0px;
+
+.main {
   width: 80%;
   display: inline-block;
   vertical-align: top;
   white-space: normal;
+  padding-right: $padding-horizontal--smaller;
 }
+
 .item {
   margin: 0px 0px $margin-vertical;
   padding: 0px $padding-horizontal;
 }
+
 .heading {
   color: $white;
-  background-color: $gray-dark;
+  background-color: $gray-darker;
   width: 100%;
   margin-left: -$margin-horizontal;
   margin-right: $margin-horizontal;
   padding-left: $padding-horizontal;
   padding-right: $padding-horizontal;
 }
+
 .legal {
   float:right;
 }
+
 .navigation {
   ul {
     list-style: none;
     padding-left: 0px;
   }
+
   li {
     display: inline;
   }
+
   a {
     color: $gray-dark;
     padding: 0px $padding-horizontal--small;
@@ -55,15 +63,103 @@ header {
     }
   }
 }
+
 .sidebar {
   width: 20%;
   display: inline-block;
   vertical-align: top;
   white-space: normal;
+  margin-top: $margin-vertical;
+  position: fixed;
+
+  h4 {
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: $margin-vertical--smaller 0px 0px;
+
+    li {
+      display: block;
+      padding: 5px $padding-horizontal;
+      margin: 5px 0px 5px -1px;
+      border-left: 1px solid darken(rgba($primary, 0), 15%);
+      transition: border 0.5s, color 0.5s;
+
+      &:hover {
+        border-left: 1px solid darken(rgba($primary, 1), 15%);
+
+        & > a {
+          color: darken($primary, 10%);
+        }
+      }
+
+      &.active {
+        // border-left: 1px solid darken($primary, 25%);
+        color: darken($primary, 25%);
+        margin-left: -1px;
+
+        &:hover {
+          color: darken($primary, 10%);
+        }
+
+        & > a {
+          border-left: 1px solid darken($primary, 25%);
+          color: darken($primary, 25%);
+          margin-left: -8px;
+          padding-left: 8px;
+
+          &:hover {
+            color: darken($primary, 10%);
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        font-size: $font-size--small;
+        box-sizing: border-box;
+      }
+
+      ul {
+        margin-top: 10px;
+
+        li {
+          margin: 0px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          border-left: 0px;
+
+          &:hover {
+            border-left: 0px;
+            margin-left: 0px;
+          }
+
+          a {
+            color: darken($primary, 25%);
+            font-size: ceil($font-size * 0.75);
+          }
+        }
+      }
+    }
+  }
 }
+
 .title {
   margin: $margin-vertical 0px;
 }
+
+.code-name {
+  display: inline-block;
+  padding: 10px 15px;
+  color: $white;
+  background-color: $gray-dark;
+  border-radius: 5px;
+}
+
 // Font Stuff
 .serif {
   font-family: $serif;

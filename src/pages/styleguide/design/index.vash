@@ -5,14 +5,14 @@
 @html.extend('pages/layouts/styleguide', function(model){
   @html.block('content', function(model){
     <article class="container">
-      <section class="content">
-        <h1 class="title">Style Guide - Design</h1>
+      <section class="main">
+        <h1 class="title">Design Components</h1>
         <section class="item">
-          <h2 class="heading">Typography</h2>
+          <h2 class="heading" id="typography">Typography</h2>
           <div class="content">
             <p class="serif">
               <strong>Font:</strong> Noto <br /> This is your '$serif' font. This is a paragraph that shows how your serif font will look.
-              <div class="code-name">$serif;</div>
+              <div class="code-name">$serif</div>
             </p>
             <p class="sans-serif">
               <strong>Font:</strong> Poppins <br /> This is your '$sans-serif' font. This is a paragraph that shows how your sans-serif font will look.
@@ -25,7 +25,7 @@
           </div>
         </section>
         <section class="item">
-          <h2 class="heading">Colors</h2>
+          <h2 class="heading" id="colors">Colors</h2>
           <div class="content">
             <div class="color">
               <div class="code-name">$</div>
@@ -36,33 +36,73 @@
           </div>
         </section>
         <section class="item">
-          <h2 class="heading">Headings</h2>
+          <h2 class="heading" id="headings">Headings</h2>
           <div class="content">
-            <h1>Heading One</h1>
-            <h2>Heading Two</h2>
-            <h3>Heading Three</h3>
-            <h4>Heading Four</h4>
-            <h5>Heading Five</h5>
-            <h6>Heading Six</h6>
+            <div>
+              <h1 class="heading-one">Heading One</h1>
+              <div class="code-name">h1</div>
+            </div>
+            <div>
+              <h2 class="heading-two">Heading Two</h2>
+              <div class="code-name">h2</div>
+            </div>
+            <div>
+              <h3 class="heading-three">Heading Three</h3>
+              <div class="code-name">h3</div>
+            </div>
+            <div>
+              <h4 class="heading-four">Heading Four</h4>
+              <div class="code-name">h4</div>
+            </div>
+            <div>
+              <h5 class="heading-five">Heading Five</h5>
+              <div class="code-name">h5</div>
+            </div>
+            <div>
+              <h6 class="heading-six">Heading Six</h6>
+              <div class="code-name">h6</div>
+            </div>
+          </div>
+        </section>
+        <section class="item">
+          <h2 class="heading" id="headings">Paragraph</h2>
+          <div class="content">
+            <p>This is an example of a paragraph. This is how a single paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+            <p>This is another example of a paragraph, and a <a href="#">link</a>. This is how the second paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+            <p>This is another example of a paragraph. This is how the third paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+            <p>This is another example of a paragraph. This is how the fourth paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+            <p>... and stop ...</p>
           </div>
         </section>
       </section>
       <aside class="sidebar right">
-        <h4>Section Items</h4>
-        <ul>
-          <li>
-            <a href="/styleguide/design/">Design</a>
-          </li>
-          <li>
-            <a href="/styleguide/js-components">JS Components</a>
-          </li>
-          <li>
-            <a href="/styleguide/ui-components">UI Components</a>
-          </li>
-          <li>
-            <a href="/styleguide/widgets">Widgets</a>
-          </li>
-        </ul>
+        <nav>
+          <ul>
+            <li class="active">
+              <a href="/styleguide/design/">Design Components</a>
+              <ul>
+                <li>
+                  <a href="#typography">Typography</a>
+                </li>
+                <li>
+                  <a href="#colors">Colors</a>
+                </li>
+                <li>
+                  <a href="#headings">Headings</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/styleguide/js-components">JS Components</a>
+            </li>
+            <li>
+              <a href="/styleguide/ui-components">UI Components</a>
+            </li>
+            <li>
+              <a href="/styleguide/widgets">Widgets</a>
+            </li>
+          </ul>
+        </nav>
       </aside>
     </article>
   })
