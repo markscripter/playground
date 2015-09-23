@@ -1,11 +1,9 @@
-export default class Accordion {
-  constructor(target, id) {
-    this.id = id;
-    this.target = target;
-    this.settings = JSON.parse(target.getAttribute('data-settings'));
-  }
+function Accordion(state) {
+  const wireUp = (settings) => {
+    $(state.target).colorbox(settings);
+  };
 
-  init() {
-    // do something
-  }
+  wireUp(JSON.parse(state.target.getAttribute('data-settings')));
 }
+
+export default Accordion;

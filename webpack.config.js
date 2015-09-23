@@ -1,4 +1,4 @@
-var path = require('path');
+import path from 'path';
 
 module.exports = {
   entry: './src/scripts/main.js',

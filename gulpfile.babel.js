@@ -156,9 +156,20 @@ gulp.task('js-libraries', () => {
 });
 
 gulp.task('js-jsdoc', () => {
-  return gulp.src(path.join(__dirname, PATHS.javascript))
+  return gulp.src([
+    path.join(__dirname, PATHS.javascript),
+  ])
     .pipe(esdoc({
+      excludes: [
+        '_tests.js',
+        'bundle.js',
+      ],
       destination: path.join(__dirname, PATHS.public, 'jsdocs/'),
+      scripts: [
+        path.join(__dirname, 'src/components/accordion/index.js'),
+        path.join(__dirname, 'src/components/carousel/index.js'),
+        path.join(__dirname, 'src/components/modal/index.js'),
+      ],
     }));
 });
 

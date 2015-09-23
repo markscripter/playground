@@ -1,12 +1,9 @@
-export default class Carousel {
-  constructor(target, id) {
-    this.id = id;
-    this.target = target;
-    this.settings = JSON.parse(target.getAttribute('data-settings'));
-    this.init();
-  }
+function Carousel(state) {
+  const wireUp = (settings) => {
+    $(state.target).slick(settings);
+  };
 
-  init() {
-    $(this.target).slick(this.settings);
-  }
+  wireUp(JSON.parse(state.target.getAttribute('data-settings')));
 }
+
+export default Carousel;
