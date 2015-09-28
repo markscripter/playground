@@ -32,7 +32,7 @@
 ///   @include media(md) {
 ///     width: 75%;
 ///   }
-@mixin media($media: xs) {
+@mixin media($media) {
   @if $media == xs {
     @media only screen and (min-width: $screen-xs) { @content; }
   }
@@ -44,6 +44,8 @@
   }
   @else if $media == lg {
     @media only screen and (min-width: $screen-lg) { @content; }
+  } else {
+    @content;
   }
 }
 

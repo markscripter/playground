@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "description": "New Project for test",
+  "name": "Playground",
+  "description": "A playground to play in.",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
