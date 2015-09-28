@@ -1,0 +1,29 @@
+<section class="item">
+  <h3 class="heading" id="headings">Headings</h3>
+  <div class="content">
+    <div>
+      <h1 class="heading-one">Heading One</h1>
+      <div class="code-name">h1</div>
+    </div>
+    <div>
+      <h2 class="heading-two">Heading Two</h2>
+      <div class="code-name">h2</div>
+    </div>
+    <div>
+      <h3 class="heading-three">Heading Three</h3>
+      <div class="code-name">h3</div>
+    </div>
+    <div>
+      <h4 class="heading-four">Heading Four</h4>
+      <div class="code-name">h4</div>
+    </div>
+    <div>
+      <h5 class="heading-five">Heading Five</h5>
+      <div class="code-name">h5</div>
+    </div>
+    <div>
+      <h6 class="heading-six">Heading Six</h6>
+      <div class="code-name">h6</div>
+    </div>
+  </div>
+</section>

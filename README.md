@@ -19,10 +19,6 @@ After installing Node & NPM, install the NPM packages using these commands:
     sudo npm i -g babel-core    // more babel stuff
     sudo npm i -g babel-eslint  // installs babel's plugin for eslint
     sudo npm i -g gulp          // installs Gulp
-    sudo npm i -g jade          // templating library
-    sudo npm i -g jsdoc         // javascript documentation
-    sudo npm i -g svgo          // SVG optimizer
-
 
 
 This should setup your environment so you can build and run this project solution. The next step is to install all of the project's dependencies.

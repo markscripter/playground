@@ -1,7 +1,3 @@
-/**
-* @requires 'ramda'
-* @requires './utils/guid'
-*/
 import R from 'ramda';
 import guid from './utils/guid';
 import Dispatcher from './utils/dispatcher';
@@ -15,6 +11,8 @@ const dispatcher = new Dispatcher();
  * @class Hi
  * @classdesc The main application for HI Projects.
  * @author Mark Scripter [mscripter@horizontalintegration.com]
+ * @requires 'ramda'
+ * @requires './utils/guid'
  */
 class Hi {
 
@@ -32,7 +30,7 @@ class Hi {
   * @param {object} module - The module we want to register.
   * @returns
   */
-  register(module) {
+  registerModule(module) {
     const name = module.name.toLowerCase();
     if (!this.isRegistered(name)) {
       this.registeredModules[name] = module;
@@ -49,7 +47,7 @@ class Hi {
   * @param {object} module - The module we want to unregister.
   * @returns {boolean} boolean - Returns true if successfully removed, otherwise false.
   */
-  unregister(module) {
+  unregisterModule(module) {
     const name = module.name.toLowerCase();
     if (this.isRegistered(name)) {
       delete this.registeredModules[name];

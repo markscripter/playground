@@ -17,7 +17,10 @@
             <a href="/styleguide/" target="_blank">Styleguide</a>
           </li>
           <li>
-            <a href="/jsdocs" target="_blank">Documentation</a>
+            <a href="/jsdocs" target="_blank">JS Docs</a>
+          </li>
+          <li>
+            <a href="/sassdoc" target="_blank">Sass Docs</a>
           </li>
         </ul>
       </nav>
@@ -45,7 +48,6 @@
             <li><a href="#" target="_blank"></a></li>
           </ul>
         </li>
-        <li><a href="/styleguide/" target="_blank">Styleguide</a></li>
       </ul>
     </article>
   </body>

@@ -1,61 +1,10 @@
 @*********************
   Page: Styleguide
 *********************@
-
-@html.extend('pages/layouts/styleguide', function(model){
-  @html.block('content', function(model){
-    <article class="container">
-      <section class="main">
-        <h1 class="title">UI Components</h1>
-        <section class="item">
-          <h2 class="heading" id="buttons">Buttons</h2>
-          <div class="content"></div>
-        </section>
-        <section class="item">
-          <h2 class="heading" id="badges">Badges</h2>
-          <div class="content"></div>
-        </section>
-        <section class="item">
-          <h2 class="heading" id="cards">Cards</h2>
-          <div class="content"></div>
-        </section>
-        <section class="item">
-          <h2 class="heading" id="hero">Hero</h2>
-          <div class="content"></div>
-        </section>
-      </section>
-      <aside class="sidebar right">
-        <nav>
-          <ul>
-            <li>
-              <a href="/styleguide/design/">Design Components</a>
-            </li>
-            <li>
-              <a href="/styleguide/js-components">JS Components</a>
-            </li>
-            <li class="active">
-              <a href="/styleguide/ui-components">UI Components</a>
-              <ul>
-                <li>
-                  <a href="#buttons">Buttons</a>
-                </li>
-                <li>
-                  <a href="#badges">Badges</a>
-                </li>
-                <li>
-                  <a href="#cards">Cards</a>
-                </li>
-                <li>
-                  <a href="#hero">Hero</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="/styleguide/widgets">Widgets</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </article>
-  })
-})
+<section class="components">
+  <h2 class="title" id="ui-components">UI Components</h2>
+  @html.include('pages/styleguide/ui-components/components/badges', model)
+  @html.include('pages/styleguide/ui-components/components/buttons', model)
+  @html.include('pages/styleguide/ui-components/components/cards', model)
+  @html.include('pages/styleguide/ui-components/components/hero', model)
+</section>

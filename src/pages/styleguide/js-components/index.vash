@@ -1,54 +1,9 @@
 @*********************
   Page: Styleguide
 *********************@
-
-@html.extend('pages/layouts/styleguide', function(model){
-  @html.block('content', function(model){
-    <article class="container">
-      <section class="main">
-        <h1 class="title">JS Components</h1>
-        <section class="item">
-          <h2 class="heading" id="carousel">Carousel</h2>
-          <div class="content"></div>
-        </section>
-        <section class="item">
-          <h2 class="heading" id="form">Form</h2>
-          <div class="content"></div>
-        </section>
-        <section class="item">
-          <h2 class="heading" id="modal">Modal</h2>
-          <div class="content"></div>
-        </section>
-      </section>
-      <aside class="sidebar right">
-        <nav>
-          <ul>
-            <li>
-              <a href="/styleguide/design/">Design Components</a>
-            </li>
-            <li class="active">
-              <a href="/styleguide/js-components">JS Components</a>
-              <ul>
-                <li>
-                  <a href="#carousel">Carousel</a>
-                </li>
-                <li>
-                  <a href="#form">Form</a>
-                </li>
-                <li>
-                  <a href="#modal">Modal</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="/styleguide/ui-components">UI Components</a>
-            </li>
-            <li>
-              <a href="/styleguide/widgets">Widgets</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </article>
-  })
-})
+<section class="components">
+  <h2 class="title" id="js-components">JS Components</h2>
+  @html.include('pages/styleguide/js-components/components/carousel', model)
+  @html.include('pages/styleguide/js-components/components/form', model)
+  @html.include('pages/styleguide/js-components/components/modal', model)
+</section>

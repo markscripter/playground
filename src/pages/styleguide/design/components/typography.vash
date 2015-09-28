@@ -1,0 +1,17 @@
+<section class="item">
+  <h3 class="heading" id="typography">Typography</h3>
+  <div class="content">
+    <p class="serif">
+      <strong>Font:</strong> Noto <br /> This is your '$serif' font. This is a paragraph that shows how your serif font will look.
+      <div class="code-name">$serif</div>
+    </p>
+    <p class="sans-serif">
+      <strong>Font:</strong> Poppins <br /> This is your '$sans-serif' font. This is a paragraph that shows how your sans-serif font will look.
+      <div class="code-name">$sans-serif</div>
+    </p>
+    <p class="monospace">
+      <strong>Font:</strong> AnonymousPro <br /> This is your '$monospace' font. This is a paragraph that shows how your monospace font will look.
+      <div class="code-name">$monospace</div>
+    </p>
+  </div>
+</section>

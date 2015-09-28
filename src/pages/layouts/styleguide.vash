@@ -20,7 +20,10 @@
             <a href="/styleguide/">Styleguide</a>
           </li>
           <li>
-            <a href="/jsDocs">Documentation</a>
+            <a href="/jsDocs">JS Docs</a>
+          </li>
+          <li>
+            <a href="/sassdoc">Sass Docs</a>
           </li>
         </ul>
       </nav>

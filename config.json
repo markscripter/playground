@@ -2,12 +2,12 @@
   "paths": {
     "assets" : "/src/assets/",
     "components": "/src/components/",
-    "componentsData" : "/src/components/**/_data.json",
+    "componentsData" : "/src/components/**/**.json",
     "cssLibraries": [
       "/bower_components/normalize.css/normalize.css",
       "/bower_components/slick-carousel/slick/slick.css"
     ],
-    "data" : "/src/siteData.json",
+    "data" : "/src/site-data.json",
     "fonts" : "/src/styles/global/fonts/*.*",
     "index" : "/src/pages/index.vash",
     "javascript": "/src/scripts/",
@@ -28,10 +28,12 @@
     "templates": "/src/pages/templates/**.*",
     "public": "/public/",
     "styleguide": {
+      "data" : "/src/styleguide-data.json",
       "styles": "/src/styles/styleguide.scss",
       "templates": [
         "/src/pages/styleguide/index.vash",
-        "/src/pages/styleguide/**/index.vash"
+        "/src/pages/styleguide/**/index.vash",
+        "/src/pages/styleguide/**/**/**.vash"
       ]
     },
     "styles": "/src/styles/",

@@ -1,0 +1,10 @@
+<section class="item">
+  <h3 class="heading" id="paragraphs">Paragraphs</h3>
+  <div class="content">
+    <p>This is an example of a paragraph. This is how a single paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+    <p>This is another example of a paragraph, and a <a href="#">link</a>. This is how the second paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+    <p>This is another example of a paragraph. This is how the third paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+    <p>This is another example of a paragraph. This is how the fourth paragraph will show up on your page. Well that was interesting. Not really, so let's see what a few more paragraphs look like together.</p>
+    <p>... and stop ...</p>
+  </div>
+</section>

@@ -1,75 +1,95 @@
-/**
-  SANS SERIF FONT
-**/
+////
+/// Imported Fonts
+/// @group fonts
+/// @author Mark Scripter - mscripter@horizontalintegration.com
+
+/// Sans Serif - Regular
 @font-face {
   font-family: Poppins;
   src: url('fonts/Poppins-Regular.ttf') format('opentype');
 }
-@font-face {
-  font-family: Poppins;
-  src: url('fonts/Poppins-Bold.ttf') format('opentype');
-  font-weight: 700;
-}
+
+/// Sans Serif - Light
 @font-face {
   font-family: Poppins;
   src: url('fonts/Poppins-Light.ttf') format('opentype');
   font-weight: 100;
 }
+
+/// Sans Serif - Medium
 @font-face {
   font-family: Poppins;
   src: url('fonts/Poppins-Medium.ttf') format('opentype');
   font-weight: 200;
 }
+
+/// Sans Serif - SemiBold
 @font-face {
   font-family: Poppins;
   src: url('fonts/Poppins-SemiBold.ttf') format('opentype');
   font-weight: 500;
 }
 
-/**
-  SERIF FONT
-**/
+/// Sans Serif - Bold
+@font-face {
+  font-family: Poppins;
+  src: url('fonts/Poppins-Bold.ttf') format('opentype');
+  font-weight: 700;
+}
+
+/// Serif - Regular
 @font-face {
   font-family: Noto;
   src: url('fonts/NotoSerif-Regular.ttf') format('opentype');
 }
+
+/// Serif - Bold
 @font-face {
   font-family: Noto;
   src: url('fonts/NotoSerif-Bold.ttf') format('opentype');
   font-weight: 700;
 }
-@font-face {
-  font-family: Noto;
-  src: url('fonts/NotoSerif-BoldItalic.ttf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-}
+
+/// Serif - Italic
 @font-face {
   font-family: Noto;
   src: url('fonts/NotoSerif-Italic.ttf') format('opentype');
   font-style: italic;
 }
 
-/**
-  MONOSPACE FONT
-**/
+/// Serif - Bold, Italic
+@font-face {
+  font-family: Noto;
+  src: url('fonts/NotoSerif-BoldItalic.ttf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/// Monospace - Regular
 @font-face {
   font-family: AnonymousPro;
   src: url('fonts/AnonymousPro-Regular.ttf') format('opentype');
 }
+
+/// Monospace - Bold
 @font-face {
   font-family: AnonymousPro;
   src: url('fonts/AnonymousPro-Bold.ttf') format('opentype');
   font-weight: 700;
 }
+
+/// Monospace - Italic
+@font-face {
+  font-family: AnonymousPro;
+  src: url('fonts/AnonymousPro-Italic.ttf') format('opentype');
+  font-style: italic;
+}
+
+
+/// Monospace - Bold, Italic
 @font-face {
   font-family: AnonymousPro;
   src: url('fonts/AnonymousPro-BoldItalic.ttf') format('opentype');
   font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: AnonymousPro;
-  src: url('fonts/AnonymousPro-Italic.ttf') format('opentype');
   font-style: italic;
 }

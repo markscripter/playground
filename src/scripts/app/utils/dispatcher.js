@@ -1,6 +1,3 @@
-/**
-* @requires 'baconjs'
-*/
 import Bacon from 'baconjs';
 
 /**
@@ -21,6 +18,7 @@ function bus(name) {
  * @class Dispatcher
  * @classdesc The dispatcher class allows you to create streams.
  * @author Mark Scripter [mscripter@horizontalintegration.com]
+ * @requires baconsjs
  */
 class Dispatcher {
 

@@ -16,22 +16,28 @@ header {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  padding-right: $padding-horizontal--smaller;
+  padding-right: $padding-horizontal--small;
 }
 
 .item {
-  margin: 0px 0px $margin-vertical;
-  padding: 0px $padding-horizontal;
+  margin: $margin-vertical $margin-horizontal $margin-vertical--large;
+  padding: 0px 0px;
+}
+
+.components {
+  margin: $margin-vertical--large 0px;
+
+  .title {
+    color: darken($primary, 10%);
+  }
 }
 
 .heading {
-  color: $white;
-  background-color: $gray-darker;
+  color: $gray-darker;
+  border-bottom: 1px solid $gray-darker;
   width: 100%;
   margin-left: -$margin-horizontal;
   margin-right: $margin-horizontal;
-  padding-left: $padding-horizontal;
-  padding-right: $padding-horizontal;
 }
 
 .legal {
@@ -79,7 +85,7 @@ header {
   ul {
     list-style: none;
     padding: 0px;
-    margin: $margin-vertical--smaller 0px 0px;
+    margin: $margin-vertical--small 0px 0px;
 
     li {
       display: block;
@@ -150,6 +156,8 @@ header {
 
 .title {
   margin: $margin-vertical 0px;
+  text-transform: uppercase;
+  color: $primary;
 }
 
 .code-name {

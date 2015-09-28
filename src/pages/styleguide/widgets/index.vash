@@ -2,46 +2,8 @@
   Page: Styleguide
 *********************@
 
-@html.extend('pages/layouts/styleguide', function(model){
-  @html.block('content', function(model){
-    <article class="container">
-      <section class="main">
-        <h1 class="title">Widgets</h1>
-        <section class="item">
-          <h2 class="heading" id="colorbox">Colorbox</h2>
-          <div class="content"></div>
-        </section>
-        <section class="item">
-          <h2 class="heading" id="slick">Slick</h2>
-          <div class="content"></div>
-        </section>
-      </section>
-      <aside class="sidebar right">
-        <nav>
-          <ul>
-            <li>
-              <a href="/styleguide/design/">Design Components</a>
-            </li>
-            <li>
-              <a href="/styleguide/js-components">JS Components</a>
-            </li>
-            <li>
-              <a href="/styleguide/ui-components">UI Components</a>
-            </li>
-            <li class="active">
-              <a href="/styleguide/widgets">Widgets</a>
-              <ul>
-                <li>
-                  <a href="#colorbox">Colorbox</a>
-                </li>
-                <li>
-                  <a href="#slick">Slick</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </article>
-  })
-})
+<section class="components">
+  <h2 class="title" id="widgets">Widgets</h2>
+  @html.include('pages/styleguide/widgets/components/colorbox', model)
+  @html.include('pages/styleguide/widgets/components/slick', model)
+</section>

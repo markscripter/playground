@@ -7,24 +7,19 @@
     <article class="container">
       <section class="main">
         <h1 class="title">Style Guide</h1>
-        <section class="item"></section>
+        <p>Welcome to the living style guide for [enter project name here.]</p>
+        <section class="sections">
+          @html.include('pages/styleguide/design/index', model)
+          @html.include('pages/styleguide/js-components/index', model)
+          @html.include('pages/styleguide/ui-components/index', model)
+          @html.include('pages/styleguide/widgets/index', model)
+        </section>
       </section>
       <aside class="sidebar right">
         <nav>
-          <ul>
-            <li>
-              <a href="/styleguide/design/">Design</a>
-            </li>
-            <li>
-              <a href="/styleguide/js-components">JS Components</a>
-            </li>
-            <li>
-              <a href="/styleguide/ui-components">UI Components</a>
-            </li>
-            <li>
-              <a href="/styleguide/widgets">Widgets</a>
-            </li>
-          </ul>
+          @if(model.sidebar){
+            @html.include('components/list/list', model.sidebar)
+          }
         </nav>
       </aside>
     </article>

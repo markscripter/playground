@@ -1,14 +1,38 @@
+////
+/// @author Mark Scripter - mscripter@horizontalintegration.components
+
+/// Makes the content of an item vertically aligned.
 @mixin alignCenter {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
+/// Apply drop shadow to text
+/// @name textDropShadow
+/// @group typography
+/// @parameter {Color} $color - The color you want applied as the drop shadow
 @mixin textDropShadow($color) {
   text-shadow: 0px 0px 15px $color;
 }
 
-@mixin media($media) {
+/// Include a media query within a given block.
+/// @name media
+/// @group breakpoints
+/// @parameter {String} $media - The size of screen you want to target.
+/// @content Used to pass the given items into a media query
+/// @require {variable} $screen-xs
+/// @require {variable} $screen-sm
+/// @require {variable} $screen-md
+/// @require {variable} $screen-lg
+/// @example
+///   @include media(xs) {
+///     width: 100%;
+///   }
+///   @include media(md) {
+///     width: 75%;
+///   }
+@mixin media($media: xs) {
   @if $media == xs {
     @media only screen and (min-width: $screen-xs) { @content; }
   }
@@ -21,4 +45,34 @@
   @else if $media == lg {
     @media only screen and (min-width: $screen-lg) { @content; }
   }
+}
+
+/// Set Padding on a given item.
+/// @name setPadding
+/// @group padding
+/// @parameter {Size} $top [$padding-vertical] - Padding top
+/// @parameter {Size} $right [$padding-horizontal] - Padding right
+/// @parameter {Size} $bottom [$padding-vertical] - Padding bottom
+/// @parameter {Size} $left [$padding-horizontal] - Padding left
+/// @require $padding-vertical
+/// @require $padding-horizontal
+/// @example
+///   @include setPadding(20px, 2%, 20px, 2%);
+@mixin setPadding($top: $padding-vertical, $right: $padding-horizontal, $bottom: $padding-vertical, $left: $padding-horizontal) {
+  padding: $top, $right, $bottom, $left;
+}
+
+/// Set Margin on a given item.
+/// @name setMargin
+/// @group margin
+/// @parameter {Size} $top [$margin-vertical] - Margin top
+/// @parameter {Size} $right [$margin-horizontal] - Margin right
+/// @parameter {Size} $bottom [$margin-vertical] - Margin bottom
+/// @parameter {Size} $left [$margin-horizontal] - Margin left
+/// @require $margin-vertical
+/// @require $margin-horizontal
+/// @example
+///   @include setMargin(20px, 2%, 20px, 2%);
+@mixin setMargin($top: $margin-vertical, $right: $margin-horizontal, $bottom: $margin-vertical, $left: $margin-horizontal) {
+  margin: $top, $right, $bottom, $left;
 }

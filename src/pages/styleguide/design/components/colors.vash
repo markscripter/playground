@@ -1,0 +1,35 @@
+<section class="item">
+  <h3 class="heading" id="colors">Colors</h3>
+  <div class="content">
+    <div class="color">
+      <div class="code-name">$white</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$black</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$gray</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$gray-light</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$gray-lighter</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$gray-dark</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$gray-darker</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$primary</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$secondary</div>
+    </div>
+    <div class="color">
+      <div class="code-name">$accent</div>
+    </div>
+  </div>
+</section>

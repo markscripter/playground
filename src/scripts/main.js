@@ -6,9 +6,9 @@ import Carousel from '../components/carousel';
 const app = new Hi();
 
 // register modules
-app.register(Accordion);
-app.register(Modal);
-app.register(Carousel);
+app.registerModule(Accordion);
+app.registerModule(Modal);
+app.registerModule(Carousel);
 
 // test events
 // app.publish('destroy', 'hi');

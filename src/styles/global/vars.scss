@@ -1,60 +1,6 @@
-/*****************
-  COLORS
-******************/
-$white:            white;
-$black:            black;
-$gray:             lighten($black, 50%); // #808080
-$gray-light:       lighten($black, 75%); // #bfbfbf
-$gray-lighter:     lighten($black, 85%); // #d9d9d9
-$gray-dark:        lighten($black, 25%); // #404040
-$gray-darker:      lighten($black, 15%); // #262626
-$primary:          #00bce7;
-$secondary:        red;
-$accent:           yellow;
-
-/*****************
-  Typography
-******************/
-$serif:            Noto, Georgia, "Times New Roman", Times, serif;
-$sans-serif:       Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$monospace:        AnonymousPro, "Courier New", Courier, monospace;
-$font-size:        16px;
-$font-size--small: ceil(($font-size * 0.85)); // 14px;
-$font-size--large: ceil(($font-size * 1.5)); // 24px
-
-
-/*****************
-  Padding
-******************/
-$padding-vertical:             20px;
-$padding-vertical--small:      ceil($padding-vertical * 0.5); // 10px
-$padding-vertical--smaller:    ceil($padding-vertical * 0.25); // 5px
-$padding-vertical--large:      ceil($padding-vertical * 1.5 ); // 30px
-$padding-vertical--larger:     ceil($padding-vertical * 2.5 ); // 50px
-$padding-horizontal:           2.5%;
-$padding-horizontal--small:    ceil($padding-horizontal * 0.5); // 1.25%
-$padding-horizontal--smaller:  ceil($padding-horizontal * 0.25); // 0.625%
-$padding-horizontal--large:    ceil($padding-horizontal * 1.5); // 3.75%
-$padding-horizontal--larger:   ceil($padding-horizontal * 2.5); // 6.25%
-
-/*****************
-  Margin
-******************/
-$margin-vertical:              20px;
-$margin-vertical--small:       ceil($margin-vertical * 0.5); // 10px
-$margin-vertical--smaller:     ceil($margin-vertical * 0.25); // 5px
-$margin-vertical--large:       ceil($margin-vertical * 1.5); // 30px
-$margin-vertical--larger:      ceil($margin-vertical * 2.5); // 50px
-$margin-horizontal:            2.5%;
-$margin-horizontal--small:     ceil($margin-horizontal * 0.5); // 1.25%
-$margin-horizontal--smaller:   ceil($margin-horizontal * 0.25); // 0.6255%
-$margin-horizontal--large:     ceil($margin-horizontal * 1.5); // 3.75%
-$margin-horizontal--larger:    ceil($margin-horizontal * 2.5); // 6.25%
-
-/*****************
-  Breakpoints
-******************/
-$screen-xs:  480px;
-$screen-sm:  768px;
-$screen-md:  992px;
-$screen-lg:  1200px;
+@import 'vars-colors.scss';
+@import 'vars-typography.scss';
+@import 'vars-padding.scss';
+@import 'vars-margin.scss';
+@import 'vars-breakpoints';
+@import 'vars-errors.scss';

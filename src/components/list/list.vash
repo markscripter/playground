@@ -1,4 +1,27 @@
 @*********************
-  Component: List
+  @name: List
+  @type:
+  @description:
+  @author:
+  @comments:
 *********************@
-<list></list>
+
+@if(model.items){
+  <ul class="list">
+    @model.items.forEach(function(item){
+      <li>
+
+        @if(item.link){
+          <a href="@item.link.href" target="@(item.link.target ? item.link.target : '_self')">@item.text</a>
+        } else {
+          @item.text
+        }
+
+        @if(item.children){
+          @html.include('/components/list/list', item.children)
+        }
+
+      </li>
+    })
+  </ul>
+}

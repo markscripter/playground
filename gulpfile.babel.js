@@ -15,6 +15,7 @@ import prefix from 'gulp-autoprefixer';
 import R from 'ramda';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
+import sassdoc from 'sassdoc';
 import sourcemaps from 'gulp-sourcemaps';
 import svgstore from 'gulp-svgstore';
 import svgmin from 'gulp-svgmin';
@@ -37,14 +38,13 @@ function pageData(root, comps) {
   // since require will cache the origin items returned from the require(root) call,
   // we need to delete the cache so it fetches any updated data from the json file
   delete require.cache[require.resolve(root)];
-
   return R.merge(tempData, data);
 }
 
 gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
 gulp.task('serve', ['build', 'watch', 'server']);
 gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-jsdoc']);
-gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup']);
+gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup', 'styles-documentation']);
 
 gulp.task('templates', ['svg'], () => {
   // get glob of pages
@@ -93,6 +93,11 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
 });
 
+gulp.task('styles-documentation', () => {
+  gulp.src(path.join(__dirname, PATHS.styles, 'global/**.scss'))
+    .pipe(sassdoc());
+});
+
 gulp.task('styleguide-styles', ['svg'], () => {
   return gulp.src(path.join(__dirname, PATHS.styleguide.styles))
     .pipe(sass({
@@ -107,8 +112,12 @@ gulp.task('styleguide-markup', ['svg'], () => {
     return path.join(__dirname, filePath);
   });
 
+  const data = require(path.join(__dirname, PATHS.styleguide.data));
+
   return gulp.src(styleguideItems)
-    .pipe(templates())
+    .pipe(templates({
+      locals: data,
+    }))
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'styleguide/')));
 });
 
@@ -212,13 +221,15 @@ gulp.task('fonts', () => {
 gulp.task('watch', () => {
   gulp.watch([
     path.join(__dirname, PATHS.assets),
-  ], ['assets']).on('change', browserSync.reload);
+  ], ['assets'], () => {
+    browserSync.reload;
+  });
 
   gulp.watch([
     path.join(__dirname, PATHS.styles, '**.scss'),
     path.join(__dirname, PATHS.styles, '**/**.scss'),
     path.join(__dirname, PATHS.components, '**/**.scss'),
-  ], ['styles', 'styleguide']).on('change', browserSync.reload);
+  ], ['styles', 'styleguide'], () => browserSync.reload);
 
   gulp.watch([
     path.join(__dirname, PATHS.templates),
@@ -226,21 +237,25 @@ gulp.task('watch', () => {
     path.join(__dirname, PATHS.components, '/**/markup/**.vash'),
     path.join(__dirname, PATHS.componentsData),
     path.join(__dirname, PATHS.data),
-  ], ['templates']).on('change', browserSync.reload);
+  ], ['templates'], () => browserSync.reload);
 
   gulp.watch(
     R.append(path.join(__dirname, PATHS.styleguide.styles),
     R.map((fp) => {
       return path.join(__dirname, fp);
     }, PATHS.styleguide.templates)),
-  ['styleguide']).on('change', browserSync.reload);
+  ['styleguide'], () => browserSync.reload);
 
   gulp.watch([
     path.join(__dirname, PATHS.javascript, '*.js'),
     path.join(__dirname, PATHS.components, '**/javascript/*.js'),
-  ], ['javascript']).on('change', browserSync.reload);
+  ], ['javascript'], () => browserSync.reload);
 
   gulp.watch([
     path.join(__dirname, PATHS.svg, '*.svg'),
-  ], ['templates']).on('change', browserSync.reload);
+  ], ['templates'], () => browserSync.reload);
+
+  gulp.watch([
+    path.join(__dirname, PATHS.styles, 'global/**.scss'),
+  ], ['styles-documentation'], () => browserSync.reload);
 });
