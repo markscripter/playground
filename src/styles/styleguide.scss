@@ -1,34 +1,14 @@
 @import "main.scss";
 
-article {
-
-  &.container {
-    white-space: nowrap;
-  }
-}
-
 header {
   border-bottom: 1px solid $gray-dark;
-}
-
-.main {
-  width: 80%;
-  display: inline-block;
-  vertical-align: top;
-  white-space: normal;
-  padding-right: $padding-horizontal--small;
-}
-
-.item {
-  margin: $margin-vertical $margin-horizontal $margin-vertical--large;
-  padding: 0px 0px;
 }
 
 .component {
   margin: $margin-vertical--large 0px;
 
   .title {
-    color: darken($primary, 10%);
+    color: darken($primary, 15%);
   }
 }
 
@@ -37,22 +17,37 @@ header {
   margin: $margin-vertical--small 0px;
 }
 
-.swatch {
-  width: 44px;
-  height: 44px;
-  box-shadow: 0px 0px 3px $gray-light;
-  box-sizing:border-box;
-  border-radius: 5px;
-  display: inline-block;
-  margin-right: 15px;
+.content {
+  display: block;
+  margin: 0px;
+  width: 100%;
 
-  & + p {
+  @include media(md) {
     display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    white-space: normal;
   }
 }
 
-.content {
-  margin: $margin-vertical 0px;
+.code-name {
+  background-color: $gray-dark;
+  box-sizing:border-box;
+  border-radius: 5px;
+  color: $white;
+  display: block;
+  margin: $margin-vertical--small 12.5%;
+  padding: 10px 15px;
+  text-align: center;
+  width: 75%;
+
+  @include media(md) {
+    display: inline-block;
+    margin: $margin-vertical--small 1%;
+    vertical-align: top;
+    white-space:normal;
+    width: 18%;
+  }
 }
 
 .heading {
@@ -63,8 +58,36 @@ header {
   margin-right: $margin-horizontal;
 }
 
+.item {
+  margin: $margin-vertical $margin-horizontal $margin-vertical--large;
+  padding: 0px 0px;
+}
+
+.main {
+  width: 100%;
+  display: block;
+  padding-right: $padding-horizontal--small;
+
+  @include media(md) {
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+  }
+}
+
 .legal {
   float:right;
+}
+
+.line-item {
+  width: 100%;
+  white-space: nowrap;
+  display: block;
+
+  p {
+    white-space: normal;
+  }
 }
 
 .navigation {
@@ -94,12 +117,18 @@ header {
 }
 
 .sidebar {
-  width: 20%;
-  display: inline-block;
-  vertical-align: top;
-  white-space: normal;
-  margin-top: $margin-vertical;
-  position: fixed;
+  display: block;
+  width: 100%;
+
+  @include media(md) {
+    display: inline-block;
+    position: fixed;
+    right: 0px;
+    top: 60px;
+    vertical-align: top;
+    width: 20%;
+    white-space: normal;
+  }
 
   h4 {
     text-align: center;
@@ -177,28 +206,39 @@ header {
   }
 }
 
+.swatch {
+  box-shadow: 0px 0px 3px $gray-light;
+  box-sizing:border-box;
+  border-radius: 5px;
+  display:block;
+  height: 44px;
+  margin: 10px 0px;
+  width: 44px;
+
+  @include media(sm) {
+    display: inline-block;
+    margin: 0px 15px 0px 0px;
+    vertical-align: top;
+  }
+
+  & + p {
+    line-height: 44px;
+    margin: 0px;
+
+    @include media(xs) {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &.white,
+    &.accent {
+      background-color: $black;
+    }
+  }
+}
+
 .title {
   margin: $margin-vertical 0px;
   text-transform: uppercase;
   color: $primary;
-}
-
-.code-name {
-  display: inline-block;
-  padding: 10px 15px;
-  color: $white;
-  background-color: $gray-dark;
-  border-radius: 5px;
-  vertical-align: top;
-}
-
-// Font Stuff
-.serif {
-  font-family: $serif;
-}
-.sans-serif {
-  font-family: $sans-serif;
-}
-.monospace {
-  font-family: $monospace;
 }

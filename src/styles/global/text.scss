@@ -18,7 +18,9 @@ hr {}
 i {}
 main {}
 mark {}
-p {}
+p {
+  margin: $margin-vertical--small 0px;
+}
 pre {}
 q {}
 rt {}
