@@ -2,7 +2,7 @@
   Page: Styleguide
 *********************@
 
-<section class="components">
+<section class="component">
   <h2 class="title" id="widgets">Widgets</h2>
   @html.include('pages/styleguide/widgets/components/colorbox', model)
   @html.include('pages/styleguide/widgets/components/slick', model)

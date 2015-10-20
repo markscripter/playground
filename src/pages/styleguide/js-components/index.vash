@@ -1,7 +1,7 @@
 @*********************
   Page: Styleguide
 *********************@
-<section class="components">
+<section class="component">
   <h2 class="title" id="js-components">JS Components</h2>
   @html.include('pages/styleguide/js-components/components/carousel', model)
   @html.include('pages/styleguide/js-components/components/form', model)

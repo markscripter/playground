@@ -1,7 +1,7 @@
 @*********************
   Page: Styleguide - Design
 *********************@
-<section class="components">
+<section class="component">
   <h2 class="title" id="design">Design Components</h2>
   @html.include('pages/styleguide/design/components/typography', model)
   @html.include('pages/styleguide/design/components/colors', model)

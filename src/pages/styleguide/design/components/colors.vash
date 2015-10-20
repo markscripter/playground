@@ -2,33 +2,43 @@
   <h3 class="heading" id="colors">Colors</h3>
   <div class="content">
     <div class="color">
+      <div class="swatch bkgd-white"></div>
       <div class="code-name">$white</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-black"></div>
       <div class="code-name">$black</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-gray"></div>
       <div class="code-name">$gray</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-gray-light"></div>
       <div class="code-name">$gray-light</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-gray-lighter"></div>
       <div class="code-name">$gray-lighter</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-gray-dark"></div>
       <div class="code-name">$gray-dark</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-gray-darker"></div>
       <div class="code-name">$gray-darker</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-primary"></div>
       <div class="code-name">$primary</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-secondary"></div>
       <div class="code-name">$secondary</div>
     </div>
     <div class="color">
+      <div class="swatch bkgd-accent"></div>
       <div class="code-name">$accent</div>
     </div>
   </div>

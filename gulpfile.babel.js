@@ -1,6 +1,3 @@
-/*
-  Imports
-*************************/
 import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
 import combiner from 'stream-combiner2';
@@ -41,8 +38,8 @@ function pageData(root, comps) {
   return R.merge(tempData, data);
 }
 
+gulp.task('default', ['build', 'watch', 'server']);
 gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
-gulp.task('serve', ['build', 'watch', 'server']);
 gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-jsdoc']);
 gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup', 'styles-documentation']);
 

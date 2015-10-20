@@ -24,7 +24,7 @@ header {
   padding: 0px 0px;
 }
 
-.components {
+.component {
   margin: $margin-vertical--large 0px;
 
   .title {
@@ -32,10 +32,33 @@ header {
   }
 }
 
+.color {
+  display: block;
+  margin: $margin-vertical--small 0px;
+}
+
+.swatch {
+  width: 44px;
+  height: 44px;
+  box-shadow: 0px 0px 3px $gray-light;
+  box-sizing:border-box;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 15px;
+
+  & + p {
+    display: inline-block;
+  }
+}
+
+.content {
+  margin: $margin-vertical 0px;
+}
+
 .heading {
   color: $gray-darker;
   border-bottom: 1px solid $gray-darker;
-  width: 100%;
+  width: 105%;
   margin-left: -$margin-horizontal;
   margin-right: $margin-horizontal;
 }
@@ -166,6 +189,7 @@ header {
   color: $white;
   background-color: $gray-dark;
   border-radius: 5px;
+  vertical-align: top;
 }
 
 // Font Stuff
