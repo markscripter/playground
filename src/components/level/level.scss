@@ -12,6 +12,20 @@
   }
 }
 
+/// levelDown animation using keyframes
+/// @name levelDownAnimation
+/// @group animations
+/// @require {variable} $gray-light
+@keyframes levelDownAnimation {
+  from {
+    box-shadow: 0px 0px 10px 2px $gray-light;
+  }
+
+  to {
+    box-shadow: 0px 0px 2px 1px $gray-light;
+  }
+}
+
 /// levelUp mixin
 /// @name levelUp
 /// @group animations
@@ -20,14 +34,39 @@
 /// @example
 ///    @include levelUp();
 ///    @include levelUp(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .level-up
 @mixin levelUp($speedInSeconds: .35s) {
   animation-duration: $speedInSeconds;
-  animation-name: levelUp;
+  animation-name: levelUpAnimation;
 }
+
+/// levelDown mixin
+/// @name levelDown
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {variable} $gray-light
+/// @example
+///    @include levelDown();
+///    @include levelDown(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .level-down
+@mixin levelDown($speedInSeconds: .35s) {
+  animation-duration: $speedInSeconds;
+  animation-name: levelDownAnimation;
+}
+
 
 .level-up {
   @include levelUp();
   box-shadow: 0px 0px 10px 2px $gray-light;
+}
+
+.level-down {
+  @include levelDown();
+  box-shadow: 0px 0px 2px 1px $gray-light;
 }
 
 .level {
