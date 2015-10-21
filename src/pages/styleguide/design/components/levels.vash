@@ -6,7 +6,7 @@
         <div class="swatch level bkgd-white" title="level"></div>
       </div>
     </div>
-    <div class="code-name">level</div>
+    <code class="code-name">level</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -14,7 +14,7 @@
         <div class="swatch level-1 bkgd-white" title="level-1"></div>
       </div>
     </div>
-    <div class="code-name">level-1</div>
+    <code class="code-name">level-1</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -22,7 +22,7 @@
         <div class="swatch level-2 bkgd-white" title="level-2"></div>
       </div>
     </div>
-    <div class="code-name">level-2</div>
+    <code class="code-name">level-2</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -30,7 +30,7 @@
         <div class="swatch level-3 bkgd-white" title="level-3"></div>
       </div>
     </div>
-    <div class="code-name">level-3</div>
+    <code class="code-name">level-3</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -38,7 +38,7 @@
         <div class="swatch level-4 bkgd-white" title="level-4"></div>
       </div>
     </div>
-    <div class="code-name">level-4</div>
+    <code class="code-name">level-4</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -46,6 +46,6 @@
         <div class="swatch level-5 bkgd-white" title="level-5"></div>
       </div>
     </div>
-    <div class="code-name">level-5</div>
+    <code class="code-name">level-5</code>
   </div>
 </section>

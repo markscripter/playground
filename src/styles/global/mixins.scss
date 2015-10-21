@@ -83,6 +83,7 @@
 /// @name level
 /// @group components
 /// @parameter {String} $level - The raised amount you want your level to be (0-5).
+/// @requires $gray-light
 /// @example
 ///   .card {
 ///     @include level(3);
@@ -114,4 +115,28 @@
     transition: .35s box-shadow;
   }
 
+}
+
+/// Set the raised level of an element.
+/// @name gridItem
+/// @group components
+/// @parameter {String} $level - The raised amount you want your level to be (0-5).
+/// @requires $gray-light
+/// @example
+///   .card {
+///     @include level(3);
+///   }
+@mixin gridItem {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  margin-left: $margin-horizontal--small;
+  margin-right: $margin-horizontal--small;
+}
+
+@mixin gridItemClear {
+  content: " ";
+  display: block;
+  width: 100%;
 }

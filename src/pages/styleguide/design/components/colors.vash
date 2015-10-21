@@ -7,7 +7,7 @@
         <p class="white" title="$white">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$white</div>
+    <code class="code-name">$white</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -16,7 +16,7 @@
         <p class="black" title="$black">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$black</div>
+    <code class="code-name">$black</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -25,7 +25,7 @@
         <p class="gray" title="$gray">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray</div>
+    <code class="code-name">$gray</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -34,7 +34,7 @@
         <p class="gray-light" title="$gray-light">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-light</div>
+    <code class="code-name">$gray-light</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -43,7 +43,7 @@
         <p class="gray-lighter" title="$gray-lighter">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-lighter</div>
+    <code class="code-name">$gray-lighter</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -52,7 +52,7 @@
         <p class="gray-dark" title="$gray-dark">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-dark</div>
+    <code class="code-name">$gray-dark</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -61,7 +61,7 @@
         <p class="gray-darker" title="$gray-darker">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-darker</div>
+    <code class="code-name">$gray-darker</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -70,7 +70,7 @@
         <p class="primary" title="$primary">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$primary</div>
+    <code class="code-name">$primary</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -79,7 +79,7 @@
         <p class="secondary" title="$secondary">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$secondary</div>
+    <code class="code-name">$secondary</code>
   </div>
   <div class="line-item">
     <div class="content">
@@ -88,6 +88,6 @@
         <p class="accent" title="$accent">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$accent</div>
+    <code class="code-name">$accent</code>
   </div>
 </section>

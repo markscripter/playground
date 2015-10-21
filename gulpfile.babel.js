@@ -89,7 +89,10 @@ gulp.task('styles', () => {
 });
 
 gulp.task('styles-documentation', () => {
-  gulp.src(path.join(__dirname, PATHS.styles, 'global/**.scss'))
+  gulp.src([
+    path.join(__dirname, PATHS.styles, 'global/**.scss'),
+    path.join(__dirname, PATHS.components, '**/*.scss'),
+  ])
     .pipe(sassdoc());
 });
 

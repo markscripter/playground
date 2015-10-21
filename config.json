@@ -20,7 +20,8 @@
       "/bower_components/slick-carousel/slick/slick.min.js",
       "/bower_components/modernizr/modernizr.js",
       "/bower_components/velocity/velocity.min.js",
-      "/node_modules/baconjs/dist/Bacon.min.js"
+      "/node_modules/baconjs/dist/Bacon.min.js",
+      "/node_modules/motion-ui/dist/motion-ui.min.js"
     ],
     "jsMaps" : [
       "/bower_components/jquery/dist/jquery.min.map"

@@ -4,36 +4,36 @@
     <div class="content">
       <h1 class="heading-one">Heading One</h1>
     </div>
-    <div class="code-name">h1</div>
+    <code class="code-name">h1</code>
   </div>
   <div class="line-item">
     <div class="content">
       <h2 class="heading-two">Heading Two</h2>
     </div>
-    <div class="code-name">h2</div>
+    <code class="code-name">h2</code>
   </div>
   <div class="line-item">
     <div class="content">
       <h3 class="heading-three">Heading Three</h3>
     </div>
-    <div class="code-name">h3</div>
+    <code class="code-name">h3</code>
   </div>
   <div class="line-item">
     <div class="content">
       <h4 class="heading-four">Heading Four</h4>
     </div>
-    <div class="code-name">h4</div>
+    <code class="code-name">h4</code>
   </div>
   <div class="line-item">
     <div class="content">
       <h5 class="heading-five">Heading Five</h5>
     </div>
-    <div class="code-name">h5</div>
+    <code class="code-name">h5</code>
   </div>
   <div class="line-item">
     <div class="content">
       <h6 class="heading-six">Heading Six</h6>
     </div>
-    <div class="code-name">h6</div>
+    <code class="code-name">h6</code>
   </div>
 </section>
