@@ -1,11 +1,11 @@
-@import "main.scss";
+@import 'main';
 
 header {
   border-bottom: 1px solid $gray-dark;
 }
 
 .component {
-  margin: $margin-vertical--large 0px;
+  margin: $margin-vertical--large 0;
 
   .title {
     color: darken($primary, 15%);
@@ -14,26 +14,26 @@ header {
 
 .color {
   display: block;
-  margin: $margin-vertical--small 0px;
+  margin: $margin-vertical--small 0;
 }
 
 .content {
   display: block;
-  margin: 0px;
+  margin: 0;
   width: 100%;
 
   @include media(md) {
     display: inline-block;
     vertical-align: top;
-    width: 80%;
     white-space: normal;
+    width: 80%;
   }
 }
 
 .code-name {
   background-color: $gray-dark;
-  box-sizing:border-box;
   border-radius: 5px;
+  box-sizing: border-box;
   color: $white;
   display: block;
   margin: $margin-vertical--small 12.5%;
@@ -45,56 +45,62 @@ header {
     display: inline-block;
     margin: $margin-vertical--small 1%;
     vertical-align: top;
-    white-space:normal;
+    white-space: normal;
     width: 18%;
   }
 }
 
 .heading {
-  color: $gray-darker;
   border-bottom: 1px solid $gray-darker;
-  width: 105%;
+  color: $gray-darker;
+  margin-bottom: $margin-vertical--small;
   margin-left: -$margin-horizontal;
   margin-right: $margin-horizontal;
-  margin-bottom: $margin-vertical--small;
+  width: 105%;
 }
 
 .item {
   margin: $margin-vertical $margin-horizontal $margin-vertical--large;
-  padding: 0px 0px;
+  padding: 0;
 }
 
 .main {
-  width: 100%;
   display: block;
   padding-right: $padding-horizontal--small;
+  width: 100%;
 
   @include media(md) {
-    width: 80%;
     display: inline-block;
     vertical-align: top;
     white-space: normal;
+    width: 80%;
   }
 }
 
 .legal {
-  float:right;
+  float: right;
 }
 
 .line-item {
-  width: 100%;
-  white-space: nowrap;
   display: block;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
 
   p {
     white-space: normal;
+    width: 75%;
+
+    @include media(sm) {
+      width: auto;
+    }
   }
 }
 
 .navigation {
   ul {
     list-style: none;
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   li {
@@ -103,16 +109,18 @@ header {
 
   a {
     color: $gray-dark;
-    padding: 0px $padding-horizontal--small;
-    text-transform: uppercase;
-    text-decoration: none;
+    padding: 0 $padding-horizontal--small;
+    text: {
+      decoration: none;
+      transform: uppercase;
+    }
 
     &:hover {
       text-decoration: underline;
     }
 
     &:first-child {
-      padding-left: 0px;
+      padding-left: 0;
     }
   }
 }
@@ -124,11 +132,11 @@ header {
   @include media(md) {
     display: inline-block;
     position: fixed;
-    right: 0px;
+    right: 0;
     top: 60px;
     vertical-align: top;
-    width: 20%;
     white-space: normal;
+    width: 20%;
   }
 
   h4 {
@@ -137,15 +145,15 @@ header {
 
   ul {
     list-style: none;
-    padding: 0px;
-    margin: $margin-vertical--small 0px 0px;
+    margin: $margin-vertical--small 0 0;
+    padding: 0;
 
     li {
-      display: block;
-      padding: 5px $padding-horizontal;
-      margin: 5px 0px 5px -1px;
       border-left: 1px solid darken(rgba($primary, 0), 15%);
-      transition: border 0.5s, color 0.5s;
+      display: block;
+      margin: 5px 0 5px -1px;
+      padding: 5px $padding-horizontal;
+      transition: border .5s, color .5s;
 
       &:hover {
         border-left: 1px solid darken(rgba($primary, 1), 15%);
@@ -177,29 +185,29 @@ header {
       }
 
       a {
-        text-decoration: none;
+        box-sizing: border-box;
         display: block;
         font-size: $font-size--small;
-        box-sizing: border-box;
+        text-decoration: none;
       }
 
       ul {
         margin-top: 10px;
 
         li {
-          margin: 0px;
-          padding-top: 0px;
-          padding-bottom: 0px;
-          border-left: 0px;
+          border-left: 0;
+          margin: 0;
+          padding-bottom: 0;
+          padding-top: 0;
 
           &:hover {
-            border-left: 0px;
-            margin-left: 0px;
+            border-left: 0;
+            margin-left: 0;
           }
 
           a {
             color: darken($primary, 25%);
-            font-size: ceil($font-size * 0.75);
+            font-size: ceil($font-size * .75);
           }
         }
       }
@@ -210,20 +218,28 @@ header {
 .swatch {
   box-sizing:border-box;
   border-radius: 5px;
-  display:block;
+  box-shadow: 0 0 3px $gray-light;
+  box-sizing: border-box;
+  display: block;
   height: 44px;
-  margin: 10px 0px;
+  margin: 10px 0;
+  position: absolute;
+  right: 5%;
   width: 44px;
+
+  @include media(xs) {
+    position: static;
+  }
 
   @include media(sm) {
     display: inline-block;
-    margin: 0px 15px 0px 0px;
+    margin: 0 15px 0 0;
     vertical-align: top;
   }
 
   & + p {
     line-height: 44px;
-    margin: 0px;
+    margin: 0;
 
     @include media(xs) {
       display: inline-block;
@@ -238,7 +254,7 @@ header {
 }
 
 .title {
-  margin: $margin-vertical 0px;
-  text-transform: uppercase;
   color: $primary;
+  margin: $margin-vertical 0;
+  text-transform: uppercase;
 }
