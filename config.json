@@ -5,7 +5,8 @@
     "componentsData" : "/src/components/**/**.json",
     "cssLibraries": [
       "/bower_components/normalize.css/normalize.css",
-      "/bower_components/slick-carousel/slick/slick.css"
+      "/bower_components/slick-carousel/slick/slick.css",
+      "/node_modules/motion-ui/dist/motion-ui.min.css"
     ],
     "data" : "/src/site-data.json",
     "fonts" : "/src/styles/global/fonts/*.*",
@@ -19,7 +20,8 @@
       "/bower_components/picturefill/dist/picturefill.min.js",
       "/bower_components/slick-carousel/slick/slick.min.js",
       "/bower_components/modernizr/modernizr.js",
-      "/bower_components/velocity/velocity.min.js"
+      "/bower_components/velocity/velocity.min.js",
+      "/node_modules/motion-ui/dist/motion-ui.min.js"
     ],
     "jsMaps" : [
       "/bower_components/jquery/dist/jquery.min.map"
