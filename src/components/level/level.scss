@@ -1,0 +1,61 @@
+/// levelUp animation using keyframes
+/// @name levelUpAnimation
+/// @group animations
+/// @require {variable} $gray-light
+@keyframes levelUpAnimation {
+  from {
+    box-shadow: 0px 0px 2px 1px $gray-light;
+  }
+
+  to {
+    box-shadow: 0px 0px 10px 2px $gray-light;
+  }
+}
+
+/// levelUp mixin
+/// @name levelUp
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {variable} $gray-light
+/// @example
+///    @include levelUp();
+///    @include levelUp(2s);
+@mixin levelUp($speedInSeconds: .35s) {
+  animation-duration: $speedInSeconds;
+  animation-name: levelUp;
+}
+
+.level-up {
+  @include levelUp();
+  box-shadow: 0px 0px 10px 2px $gray-light;
+}
+
+.level {
+  box-shadow: 0;
+  transition: .35s box-shadow;
+
+  &-1 {
+    box-shadow: 0px 0px 2px 1px $gray-light;
+    transition: .35s box-shadow;
+  }
+
+  &-2 {
+    box-shadow: 0px 0px 4px 1px $gray-light;
+    transition: .35s box-shadow;
+  }
+
+  &-3 {
+    box-shadow: 0px 0px 6px 1px $gray-light;
+    transition: .35s box-shadow;
+  }
+
+  &-4 {
+    box-shadow: 0px 0px 8px 1.5px $gray-light;
+    transition: .35s box-shadow;
+  }
+
+  &-5 {
+    box-shadow: 0px 0px 10px 2px $gray-light;
+    transition: .35s box-shadow;
+  }
+}

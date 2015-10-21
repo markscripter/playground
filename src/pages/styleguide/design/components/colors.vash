@@ -3,91 +3,91 @@
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-white" title="$white"></div>
+        <div class="swatch level-1 bkgd-white" title="$white"></div>
         <p class="white" title="$white">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$white</div>
+    <code class="code-name">$white</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-black" title="$black"></div>
+        <div class="swatch level-1 bkgd-black" title="$black"></div>
         <p class="black" title="$black">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$black</div>
+    <code class="code-name">$black</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-gray" title="$gray"></div>
+        <div class="swatch level-1 bkgd-gray" title="$gray"></div>
         <p class="gray" title="$gray">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray</div>
+    <code class="code-name">$gray</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-gray-light" title="$gray-light"></div>
+        <div class="swatch level-1 bkgd-gray-light" title="$gray-light"></div>
         <p class="gray-light" title="$gray-light">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-light</div>
+    <code class="code-name">$gray-light</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-gray-lighter" title="$gray-lighter"></div>
+        <div class="swatch level-1 bkgd-gray-lighter" title="$gray-lighter"></div>
         <p class="gray-lighter" title="$gray-lighter">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-lighter</div>
+    <code class="code-name">$gray-lighter</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-gray-dark" title="$gray-dark"></div>
+        <div class="swatch level-1 bkgd-gray-dark" title="$gray-dark"></div>
         <p class="gray-dark" title="$gray-dark">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-dark</div>
+    <code class="code-name">$gray-dark</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-gray-darker" title="$gray-darker"></div>
+        <div class="swatch level-1 bkgd-gray-darker" title="$gray-darker"></div>
         <p class="gray-darker" title="$gray-darker">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$gray-darker</div>
+    <code class="code-name">$gray-darker</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-primary" title="$primary"></div>
+        <div class="swatch level-1 bkgd-primary" title="$primary"></div>
         <p class="primary" title="$primary">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$primary</div>
+    <code class="code-name">$primary</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-secondary" title="$secondary"></div>
+        <div class="swatch level-1 bkgd-secondary" title="$secondary"></div>
         <p class="secondary" title="$secondary">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$secondary</div>
+    <code class="code-name">$secondary</code>
   </div>
   <div class="line-item">
     <div class="content">
       <div class="color">
-        <div class="swatch bkgd-accent" title="$accent"></div>
+        <div class="swatch level-1 bkgd-accent" title="$accent"></div>
         <p class="accent" title="$accent">This is what the text looks like with this color.</p>
       </div>
     </div>
-    <div class="code-name">$accent</div>
+    <code class="code-name">$accent</code>
   </div>
 </section>

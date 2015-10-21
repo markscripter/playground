@@ -46,9 +46,7 @@ gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup', 'styles-docum
 gulp.task('templates', ['svg'], () => {
   // get glob of pages
   glob(path.join(__dirname, PATHS.templates), {}, (err, pages) => {
-    if (err) {
-      return;
-    }
+    if (err) return;
 
     // for each page
     pages.forEach((page) => {
@@ -70,16 +68,16 @@ gulp.task('styles', () => {
   const globalCSS = PATHS.cssLibraries.map((filePath) => {
     return path.join(__dirname, filePath);
   });
-  return gulp.src([...globalCSS,
-    path.join(__dirname, PATHS.components, '**/*.scss'),
+  return gulp.src([
+    ...globalCSS,
     path.join(__dirname, PATHS.styles, 'main.scss'),
-  ]
-  )
+    path.join(__dirname, PATHS.components, '**/*.scss'),
+  ])
     .pipe(sourcemaps.init())
+    .pipe(concat('stylesheet.scss'))
     .pipe(sass({
       includePaths: [path.join(__dirname, PATHS.styles)],
     }))
-    .pipe(concat('stylesheet.css'))
     .pipe(prefix({
       browsers: ['last 4 versions'],
       cascade: 'false',
@@ -91,7 +89,10 @@ gulp.task('styles', () => {
 });
 
 gulp.task('styles-documentation', () => {
-  gulp.src(path.join(__dirname, PATHS.styles, 'global/**.scss'))
+  gulp.src([
+    path.join(__dirname, PATHS.styles, 'global/**.scss'),
+    path.join(__dirname, PATHS.components, '**/*.scss'),
+  ])
     .pipe(sassdoc());
 });
 

@@ -53,6 +53,7 @@ header {
 .heading {
   border-bottom: 1px solid $gray-darker;
   color: $gray-darker;
+  margin-bottom: $margin-vertical--small;
   margin-left: -$margin-horizontal;
   margin-right: $margin-horizontal;
   width: 105%;
@@ -215,6 +216,7 @@ header {
 }
 
 .swatch {
+  box-sizing:border-box;
   border-radius: 5px;
   box-shadow: 0 0 3px $gray-light;
   box-sizing: border-box;

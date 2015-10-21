@@ -32,5 +32,9 @@
     <footer class="container">
       <p class="legal">&copy; Mark Scripter 2015</p>
     </footer>
+    @html.block('scripts', function(model){
+      <script type="text/javascript" src="/js/libs.min.js"></script>
+      <script type="text/javascript" src="/js/main.min.js"></script>
+    })
   </body>
 </html>

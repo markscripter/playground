@@ -78,3 +78,65 @@
 @mixin setMargin($top: $margin-vertical, $right: $margin-horizontal, $bottom: $margin-vertical, $left: $margin-horizontal) {
   margin: $top, $right, $bottom, $left;
 }
+
+/// Set the raised level of an element.
+/// @name level
+/// @group components
+/// @parameter {String} $level - The raised amount you want your level to be (0-5).
+/// @requires $gray-light
+/// @example
+///   .card {
+///     @include level(3);
+///   }
+
+@mixin level($raised) {
+  @if $raised == 0 {
+    box-shadow: 0;
+    transition: .35s box-shadow;
+  }
+  @else if $raised == 1 {
+    box-shadow: 0px 0px 2px 1px $gray-light;
+    transition: .35s box-shadow;
+  }
+  @else if $raised == 2 {
+    box-shadow: 0px 0px 4px 1px $gray-light;
+    transition: .35s box-shadow;
+  }
+  @else if $raised == 3 {
+    box-shadow: 0px 0px 6px 1px $gray-light;
+    transition: .35s box-shadow;
+  }
+  @else if $raised == 4 {
+    box-shadow: 0px 0px 8px 1.5px $gray-light;
+    transition: .35s box-shadow;
+  }
+  @else if $raised == 5 {
+    box-shadow: 0px 0px 10px 2px $gray-light;
+    transition: .35s box-shadow;
+  }
+
+}
+
+/// Set the raised level of an element.
+/// @name gridItem
+/// @group components
+/// @parameter {String} $level - The raised amount you want your level to be (0-5).
+/// @requires $gray-light
+/// @example
+///   .card {
+///     @include level(3);
+///   }
+@mixin gridItem {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  margin-left: $margin-horizontal--small;
+  margin-right: $margin-horizontal--small;
+}
+
+@mixin gridItemClear {
+  content: " ";
+  display: block;
+  width: 100%;
+}

@@ -2,6 +2,7 @@ import Hi from './app/index.js';
 import Accordion from '../components/accordion';
 import Modal from '../components/modal';
 import Carousel from '../components/carousel';
+import Form from '../components/form';
 
 const app = new Hi();
 
@@ -9,6 +10,4 @@ const app = new Hi();
 app.registerModule(Accordion);
 app.registerModule(Modal);
 app.registerModule(Carousel);
-
-// test events
-// app.publish('destroy', 'hi');
+app.registerModule(Form);

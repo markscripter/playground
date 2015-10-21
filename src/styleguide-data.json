@@ -10,13 +10,6 @@
         "children" : {
           "items" : [
             {
-              "text" : "Typography",
-              "link" : {
-                "href" : "#typography",
-                "target" : "_self"
-              }
-            },
-            {
               "text" : "Colors",
               "link" : {
                 "href" : "#colors",
@@ -31,9 +24,23 @@
               }
             },
             {
+              "text" : "Levels",
+              "link" : {
+                "href" : "#levels",
+                "target" : "_self"
+              }
+            },
+            {
               "text" : "Paragraphs",
               "link" : {
                 "href" : "#paragraphs",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Typography",
+              "link" : {
+                "href" : "#typography",
                 "target" : "_self"
               }
             }
@@ -98,6 +105,13 @@
               "text" : "Cards",
               "link" : {
                 "href" : "#cards",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Card Collection",
+              "link" : {
+                "href" : "#card-collection",
                 "target" : "_self"
               }
             },
