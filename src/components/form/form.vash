@@ -1,4 +1,8 @@
 @*********************
   Component: Form
 *********************@
-<form></form>
+<form data-module="form" data-settings='{}'>
+  <label>
+  <input type="text" />
+  <button type="submit">Submit</button>
+</form>

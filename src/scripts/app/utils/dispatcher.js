@@ -1,5 +1,3 @@
-import Bacon from 'baconjs';
-
 /**
 * @private {Object} busCache - An empty object to hold all of the streams.
 */

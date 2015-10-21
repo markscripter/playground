@@ -1,1 +1,9 @@
-.card {}
+.card {
+  margin: $margin-vertical--small 0;
+  padding: $padding-vertical--small $padding-horizontal;
+  @include level(1);
+
+  @include media(sm) {
+    padding: $padding-vertical--small $padding-horizontal--small;
+  }
+}
