@@ -4,11 +4,11 @@
 /// @require {variable} $gray-light
 @keyframes levelUpAnimation {
   from {
-    box-shadow: 0px 0px 2px 1px $gray-light;
+    box-shadow: 0 0 2px 1px $gray-light;
   }
 
   to {
-    box-shadow: 0px 0px 10px 2px $gray-light;
+    box-shadow: 0 0 10px 2px $gray-light;
   }
 }
 
@@ -18,55 +18,55 @@
 /// @require {variable} $gray-light
 @keyframes levelDownAnimation {
   from {
-    box-shadow: 0px 0px 10px 2px $gray-light;
+    box-shadow: 0 0 10px 2px $gray-light;
   }
 
   to {
-    box-shadow: 0px 0px 2px 1px $gray-light;
+    box-shadow: 0 0 2px 1px $gray-light;
   }
 }
 
-/// levelUp mixin
-/// @name levelUp
+/// level-up mixin
+/// @name level-up
 /// @group animations
 /// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
 /// @require {variable} $gray-light
 /// @example
-///    @include levelUp();
-///    @include levelUp(2s);
+///    @include level-up();
+///    @include level-up(2s);
 ///
 ///    // You can even add the class to an element or toggle it with JavaScript.
 ///    .level-up
-@mixin levelUp($speedInSeconds: .35s) {
-  animation-duration: $speedInSeconds;
+@mixin level-up($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
   animation-name: levelUpAnimation;
 }
 
-/// levelDown mixin
-/// @name levelDown
+/// level-down mixin
+/// @name level-down
 /// @group animations
 /// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
 /// @require {variable} $gray-light
 /// @example
-///    @include levelDown();
-///    @include levelDown(2s);
+///    @include level-down();
+///    @include level-down(2s);
 ///
 ///    // You can even add the class to an element or toggle it with JavaScript.
 ///    .level-down
-@mixin levelDown($speedInSeconds: .35s) {
-  animation-duration: $speedInSeconds;
+@mixin level-down($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
   animation-name: levelDownAnimation;
 }
 
 
 .level-up {
-  @include levelUp();
-  box-shadow: 0px 0px 10px 2px $gray-light;
+  @include level-up();
+  box-shadow: 0 0 10px 2px $gray-light;
 }
 
 .level-down {
-  @include levelDown();
-  box-shadow: 0px 0px 2px 1px $gray-light;
+  @include level-down();
+  box-shadow: 0 0 2px 1px $gray-light;
 }
 
 .level {
@@ -74,27 +74,27 @@
   transition: .35s box-shadow;
 
   &-1 {
-    box-shadow: 0px 0px 2px 1px $gray-light;
+    box-shadow: 0 0 2px 1px $gray-light;
     transition: .35s box-shadow;
   }
 
   &-2 {
-    box-shadow: 0px 0px 4px 1px $gray-light;
+    box-shadow: 0 0 4px 1px $gray-light;
     transition: .35s box-shadow;
   }
 
   &-3 {
-    box-shadow: 0px 0px 6px 1px $gray-light;
+    box-shadow: 0 0 6px 1px $gray-light;
     transition: .35s box-shadow;
   }
 
   &-4 {
-    box-shadow: 0px 0px 8px 1.5px $gray-light;
+    box-shadow: 0 0 8px 1.5px $gray-light;
     transition: .35s box-shadow;
   }
 
   &-5 {
-    box-shadow: 0px 0px 10px 2px $gray-light;
+    box-shadow: 0 0 10px 2px $gray-light;
     transition: .35s box-shadow;
   }
 }
