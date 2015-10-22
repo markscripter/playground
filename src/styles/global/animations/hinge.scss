@@ -1,0 +1,144 @@
+/// hinge-top animation using keyframes
+/// @name hinge-top
+/// @group animations
+@keyframes hinge-top {
+  from {
+      opacity: 0;
+      transform-origin: top;
+      transform: perspective(2000px) rotateX(-90deg)
+  }
+
+  to {
+    opacity: 1;
+    transform-origin: top;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-top mixin
+/// @name hinge-top
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include hinge-top();
+///    @include hinge-top(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-top
+@mixin hinge-top($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: hinge-top;
+}
+
+.hinge-top {
+  @include hinge-top();
+}
+
+/// hinge-bottom animation using keyframes
+/// @name hinge-bottom
+/// @group animations
+@keyframes hinge-bottom {
+  from {
+      opacity: 0;
+      transform-origin: bottom;
+      transform: perspective(2000px) rotateX(90deg)
+  }
+
+  to {
+    opacity: 1;
+    transform-origin: bottom;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-bottom mixin
+/// @name hinge-bottom
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include hinge-bottom();
+///    @include hinge-bottom(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-bottom
+@mixin hinge-bottom($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: hinge-bottom;
+}
+
+.hinge-bottom {
+  @include hinge-bottom();
+}
+
+
+/// hinge-right animation using keyframes
+/// @name hinge-right
+/// @group animations
+@keyframes hinge-right {
+  from {
+      opacity: 0;
+      transform-origin: right;
+      transform: perspective(2000px) rotateY(90deg)
+  }
+
+  to {
+    opacity: 1;
+    transform-origin: right;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-right mixin
+/// @name hinge-right
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include hinge-right();
+///    @include hinge-right(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-right
+@mixin hinge-right($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: hinge-right;
+}
+
+.hinge-right {
+  @include hinge-right();
+}
+
+/// hinge-left animation using keyframes
+/// @name hinge-left
+/// @group animations
+@keyframes hinge-left {
+  from {
+      opacity: 0;
+      transform-origin: left;
+      transform: perspective(2000px) rotateY(-90deg)
+  }
+
+  to {
+    opacity: 1;
+    transform-origin: left;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-left mixin
+/// @name hinge-left
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include hinge-bottom();
+///    @include hinge-bottom(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-left
+@mixin hinge-left($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: hinge-left;
+}
+
+.hinge-left {
+  @include hinge-left();
+}

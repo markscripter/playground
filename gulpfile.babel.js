@@ -92,6 +92,7 @@ gulp.task('styles-documentation', () => {
   gulp.src([
     path.join(__dirname, PATHS.styles, 'global/**.scss'),
     path.join(__dirname, PATHS.components, '**/*.scss'),
+    path.join(__dirname, PATHS.styles, 'global/**/*.scss'),
   ])
     .pipe(sassdoc());
 });
@@ -227,7 +228,7 @@ gulp.task('watch', () => {
     path.join(__dirname, PATHS.styles, '**.scss'),
     path.join(__dirname, PATHS.styles, '**/**.scss'),
     path.join(__dirname, PATHS.components, '**/**.scss'),
-  ], ['styles', 'styleguide'], () => browserSync.reload);
+  ], ['styles', 'styleguide', 'styles-documentation'], () => browserSync.reload);
 
   gulp.watch([
     path.join(__dirname, PATHS.templates),
@@ -252,8 +253,4 @@ gulp.task('watch', () => {
   gulp.watch([
     path.join(__dirname, PATHS.svg, '*.svg'),
   ], ['templates'], () => browserSync.reload);
-
-  gulp.watch([
-    path.join(__dirname, PATHS.styles, 'global/**.scss'),
-  ], ['styles-documentation'], () => browserSync.reload);
 });

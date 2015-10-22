@@ -1,7 +1,8 @@
+@import '../../node_modules/motion-ui/src/motion-ui';
 @import 'global/vars.scss';
 @import 'global/fonts.scss';
 @import 'global/mixins.scss';
-@import 'global/keyframes.scss';
+@import 'global/animations.scss';
 @import 'global/clearfix.scss';
 @import 'global/lists.scss';
 @import 'global/sectioning.scss';
@@ -11,5 +12,4 @@
 @import 'global/headings.scss';
 @import 'global/svg.scss';
 @import 'global/errors.scss';
-@import '../../node_modules/motion-ui/src/motion-ui';
 @import 'site.scss';

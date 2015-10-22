@@ -1,0 +1,67 @@
+/// fade-in animation using keyframes
+/// @name fade-in
+/// @group animations
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/// fade-in mixin
+/// @name fade-in
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include fade-in();
+///    @include fade-in(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .fade-in
+@mixin fade-in($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: fade-in;
+}
+
+.fade-in {
+  @include fade-in();
+  opacity: 1;
+}
+
+/// fade-out animation using keyframes
+/// @name fade-out
+/// @group animations
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+/// fade-out mixin
+/// @name fade-out
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include fade-out();
+///    @include fade-out(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .level-down
+@mixin fade-out($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: fade-out;
+}
+
+
+.fade-out {
+  @include fade-out();
+  opacity: 0;
+}

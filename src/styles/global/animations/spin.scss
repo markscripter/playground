@@ -1,0 +1,67 @@
+/// spin-cw animation using keyframes
+/// @name spin-cw
+/// @group animations
+@keyframes spin-cw {
+  from {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform-origin: center center;
+    transform: rotate(360deg);
+  }
+}
+
+/// spin-cw mixin
+/// @name spin-cw
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include spin-cw();
+///    @include spin-cw(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-top
+@mixin spin-cw($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: spin-cw;
+}
+
+.spin-cw {
+  @include spin-cw();
+}
+
+/// spin-ccw animation using keyframes
+/// @name spin-ccw
+/// @group animations
+@keyframes spin-ccw {
+  from {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform-origin: center center;
+    transform: rotate(-360deg);
+  }
+}
+
+/// spin-ccw mixin
+/// @name spin-ccw
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @example
+///    @include spin-ccw();
+///    @include spin-ccw(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-top
+@mixin spin-ccw($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: spin-ccw;
+}
+
+.spin-ccw {
+  @include spin-ccw();
+}

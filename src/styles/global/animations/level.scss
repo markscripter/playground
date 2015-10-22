@@ -1,8 +1,8 @@
-/// levelUp animation using keyframes
-/// @name levelUpAnimation
+/// level-up animation using keyframes
+/// @name level-up
 /// @group animations
 /// @require {variable} $gray-light
-@keyframes levelUpAnimation {
+@keyframes level-up {
   from {
     box-shadow: 0 0 2px 1px $gray-light;
   }
@@ -13,10 +13,10 @@
 }
 
 /// levelDown animation using keyframes
-/// @name levelDownAnimation
+/// @name level-down
 /// @group animations
 /// @require {variable} $gray-light
-@keyframes levelDownAnimation {
+@keyframes level-down {
   from {
     box-shadow: 0 0 10px 2px $gray-light;
   }
@@ -39,7 +39,7 @@
 ///    .level-up
 @mixin level-up($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
-  animation-name: levelUpAnimation;
+  animation-name: level-up;
 }
 
 /// level-down mixin
@@ -55,7 +55,7 @@
 ///    .level-down
 @mixin level-down($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
-  animation-name: levelDownAnimation;
+  animation-name: level-down;
 }
 
 
