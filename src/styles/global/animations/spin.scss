@@ -3,13 +3,13 @@
 /// @group animations
 @keyframes spin-cw {
   from {
-    transform-origin: center center;
     transform: rotate(0deg);
+    transform-origin: center center;
   }
 
   to {
-    transform-origin: center center;
     transform: rotate(360deg);
+    transform-origin: center center;
   }
 }
 
@@ -38,13 +38,13 @@
 /// @group animations
 @keyframes spin-ccw {
   from {
-    transform-origin: center center;
     transform: rotate(0deg);
+    transform-origin: center center;
   }
 
   to {
-    transform-origin: center center;
     transform: rotate(-360deg);
+    transform-origin: center center;
   }
 }
 
