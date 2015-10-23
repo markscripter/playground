@@ -1,61 +1,67 @@
-/**
-* @private {Object} busCache - An empty object to hold all of the streams.
-*/
-let busCache;
+import stores from '../stores';
 
 /**
-* @function bus
-* @private {Object} busCache - An empty object to hold all of the streams.
-*/
-function bus(name) {
-  busCache[name] = busCache[name] || new Bacon.Bus();
-  return busCache[name];
-}
-
-/**
- * @class Dispatcher
- * @classdesc The dispatcher class allows you to create streams.
+ * @module dispatcher
+ * @classdesc This Object defines our dispatcher. It has a few methods & keys that extend a store implementation.
  * @author Mark Scripter [mscripter@horizontalintegration.com]
- * @requires baconsjs
+ * @requires 'stores'
  */
-class Dispatcher {
+const dispatcher = {
 
   /**
-  * This is the constructor method for the Dispatcher class.
-  * @param {object} currBusCache - An Bacon.Bus object that currently has already been created.
+  * @public {Object} stores - This stores all of our data stores which can be accessible through the dispatcher.
+  * @example
+  * this.dispatcher.stores
   */
-  constructor(currBusCache = {}) {
-    busCache = currBusCache;
-  }
+  stores: stores,
 
   /**
-  * This is the stream function of the Dispatcher class. It is used to get a stream, by name. If one doesn't exist, it will create a new Bacon.Bus() object.
-  * @param {string} name - The stream we want to get, by name.
-  * @returns {object} Bacon.Bus() - A Bacon.bus object in the busCache.
+  * This function creates an array of our stores keys this allows us to extend the observable that is attached to each store
+  * @param {object} stores - The store object we imported.
   */
-  stream(name = '') {
-    return name !== '' ? bus(name) : null;
-  }
+  _stores: Object.keys(stores).map((key) => {
+    return stores[key];
+  }),
 
   /**
-  * This is the push function of the Dispatcher class. It is used to push an item (value), onto a given stream (name).
-  * @param {string} name - The name of the steam you want to push something to.
-  * @param {string} value - The value you want to send to the stream.
-  * @returns
+  * This method is our 'on' facade for our stores.
+  * It goes through our _stores and calls each functions 'on' method.
+  * Usage: to add a listener for a given event.
   */
-  push(name = '', value = '') {
-    bus(name).push(value);
-  }
+  on() {
+    this._stores.forEach((el) => {
+      el.on.apply(null, [].slice.call(arguments));
+    });
+  },
 
   /**
-  * This is the stream function of the Dispatcher class.
-  * @param {string} name - The name of the steam you want to plug.
-  * @param {string} value - The value you want to plug the stream with.
-  * @returns
+  * This method is our 'one' facade for our stores.
+  * It goes through our _stores and calls each functions 'one' method.
+  * Usage:
   */
-  plug(name = '', value = '') {
-    bus(name).plug(value);
-  }
-}
+  one() {
+    this._stores.forEach((el) => {
+      el.one.apply(null, [].slice.call(arguments));
+    });
+  },
 
-export default Dispatcher;
+  /**
+  * This method is our 'off' facade for our stores.
+  * It goes through our _stores and calls each functions 'off' method.
+  * Usage: to remove a listener for a given event.
+  */
+  off() {
+    this._stores.forEach((el) => {
+      el.off.apply(null, [].slice.call(arguments));
+    });
+  },
+
+  trigger() {
+    this._stores.forEach((el) => {
+      el.trigger.apply(null, [].slice.call(arguments));
+    });
+  },
+
+};
+
+export default dispatcher;

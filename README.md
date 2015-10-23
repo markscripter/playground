@@ -50,8 +50,3 @@ The following are a list of build commands for this project.
     gulp server         // runs a local server instance
     gulp styleguide     // builds out the styleguide items
     gulp svg            // builds svg's
-
-## SASS Gems
-- [Animate.scss](https://www.npmjs.com/package/animate.scss) Animation Library for SASS.
-
-    gem install animate

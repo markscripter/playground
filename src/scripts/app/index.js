@@ -20,8 +20,16 @@ class Hi {
   * This is the constructor method for the Hi class.
   */
   constructor() {
+    // this.cache is for an internal cache of modules.
+    // This is used to restore a module if needed.
+    this.cache = {};
     this.channels = {};
+
+    // this.registeredModules holds all modules that have been registered with the application.
     this.registeredModules = {};
+
+    // this.dispatcher is the main dispatcher used throughout the application.
+    // it allows us to send messages (subscribe/publish) and pass data along with it.
     this.dispatcher = dispatcher;
   }
 
@@ -34,6 +42,12 @@ class Hi {
     const name = module.name.toLowerCase();
     if (!this.isRegistered(name)) {
       this.registeredModules[name] = module;
+
+      // if our module is not cached,
+      // Cache it,
+      // otherwise continue.
+      !this.isCached(name) ? this.cache[name] = module : 1;
+
       this.wireupModule(name);
     } else {
       // module is registered
@@ -55,7 +69,7 @@ class Hi {
   }
 
   /**
-  * Takes an key and checks to see if it is registered within out registeredModules.
+  * Takes an key and checks to see if it is registered within our registeredModules.
   * @param {string} key - The name of the module you want to verify.
   * @returns {boolean} boolean - Returns true if registered, otherwise false.
   */
@@ -63,6 +77,17 @@ class Hi {
     return R.curry((registered, item) => {
       return R.has(item, registered);
     })(this.registeredModules || {})(key);
+  }
+
+  /**
+  * Takes an key and checks to see if it is cached  within our application.
+  * @param {string} key - The name of the module you want to verify.
+  * @returns {boolean} boolean - Returns true if registered, otherwise false.
+  */
+  isCached(key) {
+    return R.curry((registered, item) => {
+      return R.has(item, registered);
+    })(this.cache || {})(key);
   }
 
   /**
