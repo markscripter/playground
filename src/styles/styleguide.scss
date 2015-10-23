@@ -42,7 +42,7 @@ header {
   width: 75%;
 
   @include media(md) {
-    display: inline-block;
+    display: in-block;
     margin: $margin-vertical--small 1%;
     vertical-align: top;
     white-space: normal;
@@ -94,6 +94,13 @@ header {
     @include media(sm) {
       width: auto;
     }
+  }
+
+  .run-animation {
+    display: block;
+    width: 80px;
+    margin: $margin-vertical--small 0 $margin-vertical--large;
+
   }
 }
 

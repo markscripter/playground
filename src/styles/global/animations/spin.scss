@@ -1,4 +1,4 @@
-/// spin-cw animation using keyframes
+/// spin-cw animation
 /// @name spin-cw
 /// @group animations
 @keyframes spin-cw {
@@ -26,13 +26,14 @@
 @mixin spin-cw($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
   animation-name: spin-cw;
+  animation-timing-function: ease-in;
 }
 
 .spin-cw {
   @include spin-cw();
 }
 
-/// spin-ccw animation using keyframes
+/// spin-ccw animation
 /// @name spin-ccw
 /// @group animations
 @keyframes spin-ccw {
@@ -60,6 +61,7 @@
 @mixin spin-ccw($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
   animation-name: spin-ccw;
+  animation-timing-function: ease-in;
 }
 
 .spin-ccw {

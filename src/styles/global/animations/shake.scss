@@ -1,4 +1,4 @@
-/// shake animation using keyframes
+/// shake animation
 /// @name shake
 /// @group animations
 @keyframes shake {
@@ -32,6 +32,7 @@
 @mixin shake($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
   animation-name: shake;
+  animation-timing-function: linear;
 }
 
 .shake {

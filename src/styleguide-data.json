@@ -88,6 +88,13 @@
         "children" : {
           "items" : [
             {
+              "text" : "Animations",
+              "link" : {
+                "href" : "#animations",
+                "target" : "_self"
+              }
+            },
+            {
               "text" : "Buttons",
               "link" : {
                 "href" : "#buttons",

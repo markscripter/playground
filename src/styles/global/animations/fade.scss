@@ -24,6 +24,7 @@
 @mixin fade-in($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
   animation-name: fade-in;
+  animation-timing-function: linear;
 }
 
 .fade-in {
@@ -58,6 +59,7 @@
 @mixin fade-out($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
   animation-name: fade-out;
+  animation-timing-function: linear;
 }
 
 

@@ -1,15 +1,14 @@
-/// hinge-top animation using keyframes
+/// hinge-top animation
 /// @name hinge-top
 /// @group animations
+/// @require {animation} fade-in
 @keyframes hinge-top {
   from {
-      opacity: 0;
-      transform-origin: top;
-      transform: perspective(2000px) rotateX(-90deg)
+    transform-origin: top;
+    transform: perspective(2000px) rotateX(-90deg)
   }
 
   to {
-    opacity: 1;
     transform-origin: top;
     transform: perspective(2000px) rotate(0deg);
   }
@@ -19,6 +18,7 @@
 /// @name hinge-top
 /// @group animations
 /// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
 /// @example
 ///    @include hinge-top();
 ///    @include hinge-top(2s);
@@ -27,25 +27,25 @@
 ///    .hinge-top
 @mixin hinge-top($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
-  animation-name: hinge-top;
+  animation-name: fade-in, hinge-top;
+  animation-timing-function: ease-in;
 }
 
 .hinge-top {
   @include hinge-top();
 }
 
-/// hinge-bottom animation using keyframes
+/// hinge-bottom animation
 /// @name hinge-bottom
 /// @group animations
+/// @require {animation} fade-in
 @keyframes hinge-bottom {
   from {
-      opacity: 0;
-      transform-origin: bottom;
-      transform: perspective(2000px) rotateX(90deg)
+    transform-origin: bottom;
+    transform: perspective(2000px) rotateX(90deg)
   }
 
   to {
-    opacity: 1;
     transform-origin: bottom;
     transform: perspective(2000px) rotate(0deg);
   }
@@ -55,6 +55,7 @@
 /// @name hinge-bottom
 /// @group animations
 /// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
 /// @example
 ///    @include hinge-bottom();
 ///    @include hinge-bottom(2s);
@@ -63,7 +64,8 @@
 ///    .hinge-bottom
 @mixin hinge-bottom($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
-  animation-name: hinge-bottom;
+  animation-name: fade-in, hinge-bottom;
+  animation-timing-function: ease-in;
 }
 
 .hinge-bottom {
@@ -71,18 +73,17 @@
 }
 
 
-/// hinge-right animation using keyframes
+/// hinge-right animation
 /// @name hinge-right
 /// @group animations
+/// @require {animation} fade-in
 @keyframes hinge-right {
   from {
-      opacity: 0;
-      transform-origin: right;
-      transform: perspective(2000px) rotateY(90deg)
+    transform-origin: right;
+    transform: perspective(2000px) rotateY(90deg)
   }
 
   to {
-    opacity: 1;
     transform-origin: right;
     transform: perspective(2000px) rotate(0deg);
   }
@@ -92,6 +93,7 @@
 /// @name hinge-right
 /// @group animations
 /// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
 /// @example
 ///    @include hinge-right();
 ///    @include hinge-right(2s);
@@ -100,25 +102,25 @@
 ///    .hinge-right
 @mixin hinge-right($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
-  animation-name: hinge-right;
+  animation-name: fade-in, hinge-right;
+  animation-timing-function: ease-in;
 }
 
 .hinge-right {
   @include hinge-right();
 }
 
-/// hinge-left animation using keyframes
+/// hinge-left animation
 /// @name hinge-left
 /// @group animations
+/// @require {animation} fade-in
 @keyframes hinge-left {
   from {
-      opacity: 0;
-      transform-origin: left;
-      transform: perspective(2000px) rotateY(-90deg)
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg)
   }
 
   to {
-    opacity: 1;
     transform-origin: left;
     transform: perspective(2000px) rotate(0deg);
   }
@@ -128,17 +130,172 @@
 /// @name hinge-left
 /// @group animations
 /// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
 /// @example
-///    @include hinge-bottom();
-///    @include hinge-bottom(2s);
+///    @include hinge-left();
+///    @include hinge-left(2s);
 ///
 ///    // You can even add the class to an element or toggle it with JavaScript.
 ///    .hinge-left
 @mixin hinge-left($speed-in-seconds: .35s) {
   animation-duration: $speed-in-seconds;
-  animation-name: hinge-left;
+  animation-name: fade-in, hinge-left;
+  animation-timing-function: ease-in;
 }
 
 .hinge-left {
   @include hinge-left();
+}
+
+
+/// hinge-middle-bottom animation
+/// @name hinge-middle-left
+/// @group animations
+/// @require {animation} fade-in
+@keyframes hinge-middle-bottom {
+  from {
+    transform-origin: center;
+    transform: perspective(2000px) rotateX(-90deg)
+  }
+
+  to {
+    transform-origin: center;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-middle-bottom mixin
+/// @name hinge-middle-bottom
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
+/// @example
+///    @include hinge-middle-bottom();
+///    @include hinge-middle-bottom(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-middle-left
+@mixin hinge-middle-bottom($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: fade-in, hinge-middle-bottom;
+  animation-timing-function: ease-in;
+}
+
+.hinge-middle-bottom {
+  @include hinge-middle-bottom();
+}
+
+
+/// hinge-middle-top animation
+/// @name hinge-middle-top
+/// @group animations
+/// @require {animation} fade-in
+@keyframes hinge-middle-top {
+  from {
+    transform-origin: center;
+    transform: perspective(2000px) rotateX(90deg)
+  }
+
+  to {
+    transform-origin: center;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-middle-top mixin
+/// @name hinge-middle-top
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
+/// @example
+///    @include hinge-middle-top();
+///    @include hinge-middle-top(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-middle-x-top
+@mixin hinge-middle-top($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: fade-in, hinge-middle-top;
+  animation-timing-function: ease-in;
+}
+
+.hinge-middle-top {
+  @include hinge-middle-top();
+}
+
+
+/// hinge-middle-left animation
+/// @name hinge-middle-left
+/// @group animations
+/// @require {animation} fade-in
+@keyframes hinge-middle-left {
+  from {
+    transform-origin: center;
+    transform: perspective(2000px) rotateY(-90deg)
+  }
+
+  to {
+    transform-origin: center;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-middle-left mixin
+/// @name hinge-middle-left
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
+/// @example
+///    @include hinge-middle-left();
+///    @include hinge-middle-left(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-middle-left
+@mixin hinge-middle-left($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: fade-in, hinge-middle-left;
+  animation-timing-function: ease-in;
+}
+
+.hinge-middle-left {
+  @include hinge-middle-left();
+}
+
+
+
+/// hinge-middle-right animation
+/// @name hinge-middle-right
+/// @group animations
+/// @require {animation} fade-in
+@keyframes hinge-middle-right {
+  from {
+    transform-origin: center;
+    transform: perspective(2000px) rotateY(90deg)
+  }
+
+  to {
+    transform-origin: center;
+    transform: perspective(2000px) rotate(0deg);
+  }
+}
+
+/// hinge-middle-right mixin
+/// @name hinge-middle-right
+/// @group animations
+/// @parameter {Time} $speedInSeconds [.35s] - The speed you want the animation to run in.
+/// @require {animation} fade-in
+/// @example
+///    @include hinge-middle-right();
+///    @include hinge-middle-right(2s);
+///
+///    // You can even add the class to an element or toggle it with JavaScript.
+///    .hinge-middle-right
+@mixin hinge-middle-right($speed-in-seconds: .35s) {
+  animation-duration: $speed-in-seconds;
+  animation-name: fade-in, hinge-middle-right;
+  animation-timing-function: ease-in;
+}
+
+.hinge-middle-right {
+  @include hinge-middle-right();
 }
