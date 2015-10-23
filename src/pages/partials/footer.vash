@@ -1,8 +1,0 @@
-@*********************
-  Partial: _footer
-*********************@
-<!-- FOOTER -->
-<footer class="container">
-  <p>footer</p>
-</footer>
-<!-- /FOOTER -->

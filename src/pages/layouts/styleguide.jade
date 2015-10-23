@@ -1,0 +1,41 @@
+//-
+//- @layout: Styleguide
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author:
+//- @comments:
+//-
+doctype html
+html(lang="en")
+  head
+    title Project Title | Style Guide
+    meta(charset="utf-8")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+    link(type="text/css" rel="stylesheet" media="all" href="/css/stylesheet.css")
+    link(type="text/css" rel="stylesheet" media="all" href="/css/styleguide.css")
+  body
+    
+    .svg-store
+      include ../../svg/svg.min.jade
+    
+    header.container
+      nav.navigation
+        ul
+          li
+            a(href="/styleguide/") Styleguide
+          li
+            a(href="/jsDocs") JS Docs
+          li
+            a(href="/sassdoc") Sass Docs
+    
+    block content
+    
+    footer.container
+      p.legal &copy; Mark Scripter 2015
+    
+    block scripts
+      script(type="text/javascript" src="/js/libs.min.js")
+      script(type="text/javascript" src="/js/main.min.js")

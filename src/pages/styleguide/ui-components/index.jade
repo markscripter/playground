@@ -1,0 +1,22 @@
+//-
+//- @page: UI Components
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author:
+//- @comments:
+//-
+include components/animations.jade
+include components/badges.jade
+include components/buttons.jade
+include components/cards.jade
+include components/hero.jade
+
+mixin ui-components()
+  section.component
+    h2.title(id="ui-components") UI Components
+    +animations()
+    +badges()
+    +buttons()
+    +cards()
+    +hero()

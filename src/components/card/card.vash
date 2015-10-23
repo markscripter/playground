@@ -1,6 +1,0 @@
-@*********************
-  Component: Card
-*********************@
-<div class="card">
-  <p>This is an example paragraph card.</p>
-</div>

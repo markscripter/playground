@@ -10,7 +10,7 @@
     ],
     "data" : "/src/site-data.json",
     "fonts" : "/src/styles/global/fonts/*.*",
-    "index" : "/src/pages/index.vash",
+    "index" : "/src/pages/index.jade",
     "javascript": "/src/scripts/",
     "jsLibraries" : [
       "/node_modules/ramda/dist/ramda.min.js",
@@ -34,9 +34,9 @@
       "data" : "/src/styleguide-data.json",
       "styles": "/src/styles/styleguide.scss",
       "templates": [
-        "/src/pages/styleguide/index.vash",
-        "/src/pages/styleguide/**/index.vash",
-        "/src/pages/styleguide/**/**/**.vash"
+        "/src/pages/styleguide/index.jade",
+        "/src/pages/styleguide/**/index.jade",
+        "/src/pages/styleguide/**/**/**.jade"
       ]
     },
     "styles": "/src/styles/",

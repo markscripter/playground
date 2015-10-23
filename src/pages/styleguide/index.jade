@@ -1,0 +1,30 @@
+//-
+//- @page: Styleguide
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author:
+//- @comments:
+//-
+extend ../layouts/styleguide.jade
+
+include design/index.jade
+include js-components/index.jade
+include ui-components/index.jade
+include widgets/index.jade
+include ../../components/list/list.jade
+
+append content
+    article.container
+      section.main
+        h1.title Style Guide
+        p Welcome to the living style guide for [enter project name here.]
+        section.sections
+          +design()
+          +js-components()
+          +ui-components()
+          +widgets()
+      aside.sidebar.right
+        nav
+          if sidebar
+            +list(sidebar)

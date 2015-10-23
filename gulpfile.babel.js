@@ -16,7 +16,7 @@ import sassdoc from 'sassdoc';
 import sourcemaps from 'gulp-sourcemaps';
 import svgstore from 'gulp-svgstore';
 import svgmin from 'gulp-svgmin';
-import templates  from './helpers/gulp-vash';
+import templates  from 'gulp-jade';
 import uglify from 'gulp-uglify';
 import webpack from 'gulp-webpack';
 import wrapper from 'gulp-wrapper';
@@ -203,7 +203,7 @@ gulp.task('svg', () => {
     .pipe(svgmin())
     .pipe(svgstore())
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'svg/')))
-    .pipe(rename('svg.min.vash'))
+    .pipe(rename('svg.min.jade'))
     .pipe(gulp.dest(path.join(__dirname, PATHS.svg)));
 });
 
@@ -232,8 +232,8 @@ gulp.task('watch', () => {
 
   gulp.watch([
     path.join(__dirname, PATHS.templates),
-    path.join(__dirname, '/pages/**/*.vash'),
-    path.join(__dirname, PATHS.components, '/**/markup/**.vash'),
+    path.join(__dirname, '/pages/**/*.jade'),
+    path.join(__dirname, PATHS.components, '/**/markup/**.jade'),
     path.join(__dirname, PATHS.componentsData),
     path.join(__dirname, PATHS.data),
   ], ['templates'], () => browserSync.reload);
