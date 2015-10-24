@@ -1,4 +1,4 @@
-import R from 'ramda';
+// import R from 'ramda';
 
 function Modal(state) {
   const wireUp = (settings) => {

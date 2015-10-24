@@ -1,11 +1,11 @@
-import R from 'ramda';
+// import R from 'ramda';
 import guid from './utils/guid';
-import Dispatcher from './utils/dispatcher';
+import dispatcher from './utils/dispatcher';
 
 /**
-* @private {Object} dispatcher - Our dispatcher object
+* @private {Object} dispatch - Our dispatcher object
 */
-const dispatcher = new Dispatcher();
+
 
 /**
  * @class Hi
@@ -28,7 +28,7 @@ class Hi {
     // this.registeredModules holds all modules that have been registered with the application.
     this.registeredModules = {};
 
-    // this.dispatcher is the main dispatcher used throughout the application.
+    // this.dispatch is the main dispatch used throughout the application.
     // it allows us to send messages (subscribe/publish) and pass data along with it.
     this.dispatcher = dispatcher;
   }
