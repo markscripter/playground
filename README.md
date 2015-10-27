@@ -18,7 +18,8 @@ After installing Node & NPM, install the NPM packages using these commands:
     sudo npm i -g babel         // es6 - es5 stuff
     sudo npm i -g babel-core    // more babel stuff
     sudo npm i -g babel-eslint  // installs babel's plugin for eslint
-    sudo npm i -g gulp          // installs Gulp
+    sudo npm i -g gulp          // installs Gulp - a task runner for build tasks.
+    sudo npm i -g faucet        // installs Faucet - a text formatter for running tests.
 
 
 This should setup your environment so you can build and run this project solution. The next step is to install all of the project's dependencies.
@@ -50,3 +51,9 @@ The following are a list of build commands for this project.
     gulp server         // runs a local server instance
     gulp styleguide     // builds out the styleguide items
     gulp svg            // builds svg's
+
+## Tests
+There are unit tests and functional tests.
+To run the tests from root of the project:
+
+    npm test
