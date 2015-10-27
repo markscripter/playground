@@ -1,8 +1,10 @@
+import Q from 'q';  // our Promises library
+
 /**
  * @module Workflow Factory
  * @classdesc This object creates a workflow, using Promises.
  * @author Mark Scripter [mscripter@horizontalintegration.com]
- * @requires
+ * @requires Q
  */
 const workflowFactory = () => {
   /**
