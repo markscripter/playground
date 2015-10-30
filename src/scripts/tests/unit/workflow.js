@@ -1,5 +1,6 @@
 import workflowFactory from '../../app/utils/workflow';
 import test from 'blue-tape';
+import Promise from 'bluebird';
 
 const workflow = workflowFactory();
 
