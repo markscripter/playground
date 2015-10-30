@@ -43,9 +43,22 @@ const workflowTest = () => {
       assert.ok(results.length === 4, 'workflow: runSync() matches the length of promises.');
     });
 
+    workflow.runSync([]).then((results) => {
+      assert.ok(results.length === 0, 'workflow: runSync() returns more than 0 items');
+    });
+
+    resolve();
+  }));
+
+  test('workflow: runASync()', (assert) => new Promise((resolve) => {
+
     workflow.runAsync([introduction(), partOne(), partTwo(), partThree()]).then((results) => {
       assert.ok(results.length > 0, 'workflow: runAsync() returns more than 0 items');
       assert.ok(results.length === 4, 'workflow: runAsync() matches the length of promises.');
+    });
+
+    workflow.runAsync([]).then((results) => {
+      assert.ok(results.length === 0, 'workflow: runAsync() returns more than 0 items');
     });
 
     resolve();

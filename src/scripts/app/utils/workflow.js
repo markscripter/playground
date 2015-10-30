@@ -33,7 +33,7 @@ const workflowFactory = () => {
     * // func 3 will fun. once completed,
     * // they will be returned
     */
-    runSync(tasks = [Promise.resolve()]) {
+    runSync(tasks = [Promise.resolve]) {
       const results = [];
       return Promise.resolve(tasks)
         .each((task) => task().then((res) => results.push(res)))
