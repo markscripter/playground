@@ -1,13 +1,17 @@
 {
-  "name": "Playground",
-  "description": "A playground to play in.",
-  "version": "0.0.0",
-  "main": "index.js",
-  "scripts": {
-    "npmi": "npm i",
-    "boweri": "bower i",
-    "test": "babel-node src/scripts/tests | faucet"
+  "author": {
+    "name": "Mark Scripter",
+    "email": "mark@mscriptdesign.com",
+    "url": "http://github.com/markscripter/"
   },
+  "bugs": {
+    "url": "https://github.com/markscripter/playground/issues"
+  },
+  "dependencies": {
+    "gridle": "^2.0.4",
+    "riot": "^2.2.4"
+  },
+  "description": "A playground to play in.",
   "devDependencies": {
     "babel": "^5.8.20",
     "babel-core": "^5.8.20",
@@ -51,8 +55,19 @@
     "velocity-animate": "^1.2.3",
     "webpack": "^1.12.2"
   },
-  "dependencies": {
-    "gridle": "^2.0.4",
-    "riot": "^2.2.4"
-  }
+  "homepage": "https://github.com/markscripter/playground",
+  "keywords": [],
+  "license": "MIT",
+  "name": "Playground",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/markscripter/playground.git"
+  },
+  "scripts": {
+    "boweri": "bower i",
+    "npmi": "npm i",
+    "test": "babel-node src/scripts/tests | faucet"
+  },
+  "version": "0.0.0"
 }
