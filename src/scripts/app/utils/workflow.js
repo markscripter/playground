@@ -1,77 +1,52 @@
-import Q from 'q';  // our Promises library
+import Promise from 'bluebird';  // our Promises library
 
 /**
  * @module Workflow Factory
  * @classdesc This object creates a workflow, using Promises.
  * @author Mark Scripter [mscripter@horizontalintegration.com]
- * @requires Q
+ * @requires bluebird
+ * @example
+ * import workflowFactory from './workflow';
+ * const workflow = workflowFactory();
  */
 const workflowFactory = () => {
   /**
-   * @private {Array} tasks - This property is what holds the tasks to be ran.
-   */
-  let tasks = [];
-
-  /**
-   * @module Workflow Factory
+   * @module workflow Object
    * @classdesc This object creates a workflow, using Promises.
-   * @author Mark Scripter [mscripter@horizsontalintegration.com]
+   * @author Mark Scripter [mscripter@horizontalintegration.com]
    * @requires
+   * @example
+   * const workflow = workFlowFactory();
    */
   const workflow = {
 
     /**
-    * This method sets the tasks associated with this workflow.
-    * @param {array} _tasks - an array of tasks you associated with this workflow.
-    * @return {boolean} true if successful, false if unsuccessful
-    * @example
-    * workflow.setTasks([taskArray])
-    */
-    setTasks(_tasks = []) {
-      if (_tasks.length >= 0) {
-        tasks = _tasks;
-        return true;
-      }
-
-      return false;
-    },
-
-    /**
-    * This method returns the tasks associated with this workflow.
-    * @return {array} An array of tasks associated with this workflow.
-    * @example
-    * var tasks = workflow.getTasks();
-    */
-    getTasks() {
-      return tasks;
-    },
-
-    /**
-    * This will run through the tasks syncronously.
+    * The runSync() method will run through the tasks syncronously.
     * Use this method when the tasks depend on eachother. They will be
     * iterated through one after another.
+    * @param {Array} tasks - An array of functions that return a promise.
+    * @return {object} returns an object hash of the task results
     * @example
-    * workflow.tasks = [func1, func2, func3];
-    * workflow.sync();
+    * workflow.runSync([PromiseFunc, PromiseFunc, PromiseFunc]);
     * // func 1 will run. once completed,
     * // func 2 will run. once completed,
     * // func 3 will fun. once completed,
     * // they will be returned
     */
-    runSync() {
-      const _tasks = tasks.getTasks();
-      for (let i = 0; i < _tasks.length; i++) {
-        _tasks[i]();
-      }
+    runSync(tasks = [Promise.resolve()]) {
+      const results = [];
+      return Promise.resolve(tasks)
+        .each((task) => task().then((res) => results.push(res)))
+        .then(() => results);
     },
 
     /**
-    * The async() method will run through the tasks asyncronously.
+    * The runAsync() method will run through the tasks asyncronously.
     * Use this method when none of the tasks depend on eachother but all
     * need to be completed before continuing.
+    * @param {Array} tasks - An array of functions that return a promise.
     * @example
-    * workflow.tasks = [func1, func2, func3];
-    * workflow.async();
+    * workflow.async([PromiseFunc(), PromiseFunc(), PromiseFunc()]);
     * // func 1 will be triggered
     * // func 2 will be triggered
     * // func 3 will be triggered
@@ -79,8 +54,8 @@ const workflowFactory = () => {
     * // it will check and keep count of how many of the tasks were completed.
     * // once all are done, they will be returned.
     */
-    runAsync() {
-
+    runAsync(tasks = [Promise.resolve()]) {
+      return Promise.all(tasks);
     },
 
   };
