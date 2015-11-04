@@ -1,0 +1,39 @@
+//-
+//- @layout: Layout
+//- @group: Global
+//- @type:
+//- @description:
+//- @author:
+//- @comments:
+//-
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    
+    block meta
+      meta(charset="utf-8")
+      meta(name="apple-mobile-web-app-capable" content="yes")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      meta(name="description" content="")
+      meta(name="keywords" content="")
+
+    block links
+      link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+      link(type="text/css" rel="stylesheet" media="all" href="/css/stylesheet.css")
+    
+  body
+    .svg-store
+      include ../../svg/svg.min.jade
+
+    include ../partials/header.jade
+
+    <!-- CONTENT -->
+    block content
+    <!-- /CONTENT -->
+
+    include ../partials/footer.jade
+    
+    block scripts
+      script(type="text/javascript" src="/js/libs.min.js")
+      script(type="text/javascript" src="/js/main.min.js")

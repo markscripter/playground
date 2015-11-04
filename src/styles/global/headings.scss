@@ -1,0 +1,53 @@
+////
+/// Heading Elements
+/// @group headings
+/// @author Mark Scripter - mscripter@horizontalintegration.com
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: $sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+h1,
+.heading-one {
+  font-size: ceil($font-size * 2.5);
+}
+
+h2,
+.heading-two {
+  font-size: ceil($font-size * 2);
+}
+
+h3,
+.heading-three {
+  font-size: ceil($font-size * 1.5);
+}
+
+h4,
+.heading-four {
+  font-size: ceil($font-size * 1.25);
+}
+
+h5,
+.heading-five {
+  font-size: ceil($font-size * 1.125);
+}
+
+h6,
+.heading-six {
+  font-size: ceil($font-size * 1.1);
+}
+
+hgroup {
+  margin: 0;
+  padding: 0;
+}

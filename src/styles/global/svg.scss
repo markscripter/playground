@@ -1,0 +1,17 @@
+////
+/// SVG Elements
+/// @group svg
+/// @author Mark Scripter - mscripter@horizontalintegration.com
+
+svg {}
+svg.logo {
+  .top {
+    fill: blue;
+  }
+  .middle {
+    fill: green;
+  }
+  .bottom {
+    fill: purple;
+  }
+}

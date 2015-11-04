@@ -1,0 +1,22 @@
+//-
+//- @page: Design Components
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author:
+//- @comments:
+//-
+include components/colors.jade
+include components/headings.jade
+include components/levels.jade
+include components/paragraphs.jade
+include components/typography.jade
+
+mixin design()
+  section.component
+    h2.title(id="design") Design Components
+    +colors()
+    +headings()
+    +levels()
+    +paragraphs()
+    +typography()

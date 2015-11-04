@@ -1,0 +1,162 @@
+{
+  "sidebar" : {
+    "items" : [
+      {
+        "text" : "Design",
+        "link" : {
+          "href" : "#design",
+          "target" : "_self"
+        },
+        "children" : {
+          "items" : [
+            {
+              "text" : "Colors",
+              "link" : {
+                "href" : "#colors",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Headings",
+              "link" : {
+                "href" : "#headings",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Levels",
+              "link" : {
+                "href" : "#levels",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Paragraphs",
+              "link" : {
+                "href" : "#paragraphs",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Typography",
+              "link" : {
+                "href" : "#typography",
+                "target" : "_self"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text" : "JS Components",
+        "link" : {
+          "href" : "#js-components",
+          "target" : "_self"
+        },
+        "children" : {
+          "items" : [
+            {
+              "text" : "Carousel",
+              "link" : {
+                "href" : "#carousel",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Form",
+              "link" : {
+                "href" : "#form",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Modal",
+              "link" : {
+                "href" : "#modal",
+                "target" : "_self"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text" : "UI Components",
+        "link" : {
+          "href" : "#ui-components",
+          "target" : "_self"
+        },
+        "children" : {
+          "items" : [
+            {
+              "text" : "Animations",
+              "link" : {
+                "href" : "#animations",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Buttons",
+              "link" : {
+                "href" : "#buttons",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Badges",
+              "link" : {
+                "href" : "#badges",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Cards",
+              "link" : {
+                "href" : "#cards",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Card Collection",
+              "link" : {
+                "href" : "#card-collection",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Hero",
+              "link" : {
+                "href" : "#hero",
+                "target" : "_self"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "text" : "Widgets",
+        "link" : {
+          "href" : "#widgets",
+          "target" : "_self"
+        },
+        "children" : {
+          "items" : [
+            {
+              "text" : "Colorbox",
+              "link" : {
+                "href" : "#colorbox",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Slick",
+              "link" : {
+                "href" : "#slick",
+                "target" : "_self"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

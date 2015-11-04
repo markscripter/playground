@@ -1,0 +1,18 @@
+//-
+//- @page: JS Components
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author:
+//- @comments:
+//-
+include components/carousel.jade
+include components/form.jade
+include components/modal.jade
+
+mixin js-components()
+  section.component
+    h2.title(id="js-components") JS Components
+    +carousel()
+    +form()
+    +modal()
