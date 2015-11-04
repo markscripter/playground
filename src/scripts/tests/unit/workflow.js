@@ -32,8 +32,8 @@ const partThree = () => new Promise((resolve) => {
 const workflowTest = () => {
   test('workflow: workflow is an object', (assert) => new Promise((resolve) => {
     assert.ok(typeof workflow === 'object');
-    assert.ok(workflow.hasOwnProperty('runSync'), 'workflow: runSync() exists.');
-    assert.ok(workflow.hasOwnProperty('runAsync'), 'workflow: runAsync() exists.');
+    assert.ok(!!workflow.runSync, 'workflow: runSync() exists.');
+    assert.ok(!!workflow.runAsync, 'workflow: runAsync() exists.');
     resolve();
   }));
 

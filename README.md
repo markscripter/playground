@@ -14,12 +14,13 @@ First, you will need some items installed in order to build, run and serve this 
 
 After installing Node & NPM, install the NPM packages using these commands:
 
-    sudo npm i -g eslint        // installs eslint
     sudo npm i -g babel         // es6 - es5 stuff
     sudo npm i -g babel-core    // more babel stuff
     sudo npm i -g babel-eslint  // installs babel's plugin for eslint
-    sudo npm i -g gulp          // installs Gulp - a task runner for build tasks.
+    sudo npm i -g eslint        // installs eslint
     sudo npm i -g faucet        // installs Faucet - a text formatter for running tests.
+    sudo npm i -g gulp          // installs Gulp - a task runner for build tasks.
+    sudo npm i -g istanbul      // Test coverage tool
 
 
 This should setup your environment so you can build and run this project solution. The next step is to install all of the project's dependencies.
