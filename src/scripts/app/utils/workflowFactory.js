@@ -1,21 +1,21 @@
 import Promise from 'bluebird';  // our Promises library
 
 /**
- * @module Workflow Factory
- * @classdesc This object creates a workflow, using Promises.
+ * This object creates a workflow, using Promises.
+ * @module workflowFactory
  * @author Mark Scripter [mscripter@horizontalintegration.com]
  * @requires bluebird
+ * @returns {workflow} - A workflow object
  * @example
  * import workflowFactory from './workflow';
- * const workflow = workflowFactory();
  */
-const workflowFactory = () => {
+function workflowFactory() {
   /**
-   * @module workflow Object
-   * @classdesc This object creates a workflow, using Promises.
+   * This object creates a workflow, using Promises.
+   * @module workflow
    * @author Mark Scripter [mscripter@horizontalintegration.com]
-   * @requires
    * @example
+   * import workflowFactory from './workflow';
    * const workflow = workFlowFactory();
    */
   const workflow = {
@@ -33,7 +33,7 @@ const workflowFactory = () => {
     * // func 3 will fun. once completed,
     * // they will be returned
     */
-    runSync(tasks = [Promise.resolve]) {
+    runSync(tasks = [Promise.resolve()]) {
       const results = [];
       return Promise.resolve(tasks)
         .each((task) => task().then((res) => results.push(res)))
@@ -61,6 +61,6 @@ const workflowFactory = () => {
   };
 
   return workflow;
-};
+}
 
 export default workflowFactory;

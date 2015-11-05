@@ -1,5 +1,5 @@
 import unit from './unit';
-import functional from './functional';
+// import integration from './integration';
 
 unit();
-functional();
+// integration();

@@ -3,10 +3,10 @@ import browserSync from 'browser-sync';
 import combiner from 'stream-combiner2';
 import concat from 'gulp-concat';
 import cssMinify from 'gulp-minify-css';
+import documentation from 'gulp-documentation';
 import eslint from 'gulp-eslint';
 import glob from 'glob';
 import gulp from 'gulp';
-import esdoc from 'gulp-esdoc';
 import path from 'path';
 import prefix from 'gulp-autoprefixer';
 import R from 'ramda';
@@ -25,7 +25,7 @@ const PATHS = require('./config.json').paths;
 
 gulp.task('default', ['build', 'watch', 'server']);
 gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
-gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-jsdoc']);
+gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-docs']);
 gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup', 'styles-documentation']);
 
 gulp.task('templates', ['svg'], () => {
@@ -148,22 +148,16 @@ gulp.task('js-libraries', () => {
   ]);
 });
 
-gulp.task('js-jsdoc', () => {
-  return gulp.src([
-    path.join(__dirname, PATHS.javascript),
-  ])
-    .pipe(esdoc({
-      excludes: [
-        '_tests.js',
-        'bundle.js',
-      ],
-      destination: path.join(__dirname, PATHS.public, 'jsdocs/'),
-      scripts: [
-        path.join(__dirname, 'src/components/accordion/index.js'),
-        path.join(__dirname, 'src/components/carousel/index.js'),
-        path.join(__dirname, 'src/components/modal/index.js'),
-      ],
-    }));
+gulp.task('js-docs', () => {
+  glob(path.join(__dirname, PATHS.javascript, '/app/**/*.js'), {}, (err, pages) => {
+    gulp.src([
+      path.join(__dirname, PATHS.javascript, 'main.js'),
+      ...pages,
+    ])
+      .pipe(documentation({format: 'html'}))
+      .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'jsdocs/')));
+  });
+  return;
 });
 
 gulp.task('js-maps', () => {
@@ -232,7 +226,9 @@ gulp.task('watch', () => {
 
   gulp.watch([
     path.join(__dirname, PATHS.javascript, '*.js'),
-    path.join(__dirname, PATHS.components, '**/javascript/*.js'),
+    path.join(__dirname, PATHS.javascript, '**/*.js'),
+    path.join(__dirname, PATHS.javascript, '**/**/*.js'),
+    path.join(__dirname, PATHS.components, '**/*.js'),
   ], ['javascript'], () => browserSync.reload);
 
   gulp.watch([

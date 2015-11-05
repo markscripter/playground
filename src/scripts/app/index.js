@@ -3,11 +3,6 @@ import guid from './utils/guid';
 import dispatcher from './utils/dispatcher';
 
 /**
-* @private {Object} dispatch - Our dispatcher object
-*/
-
-
-/**
  * @class Hi
  * @classdesc The main application for HI Projects.
  * @author Mark Scripter [mscripter@horizontalintegration.com]

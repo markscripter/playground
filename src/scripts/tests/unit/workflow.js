@@ -1,4 +1,4 @@
-import workflowFactory from '../../app/utils/workflow';
+import workflowFactory from '../../app/utils/workflowFactory';
 import test from 'blue-tape';
 import Promise from 'bluebird';
 

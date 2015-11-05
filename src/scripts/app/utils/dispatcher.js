@@ -1,32 +1,33 @@
 import stores from '../stores';
 
 /**
+ * This object defines our dispatcher. It has a few methods & keys that extend onto a store implementation.
  * @module dispatcher
- * @classdesc This Object defines our dispatcher. It has a few methods & keys that extend a store implementation.
  * @author Mark Scripter [mscripter@horizontalintegration.com]
- * @requires 'stores'
+ * @requires stores
+ * @returns {dispatch} - A dispatcher object
  */
 const dispatcher = {
 
   /**
-  * @public {Object} stores - This stores all of our data stores which can be accessible through the dispatcher.
+  * This stores all of our data stores which can be accessible through the dispatcher.
+  * @public
   * @example
   * this.dispatcher.stores
   */
   stores: stores,
 
   /**
-  * This function creates an array of our stores keys this allows us to extend the observable that is attached to each store
-  * @param {object} stores - The store object we imported.
+  * Our internal stores, used to iterate through and call each store.
+  * @private
   */
   _stores: Object.keys(stores).map((key) => {
     return stores[key];
   }),
 
   /**
-  * This method is our 'on' facade for our stores.
-  * It goes through our _stores and calls each functions 'on' method.
-  * Usage: to add a listener for a given event.
+  * Our 'on' method which allows us to subscribe|listen to an event.
+  * @function on
   */
   on() {
     this._stores.forEach((el) => {
@@ -35,9 +36,8 @@ const dispatcher = {
   },
 
   /**
-  * This method is our 'one' facade for our stores.
-  * It goes through our _stores and calls each functions 'one' method.
-  * Usage:
+  * Our 'one' method which allows us to listen to an event, once.
+  * @function one
   */
   one() {
     this._stores.forEach((el) => {
@@ -46,9 +46,8 @@ const dispatcher = {
   },
 
   /**
-  * This method is our 'off' facade for our stores.
-  * It goes through our _stores and calls each functions 'off' method.
-  * Usage: to remove a listener for a given event.
+  * Our 'off' method which allows us to unsubscribe|unlisten to an event.
+  * @function off
   */
   off() {
     this._stores.forEach((el) => {
@@ -56,6 +55,10 @@ const dispatcher = {
     });
   },
 
+  /**
+  * Our 'trigger' method which allows us to trigger an event.
+  * @function trigger
+  */
   trigger() {
     this._stores.forEach((el) => {
       el.trigger.apply(null, [].slice.call(arguments));
