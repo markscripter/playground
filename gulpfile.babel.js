@@ -53,12 +53,27 @@ const report = () => {
     }));
 };
 
-gulp.task('default', ['build', 'watch', 'server']);
-gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
-gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-docs']);
-gulp.task('styleguide', ['styleguide-styles', 'styleguide-markup', 'styles-documentation']);
+gulp.task('default', ['build', 'serve']);
 
-gulp.task('templates', ['svg'], () => {
+gulp.task('build', ['styles', 'javascript', 'assets', 'templates']);
+gulp.task('serve', ['server']);
+
+gulp.task('assets', ['svg', 'fonts', 'assetFolder']);
+gulp.task('javascript', ['js-global', 'js-libraries', 'js-maps', 'js-docs', 'js-test']);
+gulp.task('styles', ['sass', 'styleguide-styles', 'styles-documentation']);
+gulp.task('templates', ['jade', 'styleguide-jade']);
+
+gulp.task('assetFolder', () => {
+  return gulp.src(path.join(__dirname, PATHS.assets, '**.*'))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'assets/')));
+});
+
+gulp.task('fonts', () => {
+  return gulp.src(path.join(__dirname, PATHS.fonts))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/fonts/')));
+});
+
+gulp.task('jade', () => {
   // get glob of pages
   glob(path.join(__dirname, PATHS.templates), {}, (err, pages) => {
     if (err) return;
@@ -79,60 +94,16 @@ gulp.task('templates', ['svg'], () => {
     .pipe(gulp.dest(path.join(__dirname, PATHS.public)));
 });
 
-gulp.task('styles', () => {
-  const globalCSS = PATHS.cssLibraries.map((filePath) => {
-    return path.join(__dirname, filePath);
+gulp.task('js-docs', () => {
+  glob(path.join(__dirname, PATHS.javascript, '/app/**/*.js'), {}, (err, pages) => {
+    gulp.src([
+      path.join(__dirname, PATHS.javascript, 'main.js'),
+      ...pages,
+    ])
+      .pipe(documentation({format: 'html'}))
+      .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'jsdocs/')));
   });
-  return gulp.src([
-    ...globalCSS,
-    path.join(__dirname, PATHS.styles, 'main.scss'),
-    path.join(__dirname, PATHS.components, '**/*.scss'),
-  ])
-    .pipe(sourcemaps.init())
-    .pipe(concat('stylesheet.scss'))
-    .pipe(sass({
-      includePaths: [path.join(__dirname, PATHS.styles)],
-    }))
-    .pipe(prefix({
-      browsers: ['last 4 versions'],
-      cascade: 'false',
-    }))
-    .pipe(cssMinify())
-    .pipe(rename('stylesheet.css'))
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
-});
-
-gulp.task('styles-documentation', () => {
-  gulp.src([
-    path.join(__dirname, PATHS.styles, 'global/**.scss'),
-    path.join(__dirname, PATHS.components, '**/*.scss'),
-    path.join(__dirname, PATHS.styles, 'global/**/*.scss'),
-  ])
-    .pipe(sassdoc());
-});
-
-gulp.task('styleguide-styles', ['svg'], () => {
-  return gulp.src(path.join(__dirname, PATHS.styleguide.styles))
-    .pipe(sass({
-      includePaths: [path.join(__dirname, PATHS.styles)],
-    }))
-    .pipe(rename('styleguide.css'))
-    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
-});
-
-gulp.task('styleguide-markup', ['svg'], () => {
-  const styleguideItems = PATHS.styleguide.templates.map((filePath) => {
-    return path.join(__dirname, filePath);
-  });
-
-  const data = require(path.join(__dirname, PATHS.styleguide.data));
-
-  return gulp.src(styleguideItems)
-    .pipe(templates({
-      locals: data,
-    }))
-    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'styleguide/')));
+  return;
 });
 
 gulp.task('js-global', () => {
@@ -178,18 +149,6 @@ gulp.task('js-libraries', () => {
   ]);
 });
 
-gulp.task('js-docs', () => {
-  glob(path.join(__dirname, PATHS.javascript, '/app/**/*.js'), {}, (err, pages) => {
-    gulp.src([
-      path.join(__dirname, PATHS.javascript, 'main.js'),
-      ...pages,
-    ])
-      .pipe(documentation({format: 'html'}))
-      .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'jsdocs/')));
-  });
-  return;
-});
-
 gulp.task('js-maps', () => {
   const maps = PATHS.jsMaps.map((filePath) => {
     return path.join(__dirname, filePath);
@@ -201,12 +160,68 @@ gulp.task('js-maps', () => {
 
 gulp.task('js-test', callbackSequence(instrument, test, report));
 
-gulp.task('server', () => {
+gulp.task('sass', () => {
+  const globalCSS = PATHS.cssLibraries.map((filePath) => {
+    return path.join(__dirname, filePath);
+  });
+  return gulp.src([
+    ...globalCSS,
+    path.join(__dirname, PATHS.styles, 'main.scss'),
+    path.join(__dirname, PATHS.components, '**/*.scss'),
+  ])
+    .pipe(sourcemaps.init())
+    .pipe(concat('stylesheet.scss'))
+    .pipe(sass({
+      includePaths: [path.join(__dirname, PATHS.styles)],
+    }))
+    .pipe(prefix({
+      browsers: ['last 4 versions'],
+      cascade: 'false',
+    }))
+    .pipe(cssMinify())
+    .pipe(rename('stylesheet.css'))
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
+});
+
+gulp.task('server', ['watch'], () => {
   browserSync({
     server: {
       baseDir: 'public',
     },
   });
+});
+
+gulp.task('styles-documentation', () => {
+  gulp.src([
+    path.join(__dirname, PATHS.styles, 'global/**.scss'),
+    path.join(__dirname, PATHS.components, '**/*.scss'),
+    path.join(__dirname, PATHS.styles, 'global/**/*.scss'),
+  ])
+    .pipe(sassdoc());
+});
+
+gulp.task('styleguide-styles', () => {
+  return gulp.src(path.join(__dirname, PATHS.styleguide.styles))
+    .pipe(sass({
+      includePaths: [path.join(__dirname, PATHS.styles)],
+    }))
+    .pipe(rename('styleguide.css'))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/')));
+});
+
+gulp.task('styleguide-jade', () => {
+  const styleguideItems = PATHS.styleguide.templates.map((filePath) => {
+    return path.join(__dirname, filePath);
+  });
+
+  const data = require(path.join(__dirname, PATHS.styleguide.data));
+
+  return gulp.src(styleguideItems)
+    .pipe(templates({
+      locals: data,
+    }))
+    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'styleguide/')));
 });
 
 gulp.task('svg', () => {
@@ -216,16 +231,6 @@ gulp.task('svg', () => {
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'svg/')))
     .pipe(rename('svg.min.jade'))
     .pipe(gulp.dest(path.join(__dirname, PATHS.svg)));
-});
-
-gulp.task('assets', () => {
-  return gulp.src(path.join(__dirname, PATHS.assets, '**.*'))
-    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'assets/')));
-});
-
-gulp.task('fonts', () => {
-  return gulp.src(path.join(__dirname, PATHS.fonts))
-    .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'css/fonts/')));
 });
 
 gulp.task('watch', () => {

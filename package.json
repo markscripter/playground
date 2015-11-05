@@ -71,8 +71,11 @@
     "url": "git://github.com/markscripter/playground.git"
   },
   "scripts": {
+    "build": "gulp build",
     "postinstall": "bower install",
-    "test": "babel-node src/scripts/tests | faucet"
+    "serve": "gulp serve",
+    "styles": "gulp styles",
+    "test": "gulp js-test"
   },
   "version": "0.0.0"
 }
