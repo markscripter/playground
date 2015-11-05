@@ -5,10 +5,9 @@ This is the Horizontal Integration (HI) FED Development Environment.
 First, you will need some items installed in order to build, run and serve this project locally. First, make sure your computer is setup to be working in this HI's environment. See: [FED Computer Setup](https://horizontal.atlassian.net/wiki/display/frontend/FED+Computer+Setup)
 
 ## Installation
-The recommended way is to fork this repo and do pull request to merge in changes. Once forked, run:
+The recommended way is to fork this repo and do pull request to merge in changes. Once forked and cloned locally, run:
 
     npm i       // installs all the node dependencies
-    bower i     // installs all the bower dependencies.
 
 This will grab the dependencies from the package.json file and install them.
 
@@ -37,9 +36,6 @@ The following are a list of build commands for this project.
     gulp svg                        // builds svg's
     gulp fonts                      // moves our fonts into the public folder
     gulp watch                      // watches our files and runs specific tasks based on the file change.
-
-
-
 
 ## Tests
 There are unit tests and functional tests.

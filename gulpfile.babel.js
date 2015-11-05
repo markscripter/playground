@@ -1,5 +1,6 @@
 import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
+import callbackSequence from 'callback-sequence';
 import combiner from 'stream-combiner2';
 import concat from 'gulp-concat';
 import cssMinify from 'gulp-minify-css';
@@ -7,6 +8,8 @@ import documentation from 'gulp-documentation';
 import eslint from 'gulp-eslint';
 import glob from 'glob';
 import gulp from 'gulp';
+const  isparta = require('isparta');
+import istanbul from 'gulp-istanbul';
 import path from 'path';
 import prefix from 'gulp-autoprefixer';
 import R from 'ramda';
@@ -16,12 +19,39 @@ import sassdoc from 'sassdoc';
 import sourcemaps from 'gulp-sourcemaps';
 import svgstore from 'gulp-svgstore';
 import svgmin from 'gulp-svgmin';
+import tape from 'gulp-tape';
 import templates  from 'gulp-jade';
 import uglify from 'gulp-uglify';
 import webpack from 'gulp-webpack';
 import wrapper from 'gulp-wrapper';
 
 const PATHS = require('./config.json').paths;
+
+// js-test callbacks
+const test = () => {
+  return gulp.src(path.join(__dirname, PATHS.javascript, '/tests/index.js'))
+    .pipe(tape());
+};
+
+const instrument = () => {
+  return gulp.src([
+    path.join(__dirname, PATHS.javascript, '/app/**/*.js'),
+    path.join(__dirname, PATHS.javascript, '/app/*.js'),
+  ])
+    .pipe(istanbul({
+      includeUntested: true,
+      instrumenter: isparta.Instrumenter,
+    }))
+    .pipe(istanbul.hookRequire({}));
+};
+
+const report = () => {
+  return gulp.src(path.join(__dirname, PATHS.javascript, '/tests/index.js'))
+    .pipe(istanbul.writeReports({
+      reporters: ['lcov', 'text'],
+      reportOpts: { dir: path.join(__dirname, PATHS.public, 'coverage') },
+    }));
+};
 
 gulp.task('default', ['build', 'watch', 'server']);
 gulp.task('build', ['styles', 'styleguide', 'javascript', 'assets', 'fonts', 'templates']);
@@ -168,6 +198,8 @@ gulp.task('js-maps', () => {
   return gulp.src(maps)
     .pipe(gulp.dest(path.join(__dirname, PATHS.public, 'js')));
 });
+
+gulp.task('js-test', callbackSequence(instrument, test, report));
 
 gulp.task('server', () => {
   browserSync({

@@ -6,27 +6,19 @@ const workflow = workflowFactory();
 
 // Tasks to run through
 const introduction = () => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(0);
-  }, 1000);
+  setTimeout(() => resolve(0), 1000);
 });
 
 const partOne = () => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(1);
-  }, 1000);
+  setTimeout(() => resolve(1), 1000);
 });
 
 const partTwo = () => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(2);
-  }, 1000);
+  setTimeout(() => resolve(2), 1000);
 });
 
 const partThree = () => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(3);
-  }, 1000);
+  setTimeout(() => resolve(3), 1000);
 });
 
 const workflowTest = () => {
@@ -51,7 +43,6 @@ const workflowTest = () => {
   }));
 
   test('workflow: runASync()', (assert) => new Promise((resolve) => {
-
     workflow.runAsync([introduction(), partOne(), partTwo(), partThree()]).then((results) => {
       assert.ok(results.length > 0, 'workflow: runAsync() returns more than 0 items');
       assert.ok(results.length === 4, 'workflow: runAsync() matches the length of promises.');
