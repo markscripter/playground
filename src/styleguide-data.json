@@ -10,6 +10,13 @@
         "children" : {
           "items" : [
             {
+              "text" : "Code",
+              "link" : {
+                "href" : "#code",
+                "target" : "_self"
+              }
+            },
+            {
               "text" : "Colors",
               "link" : {
                 "href" : "#colors",
@@ -24,9 +31,30 @@
               }
             },
             {
+              "text" : "Icons",
+              "link" : {
+                "href" : "#icons",
+                "target" : "_self"
+              }
+            },
+            {
               "text" : "Levels",
               "link" : {
                 "href" : "#levels",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Margin",
+              "link" : {
+                "href" : "#margin",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Padding",
+              "link" : {
+                "href" : "#padding",
                 "target" : "_self"
               }
             },
@@ -41,38 +69,6 @@
               "text" : "Typography",
               "link" : {
                 "href" : "#typography",
-                "target" : "_self"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "text" : "JS Components",
-        "link" : {
-          "href" : "#js-components",
-          "target" : "_self"
-        },
-        "children" : {
-          "items" : [
-            {
-              "text" : "Carousel",
-              "link" : {
-                "href" : "#carousel",
-                "target" : "_self"
-              }
-            },
-            {
-              "text" : "Form",
-              "link" : {
-                "href" : "#form",
-                "target" : "_self"
-              }
-            },
-            {
-              "text" : "Modal",
-              "link" : {
-                "href" : "#modal",
                 "target" : "_self"
               }
             }
@@ -123,9 +119,37 @@
               }
             },
             {
+              "text" : "Carousel",
+              "link" : {
+                "href" : "#carousel",
+                "target" : "_self"
+              }
+            },
+            {
               "text" : "Hero",
               "link" : {
                 "href" : "#hero",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Form",
+              "link" : {
+                "href" : "#form",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Modal",
+              "link" : {
+                "href" : "#modal",
+                "target" : "_self"
+              }
+            },
+            {
+              "text" : "Table",
+              "link" : {
+                "href" : "#table",
                 "target" : "_self"
               }
             }

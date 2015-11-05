@@ -244,7 +244,7 @@ gulp.task('watch', () => {
     path.join(__dirname, PATHS.styles, '**.scss'),
     path.join(__dirname, PATHS.styles, '**/**.scss'),
     path.join(__dirname, PATHS.components, '**/**.scss'),
-  ], ['styles', 'styleguide', 'styles-documentation'], () => browserSync.reload);
+  ], ['styles'], () => browserSync.reload);
 
   gulp.watch([
     path.join(__dirname, PATHS.templates),
@@ -252,6 +252,7 @@ gulp.task('watch', () => {
     path.join(__dirname, PATHS.components, '/**/markup/**.jade'),
     path.join(__dirname, PATHS.componentsData),
     path.join(__dirname, PATHS.data),
+    PATHS.styleguide.templates.map((itemPath) => path.join(__dirname, itemPath)),
   ], ['templates'], () => browserSync.reload);
 
   gulp.watch(
@@ -259,7 +260,7 @@ gulp.task('watch', () => {
     R.map((fp) => {
       return path.join(__dirname, fp);
     }, PATHS.styleguide.templates)),
-  ['styleguide'], () => browserSync.reload);
+  ['styleguide-styles'], () => browserSync.reload);
 
   gulp.watch([
     path.join(__dirname, PATHS.javascript, '*.js'),

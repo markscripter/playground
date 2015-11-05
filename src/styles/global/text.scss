@@ -6,7 +6,16 @@
 // unstyled elements
 abbr {}
 cite {}
-code {}
+code {
+  background-color: $gray-lighter;
+  border: 1px solid $black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: $black;
+  display: block;
+  margin-top: $margin-vertical--small;
+  padding: 3px 5px;
+}
 data {}
 dd {}
 dfn {}
@@ -16,6 +25,19 @@ dt {}
 em {}
 hr {}
 i {}
+kbd {
+  background-color: $gray-lighter;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: $black;
+  padding: 2px 4px;
+
+  &:before {
+    content: "\203A";
+    display: inline;
+    margin-right: 5px;
+  }
+}
 main {}
 mark {}
 p {
