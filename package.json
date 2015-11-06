@@ -21,6 +21,7 @@
     "blue-tape": "^0.1.10",
     "bluebird": "^3.0.2",
     "browser-sync": "^2.8.2",
+    "callback-sequence": "^1.3.2",
     "documentation": "^3.0.3",
     "eslint": "^1.0.0",
     "eslint-plugin-react": "^3.2.0",
@@ -33,6 +34,7 @@
     "gulp-documentation": "^2.0.0",
     "gulp-esdoc": "0.0.4",
     "gulp-eslint": "^1.0.0",
+    "gulp-istanbul": "^0.10.2",
     "gulp-jade": "^1.1.0",
     "gulp-minify-css": "^1.2.0",
     "gulp-rename": "^1.2.2",
@@ -40,10 +42,11 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.4",
+    "gulp-tape": "0.0.5",
     "gulp-uglify": "^1.2.0",
     "gulp-webpack": "^1.5.0",
     "gulp-wrapper": "^1.0.0",
-    "istanbul": "^0.4.0",
+    "isparta": "^3.5.1",
     "jade": "^1.11.0",
     "jsdoc": "^3.3.2",
     "nightwatch": "^0.8.6",
@@ -52,6 +55,7 @@
     "sass": "^0.5.0",
     "sassdoc": "^2.1.15",
     "stream-combiner2": "^1.0.2",
+    "tap-spec": "^4.1.0",
     "tape": "^4.2.2",
     "vash": "^0.9.3",
     "velocity-animate": "^1.2.3",
@@ -67,9 +71,11 @@
     "url": "git://github.com/markscripter/playground.git"
   },
   "scripts": {
-    "boweri": "bower i",
-    "npmi": "npm i",
-    "test": "babel-node src/scripts/tests | faucet"
+    "build": "gulp build",
+    "postinstall": "bower install",
+    "serve": "gulp serve",
+    "styles": "gulp styles",
+    "test": "gulp js-test"
   },
   "version": "0.0.0"
 }
