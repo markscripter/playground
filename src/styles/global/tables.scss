@@ -1,16 +1,40 @@
 ////
-/// Tabel Elements
+/// Table Elements
 /// @group tabel
 /// @author Mark Scripter - mscripter@horizontalintegration.com
 
-// unstyled elements
 caption {}
+
 col {}
+
 colgroup {}
-table {}
+
+table {
+  border: 1px solid $black;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 tbody {}
-td {}
+
+td {
+  border: 1px solid $gray;
+  box-sizing: border-box;
+  padding: $padding-vertical--small $padding-horizontal--small;
+  text-align: left;
+}
+
 tfoot {}
-th {}
+
+th {
+  border: 1px solid $black;
+  box-sizing: border-box;
+  background-color: $gray-lighter;
+  color: $black;
+  padding: $padding-vertical--small $padding-horizontal--small;
+  text-align: left;
+}
+
 thead {}
+
 tr {}

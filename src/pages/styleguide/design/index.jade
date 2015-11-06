@@ -6,17 +6,25 @@
 //- @author:
 //- @comments:
 //-
+include components/code.jade
 include components/colors.jade
 include components/headings.jade
+include components/icons.jade
 include components/levels.jade
+include components/margin.jade
+include components/padding.jade
 include components/paragraphs.jade
 include components/typography.jade
 
 mixin design()
   section.component
     h2.title(id="design") Design Components
+    +code()
     +colors()
     +headings()
+    +icons()
     +levels()
+    +margin()
+    +padding()
     +paragraphs()
     +typography()
