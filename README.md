@@ -1,9 +1,3 @@
-#  FED Environment
-This is the Horizontal Integration (HI) FED Development Environment.
-
-## Setup
-First, you will need some items installed in order to build, run and serve this project locally. First, make sure your computer is setup to be working in this HI's environment. See: [FED Computer Setup](https://horizontal.atlassian.net/wiki/display/frontend/FED+Computer+Setup)
-
 ## Installation
 The recommended way is to fork this repo and do pull request to merge in changes. Once forked and cloned locally, run:
 
