@@ -32,7 +32,7 @@
       "templates": [
         "/src/pages/styleguide/index.jade",
         "/src/pages/styleguide/**/index.jade",
-        "/src/pages/styleguide/**/**/**.jade"
+        "/src/pages/styleguide/**/**.jade"
       ]
     },
     "styles": "/src/styles/",

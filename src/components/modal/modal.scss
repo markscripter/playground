@@ -1,0 +1,41 @@
+.modal {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+
+  &-box {
+    background-color: $white;
+    border: 10px solid #00477d;
+    box-sizing: border-box;
+    margin: 5vh auto;
+    max-width: 640px;
+    padding: 20px;
+    position: relative;
+    width: 90vw;
+    z-index: 90;
+  }
+
+  .content {}
+
+  .close {
+    background-color: #00477d;
+    color:$white;
+    padding: 4px 8px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    z-index: 100;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 80;
+  }
+}

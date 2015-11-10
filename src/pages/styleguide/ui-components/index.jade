@@ -10,13 +10,21 @@ include components/animations.jade
 include components/badges.jade
 include components/buttons.jade
 include components/cards.jade
+include components/carousel.jade
+include components/form.jade
 include components/hero.jade
+include components/modal.jade
+include components/tables.jade
 
 mixin ui-components()
   section.component
     h2.title(id="ui-components") UI Components
     +animations()
     +badges()
+    +carousel()
     +buttons()
     +cards()
+    +form()
     +hero()
+    +modal()
+    +table()

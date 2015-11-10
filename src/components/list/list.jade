@@ -11,7 +11,7 @@ mixin list(data)
       each item in data.items
         li(class=(item.children ? 'had-children' : ''))
           if item.link
-            a(href="#{item.link.href}" target="(item.link.target ? item.link.target : '_self')") #{item.text}
+            a(href="#{item.link.href}" target=(item.link.target ? item.link.target : '_self')) #{item.text}
           else
             #{item.text}
           if item.children

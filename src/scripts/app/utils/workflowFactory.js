@@ -1,21 +1,21 @@
 import Promise from 'bluebird';  // our Promises library
 
 /**
- * @module Workflow Factory
- * @classdesc This object creates a workflow, using Promises.
+ * This object creates a workflow, using Promises.
+ * @module workflowFactory
  * @author Mark Scripter [mscripter@horizontalintegration.com]
  * @requires bluebird
+ * @returns {workflow} - A workflow object
  * @example
- * import workflowFactory from './workflow';
- * const workflow = workflowFactory();
+ * import workflowFactory from './workflowFactory';
  */
-const workflowFactory = () => {
+function workflowFactory() {
   /**
-   * @module workflow Object
-   * @classdesc This object creates a workflow, using Promises.
+   * This object creates a workflow, using Promises.
+   * @module workflow
    * @author Mark Scripter [mscripter@horizontalintegration.com]
-   * @requires
    * @example
+   * import workflowFactory from './workflowFactory';
    * const workflow = workFlowFactory();
    */
   const workflow = {
@@ -33,7 +33,7 @@ const workflowFactory = () => {
     * // func 3 will fun. once completed,
     * // they will be returned
     */
-    runSync(tasks = [Promise.resolve]) {
+    runSync(tasks = [Promise.resolve()]) {
       const results = [];
       return Promise.resolve(tasks)
         .each((task) => task().then((res) => results.push(res)))
@@ -46,7 +46,7 @@ const workflowFactory = () => {
     * need to be completed before continuing.
     * @param {Array} tasks - An array of functions that return a promise.
     * @example
-    * workflow.async([PromiseFunc(), PromiseFunc(), PromiseFunc()]);
+    * workflow.async([PromiseFunc, PromiseFunc, PromiseFunc]);
     * // func 1 will be triggered
     * // func 2 will be triggered
     * // func 3 will be triggered
@@ -54,13 +54,14 @@ const workflowFactory = () => {
     * // it will check and keep count of how many of the tasks were completed.
     * // once all are done, they will be returned.
     */
-    runAsync(tasks = [Promise.resolve()]) {
-      return Promise.all(tasks);
+    runAsync(tasks = [Promise.resolve]) {
+      const taskPromises = tasks.map(task => task());
+      return Promise.all(taskPromises);
     },
 
   };
 
   return workflow;
-};
+}
 
 export default workflowFactory;

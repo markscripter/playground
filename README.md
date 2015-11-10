@@ -1,34 +1,13 @@
-#  Playground
-This is a playground.
+#  FED Environment
+This is the Horizontal Integration (HI) FED Development Environment.
 
 ## Setup
-First, you will need some items installed in order to build, run and serve this project locally. You will need:
+First, you will need some items installed in order to build, run and serve this project locally. First, make sure your computer is setup to be working in this HI's environment. See: [FED Computer Setup](https://horizontal.atlassian.net/wiki/display/frontend/FED+Computer+Setup)
 
-### Node & NPM
-- [Node.JS](http://nodejs.org/) & [NPM](https://www.npmjs.com/) - Note: NPM installs with Node
-
-### NPM Packages
-- [Gulp](https://www.npmjs.com/package/gulp) - This is used for building our project.
-- [Eslint](https://www.npmjs.com/package/eslint) - This is used for enforcing a coding standard and providing errors/warnings.
-- [Babel-Eslint](https://www.npmjs.com/package/babel-eslint) - Support for ES6 | ES2015 | Harmony | whatever it's called.
-
-After installing Node & NPM, install the NPM packages using these commands:
-
-    sudo npm i -g babel         // es6 - es5 stuff
-    sudo npm i -g babel-core    // more babel stuff
-    sudo npm i -g babel-eslint  // installs babel's plugin for eslint
-    sudo npm i -g eslint        // installs eslint
-    sudo npm i -g faucet        // installs Faucet - a text formatter for running tests.
-    sudo npm i -g gulp          // installs Gulp - a task runner for build tasks.
-    sudo npm i -g istanbul      // Test coverage tool
-
-
-This should setup your environment so you can build and run this project solution. The next step is to install all of the project's dependencies.
-
-To do this, run:
+## Installation
+The recommended way is to fork this repo and do pull request to merge in changes. Once forked and cloned locally, run:
 
     npm i       // installs all the node dependencies
-    bower i     // installs all the bower dependencies.
 
 This will grab the dependencies from the package.json file and install them.
 
@@ -36,22 +15,32 @@ This will grab the dependencies from the package.json file and install them.
 The following are a list of build commands for this project.
 
     // GLOBAL COMMANDS
-    gulp build      // this will build jade, less, javascript, svg's tasks
-    gulp serve      // this runs the 'build' command and also serves a local server instance
-    gulp javascript // this builds out all of the javascript tasks
+    gulp                            // the default gulp runner. It will run the the build, watch, and server tasks.
+    gulp build                      // builds the styles, styleguide, javascript, assets, fonts, and templates tasks.
+    gulp serve                      // serves our static environment
+
+    // GROUP TASKS
+    gulp assets                     // moves all of our assets into the public directory for use.
+    gulp javascript                 // builds out all of the js-global, js-libraries, js-maps, js-docs, and the js-test tasks
+    gulp styles                     // builds out the all of our styles
+    gulp templates                  // builds out all our templates, including the styleguide
 
     // SPECIFIC TASKS
-    gulp es6-babel      // builds out the express file so it can be ran in nodes es5 environment
-    gulp jade           // builds jade templates
-    gulp styles         // builds less files
-    gulp js-global      // builds the global javascript files
-    gulp js-libraries   // builds the third party javascript files and concats them into 1 file
-    gulp js-components  // builds and concats all of the javascript components into 1 file
-    gulp js-jsdoc       // builds out the JSDOCS
-    gulp js-maps        // moves the javascript map files into the public directory for use
-    gulp server         // runs a local server instance
-    gulp styleguide     // builds out the styleguide items
-    gulp svg            // builds svg's
+    gulp assetFolder                // moves our assets into the public folder
+    gulp fonts                      // moves our fonts into the public folder
+    gulp jade                       // builds out our jade templates (not styleguide)
+    gulp js-docs                    // builds out the our JavaScript documentation
+    gulp js-global                  // builds out our global javascript files
+    gulp js-libraries               // builds out our third party javascript files and concats them into 1 file
+    gulp js-maps                    // moves the javascript map files into the public directory for use
+    gulp js-test                    // runs our testing framework and compiles a coverage report
+    gulp sass                       // builds out our sass styles
+    gulp server                     // runs a local server instance
+    gulp styles-documentation       // builds out our sass documentation
+    gulp styleguide-styles          // builds out our styleguide stylesheet
+    gulp styleguide-jade            // builds out our styleguide templates
+    gulp svg                        // builds svg's
+    gulp watch                      // watches our files and runs specific tasks based on the file change.
 
 ## Tests
 There are unit tests and functional tests.

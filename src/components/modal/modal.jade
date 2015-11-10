@@ -5,5 +5,10 @@
 //- @author:
 //- @comments:
 //-
-mixin modal()
-  .modal
+mixin modal(data)
+  .modal(class=(data.class ? '#{data.class}' : ''))
+    .overlay
+    .modal-box
+      .close
+        i.fa.fa-times
+      .content
