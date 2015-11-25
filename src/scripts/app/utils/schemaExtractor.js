@@ -84,7 +84,10 @@ const schemaExtractor = {
              a.order > b.order ?  1 : 0;
     });
 
-    schema.map((curr) => typeof data[curr.key] === curr.type || Array.isArray(data[curr.key]) ? schemaArr.push(data[curr.key]) : 0);
+    schema.map((curr) =>
+      typeof data[curr.key] === curr.type || Array.isArray(data[curr.key]) ?
+        schemaArr.push(data[curr.key]) :
+        0);
 
     return schemaArr;
   },
