@@ -1,0 +1,13 @@
+/*
+Swatch Component
+
+A swatch component, typically used for colors
+
+Styleguide: 6.7
+*/
+.c-swatch {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--light-grey);
+  border-radius: var(--radius);
+}

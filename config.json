@@ -1,41 +1,20 @@
 {
   "paths": {
-    "assets" : "/src/assets/",
-    "components": "/src/components/",
-    "componentsData" : "/src/components/**/**.json",
-    "cssLibraries": [
-      "/bower_components/normalize.css/normalize.css",
-      "/bower_components/slick-carousel/slick/slick.css"
-    ],
-    "data" : "/src/site-data.json",
-    "fonts" : "/src/styles/global/fonts/*.*",
-    "index" : "/src/pages/index.jade",
-    "javascript": "/src/scripts/",
-    "jsLibraries" : [
-      "/node_modules/ramda/dist/ramda.min.js",
-      "/bower_components/scrollReveal.js/dist/scrollReveal.min.js",
-      "/bower_components/jquery/dist/jquery.min.js",
-      "/bower_components/jquery-colorbox/jquery.colorbox-min.js",
-      "/bower_components/picturefill/dist/picturefill.min.js",
-      "/bower_components/slick-carousel/slick/slick.min.js",
-      "/bower_components/modernizr/modernizr.js"
-    ],
-    "jsMaps" : [
-      "/bower_components/jquery/dist/jquery.min.map"
-    ],
-    "logs": "/logs/",
-    "templates": "/src/pages/templates/**.*",
-    "public": "/public/",
+    "assets": "src/assets/",
+    "components": "src/components/",
+    "componentsData": "src/components/**/**.json",
+    "data": "src/site-data.json",
+    "index": "src/pages/index.jade",
+    "javascript": "src/scripts/",
+    "templates": "src/pages/templates/**.*",
+    "public": "public/",
     "styleguide": {
-      "data" : "/src/styleguide-data.json",
-      "styles": "/src/styles/styleguide.scss",
-      "templates": [
-        "/src/pages/styleguide/index.jade",
-        "/src/pages/styleguide/**/index.jade",
-        "/src/pages/styleguide/**/**.jade"
-      ]
+      "data": "src/styleguide-data.json",
+      "styles": "src/styles/_themes/styleguide.css",
+      "templates": "src/styleguide/index.jade",
+      "generator": "src/styleguide/"
     },
-    "styles": "/src/styles/",
-    "svg": "/src/svg/"
+    "styles": "src/styles/",
+    "svg": "src/svg/"
   }
 }

@@ -1,0 +1,118 @@
+/*
+Global
+
+Global tasks such as normalization, css reset and clearfix stuff.
+
+Styleguide: 1
+*/
+@import './_global/g_normalize.css';
+@import './_global/g_reset.css';
+@import './_global/g_clearfix.css';
+@import './_global/g_box-sizing.css';
+
+/*
+Settings
+
+CSS custom properties, media queries, and other pieces of code which do not directly output CSS classes themselves.
+
+Styleguide: 3
+*/
+@import './settings/animations.css';
+@import './settings/breakpoints.css';
+@import './settings/colors.css';
+@import './settings/margin.css';
+@import './settings/padding.css';
+@import './settings/settings.css';
+@import './settings/typography.css';
+
+/*
+Animations
+
+Selection of CSS animations using keystrokes. They can be used as class names or as actual animation names.
+
+Styleguide: 2
+*/
+@import './_animations/a_fade.css';
+@import './_animations/a_hinge.css';
+@import './_animations/a_level.css';
+@import './_animations/a_shake.css';
+@import './_animations/a_spin.css';
+
+/*
+Elements
+
+These are highly generic styles that should rarely, if ever, be altered, due to the breadth of their implementation. No classes are defined within these styles
+
+Styleguide: 4
+*/
+@import './elements/e_forms.css';
+@import './elements/e_headings.css';
+@import './elements/e_links.css';
+@import './elements/e_lists.css';
+@import './elements/e_media.css';
+@import './elements/e_sectioning.css';
+@import './elements/e_svg.css';
+@import './elements/e_tables.css';
+@import './elements/e_text.css';
+
+/*
+Objects
+
+Context-agnostic classes that serve to define high-level structure and layout; this includes grid structures and the media object. Object classes use the o- namespace.
+
+Styleguide: 5
+*/
+@import './objects/o_errors.css';
+@import './objects/o_layout.css';
+@import './objects/o_media.css';
+@import './objects/o_wrapper.css';
+
+/*
+Components
+
+Context-specific classes that generate distinct components of an interface (for example, buttons). Components use the c- namespace.
+
+Styleguide: 6
+*/
+@import '../components/buttons/c_buttons.css';
+@import '../components/card/c_card.css';
+@import '../components/carousel/c_carousel.css';
+@import '../components/media/c_media.css';
+@import '../components/menu/c_menu.css';
+@import '../components/page-title/c_page-title.css';
+@import '../components/swatch/c_swatch.css';
+
+/*
+Utilities
+
+Structure- and layout-related classes that do one thing extremely well. These styles are highly granular, and can be combined with surface classes (see below) to construct ‘generic’ UI objects.
+
+Styleguide: 7
+*/
+@import './utilities/u_align-center.css';
+@import './utilities/u_display.css';
+@import './utilities/u_float.css';
+@import './utilities/u_grid.css';
+@import './utilities/u_margin.css';
+@import './utilities/u_padding.css';
+@import './utilities/u_position.css';
+
+
+
+/*
+Visual
+
+Similar to utilities, but focused on surface- (or ‘skin’)-level styles as opposed to structural/layout styles, like colours or font settings. Surface classes use the s- namespace.
+
+Styleguide: 8
+*/
+@import './visual/v_borders.css';
+@import './visual/v_colors.css';
+@import './visual/v_links.css';
+@import './visual/v_text.css';
+@import './visual/v_zIndex.css';
+
+/*
+  SITE THEME FILE
+*/
+@import './_themes/site.css';

@@ -1,0 +1,28 @@
+/*
+Margins
+
+The list of margin variables available for use.
+
+--mv         - Base vertical margin
+--mv-s       - Small vertical margin
+--mv-l       - Large vertical margin
+--mh         - Base horizontal margin
+--mh-s       - Small horizontal margin
+--mh-l       - Large horizontal margin
+
+Markup:
+| margin: var(--mv) var(--mh)
+| margin: var(--mv-s) var(--mh-s)
+| margin: var(--mv-l) var(--mh-l)
+
+Styleguide: 3.5
+*/
+:root {
+  --mv: 0px;
+  --mv-s: 15px;
+  --mv-l: 45px;
+
+  --mh: 2.5%;
+  --mh-s: 1%;
+  --mh-l: 5%;
+}

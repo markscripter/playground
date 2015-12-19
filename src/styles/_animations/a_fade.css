@@ -1,0 +1,48 @@
+/*
+fade
+
+fade animations using keyframes
+
+.fade-in    - fade-in class
+.fade-out   - fade-out class
+
+Markup: div(class="#{modifier_class}")
+
+Example: true
+
+Styleguide: 2.1
+*/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in;
+  animation-timing-function: linear;
+  opacity: 1;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-out;
+  animation-timing-function: linear;
+  opacity: 0;
+}

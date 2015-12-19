@@ -1,0 +1,47 @@
+/*
+spin
+
+spin animations using keyframes
+
+.spin-cw      - spin-cw class
+.spin-ccw     - spin-ccw class
+
+Markup: div(class="#{modifier_class}")
+
+Styleguide: 2.5
+*/
+@keyframes spin-cw {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: center center;
+  }
+}
+
+.spin-cw {
+  animation-duration: var(--animation-speed);
+  animation-name: spin-cw;
+  animation-timing-function: ease-in;
+}
+
+@keyframes spin-ccw {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+
+  to {
+    transform: rotate(-360deg);
+    transform-origin: center center;
+  }
+}
+
+.spin-ccw {
+  animation-duration: var(--animation-speed);
+  animation-name: spin-ccw;
+  animation-timing-function: ease-in;
+}

@@ -1,13 +1,8 @@
-import Hi from './app/index.js';
-import Accordion from '../components/accordion';
-import Modal from '../components/modal';
-import Carousel from '../components/carousel';
-import Form from '../components/form';
+import app from './app';
+import Menu from '../components/menu';
+import dispatcher from './app/utils/dispatcher';
+import APP_EVENTS from './app/events/appEvents';
 
-const app = new Hi();
-
-// register modules
-app.registerModule(Accordion);
-app.registerModule(Modal);
-app.registerModule(Carousel);
-app.registerModule(Form);
+dispatcher.on(APP_EVENTS.APP_STARTED, () => {
+  app.registerModule(Menu);
+});

@@ -1,0 +1,15 @@
+/*
+Box Sizing
+
+Generic styles that help adhear to the box-sizing:border-box model..
+
+Styleguide: 1.2
+*/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,17 @@
+/*
+Animations
+
+The list of animation variables available for use.
+
+--animation-speed  - The animation speed: .35s
+
+Markup:
+| .cssClass {
+|   animation-duration: var(--animation-speed);
+| }
+
+Styleguide: 3.1
+*/
+:root {
+  --animation-speed: .35s;
+}

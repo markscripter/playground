@@ -1,0 +1,81 @@
+/*
+Margin
+
+Margin classes that use the settings variables
+
+.u-m        - Base margin (vertical & horizontal) | var(--mv);
+.u-m-s      - Small margin (vertical & horizontal) | var(--mv-s);
+.u-m-l      - Large margin (vertical & horizontal) | var(--mv-l);
+.u-mv       - Base margin (vertical) | var(--mv);
+.u-mv-s     - Small margin (vertical) | var(--mv-s);
+.u-mv-l     - Large margin (vertical) | var(--mv-l);
+.u-mh       - Base margin (horizontal) | var(--mh);
+.u-mh-s     - Small margin (horizontal) | var(--mh-s);
+.u-mh-l     - Large margin (horizontal) | var(--mh-l);
+.u-mt0      - margin-top: var(--mv);
+.u-mt1      - margin-top: var(--mv-s);
+.u-mt2      - margin-top: var(--mv-l);
+.u-mb0      - margin-bottom: var(--mv);
+.u-mb1      - margin-bottom: var(--mv-s);
+.u-mb2      - margin-bottom: var(--mv-l);
+.u-ml0      - margin-left: var(--mh);
+.u-ml1      - margin-left: var(--mh-s);
+.u-ml2      - margin-left: var(--mh-l);
+.u-mr0      - margin-right: var(--mh);
+.u-mr1      - margin-right: var(--mh-s);
+.u-mr2      - margin-right: var(--mh-l);
+
+Markup: div(class="#{modifier_class}" title="#{modifier_class}") #{modifier_description}
+
+Styleguide: 7.5
+*/
+.u-m-s {
+  margin-top: var(--mv-s);
+  margin-bottom: var(--mv-s);
+  margin-left: var(--mh-s);
+  margin-right: var(--mh-s);
+}
+
+.u-m {
+  margin-top: var(--mv);
+  margin-bottom: var(--mv);
+  margin-left: var(--mh);
+  margin-right: var(--mh);
+}
+
+.u-m-l {
+  margin-top: var(--mv-l);
+  margin-bottom: var(--mv-l);
+  margin-left: var(--mh-l);
+  margin-right: var(--mh-l);
+}
+
+.u-mv-s {
+  margin-top: var(--mv-s);
+  margin-bottom: var(--mv-s);
+}
+
+.u-mv {
+  margin-top: var(--mv);
+  margin-bottom: var(--mv);
+}
+
+.u-mv-l {
+  margin-top: var(--mv-l);
+  margin-bottom: var(--mv-l);
+}
+
+.u-mh-s {
+  margin-left: var(--mh-s);
+  margin-right: var(--mh-s);
+}
+
+.u-mh {
+  margin-left: var(--mh);
+  margin-right: var(--mh);
+}
+
+.u-mh-l {
+  margin-left: var(--mh-l);
+  margin-right: var(--mh-l);
+}

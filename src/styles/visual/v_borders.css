@@ -1,0 +1,121 @@
+/*
+Borders
+
+Border style classes.
+
+.v-b0            - Base border (vertical & horizontal) | 1px solid var(--light-grey);
+.v-b1            - First level border (vertical & horizontal) | 3px solid var(--light-grey);
+.v-b2            - Second level border (vertical & horizontal) | 5px solid var(--light-grey);
+.v-bv0           - Base border (vertical) | 1px solid var(--light-grey);
+.v-bv1           - First level border (vertical) | 3px solid var(--light-grey);
+.v-bv2           - Second level border (vertical) | 5px solid var(--light-grey);
+.v-bh0           - Base border (horizontal) | 1px solid var(--light-grey);
+.v-bh1           - First level border (horizontal) | 3px solid var(--light-grey);
+.v-bh2           - Second level border (horizontal) | 5px solid var(--light-grey);
+.v-bl0           - Base border (left) | 1px solid var(--light-grey);
+.v-bl1           - First level border (left) | 3px solid var(--light-grey);
+.v-bl2           - Second level border (left) | 5px solid var(--light-grey);
+.v-br0           - Base border (right) | 1px solid var(--light-grey);
+.v-br1           - First level border (right) | 3px solid var(--light-grey);
+.v-br2           - Second level border (right) | 5px solid var(--light-grey);
+.v-bt0           - Base border (top) | 1px solid var(--light-grey);
+.v-bt1           - First level border (top) | 3px solid var(--light-grey);
+.v-bt2           - Second level border (top) | 5px solid var(--light-grey);
+.v-bb0           - Base border (bottom) | 1px solid var(--light-grey);
+.v-bb1           - First level border (bottom) | 3px solid var(--light-grey);
+.v-bb2           - Second level border (bottom) | 5px solid var(--light-grey);
+
+Markup: div(class="c-swatch #{modifier_class}")
+
+Styleguide: 8.1
+*/
+
+.v-b0 {
+  border: 1px solid var(--light-grey);
+}
+
+.v-b1 {
+  border: 3px solid var(--light-grey);
+}
+
+.v-b2 {
+  border: 5px solid var(--light-grey);
+}
+
+.v-bv0 {
+  border-top: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.v-bv1 {
+  border-top: 3px solid var(--light-grey);
+  border-bottom: 3px solid var(--light-grey);
+}
+
+.v-bv2 {
+  border-top: 5px solid var(--light-grey);
+  border-bottom: 5px solid var(--light-grey);
+}
+
+.v-bh0 {
+  border-left: 1px solid var(--light-grey);
+  border-right: 1px solid var(--light-grey);
+}
+
+.v-bh1 {
+  border-left: 3px solid var(--light-grey);
+  border-right: 3px solid var(--light-grey);
+}
+
+.v-bh2 {
+  border-left: 5px solid var(--light-grey);
+  border-right: 5px solid var(--light-grey);
+}
+
+.v-bl0 {
+  border-left: 1px solid var(--light-grey);
+}
+
+.v-bl1 {
+  border-left: 3px solid var(--light-grey);
+}
+
+.v-bl2 {
+  border-left: 5px solid var(--light-grey);
+}
+
+.v-br0 {
+  border-right: 1px solid var(--light-grey);
+}
+
+.v-br1 {
+  border-right: 3px solid var(--light-grey);
+}
+
+.v-br2 {
+  border-right: 5px solid var(--light-grey);
+}
+
+.v-bt0 {
+  border-top: 1px solid var(--light-grey);
+}
+
+.v-bt1 {
+  border-top: 3px solid var(--light-grey);
+}
+
+.v-bt2 {
+  border-top: 5px solid var(--light-grey);
+}
+
+.v-bb0 {
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.v-bb1 {
+  border-bottom: 3px solid var(--light-grey);
+}
+
+.v-bb2 {
+  border-bottom: 5px solid var(--light-grey);
+}

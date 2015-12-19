@@ -1,0 +1,104 @@
+//-
+//- @layout: Styleguide
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author: Mark Scripter
+//- @comments:
+//-
+
+doctype html
+html(lang="en")
+  head
+    title Project Title | Style Guide
+
+    meta(charset="utf-8")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    != styles
+    link(media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" rel="stylesheet")
+    
+    link(media="all" href="/css/styleguide.css" type="text/css" rel="stylesheet")
+
+  body
+    .svg-store
+      include ../svg/svg.min.jade
+    
+    .menu(data-module="menu" data-settings='')
+      .trigger
+        svg.menu-icon
+          rect.top(y="0" x="0")
+          rect.middle(y="10" x="0")
+          rect.bottom(y="20" x="0")
+      .menu-wrapper
+        .menu-overflow
+          nav.menu-list
+            ul.list
+              each root in helpers.eachRoot()
+                li(class=(helpers.hasChildren(root.reference) ? 'has-children' : ''))
+                  a(href="section-#{root.referenceURI}.html")
+                    | #{root.header}
+                    if helpers.hasChildren(root.reference)
+                      .icon-arrow
+                        i.fa.fa-arrow-right
+                  if helpers.hasChildren(root.reference)
+                    ul.list
+                      each section in helpers.eachSection(root.reference)
+                        if helpers.ifDepth(2, section)
+                          li
+                            a(href='section-#{root.referenceURI}.html#ref-#{section.referenceURI}')
+                              | #{section.header}
+
+    header.o-wrapper
+      .branding
+        a(href="./")
+          svg.logo
+            use(xlink:href="#logo")
+        h1.title style guide
+
+    article.o-wrapper
+      if homepage
+        section.u-mv-l.u-ph-s(id="section-0") !{homepage}
+      else
+        each section in helpers.eachSection(rootName)
+          section.u-mv-l.u-ph-s(id="ref-#{section.referenceURI}")
+            h2 #{section.header}
+
+            if section.description
+              | !{section.description}
+            
+            if section.license
+              span.v-text-callout.u-block !{section.license}
+              
+            if section.modifiers.length
+              .v-b0.u-p-s
+                p Options:
+                ul
+                  each modifier in helpers.eachModifier(section)
+                    li.u-mv-s
+                      span.u-br1.u-pr1 #{modifier.name}
+                      | #{modifier.description}
+                
+              each modifier in helpers.eachModifier(section)
+                .v-b0.u-mv-s.u-ph-s.u-pb1
+                  p #{modifier.name} - <span class="modifier_descriptions">#{modifier.description}</span>
+                  if section.markup
+                    pre
+                      code.hljs= helpers.markup(modifier)
+                    if section.example
+                      .live-example
+                        p Example
+                        span !{helpers.markup(modifier)}
+
+    footer.o-wrapper
+      p.legal &copy; Mark Scripter 2015
+        
+      
+    != scripts
+    script(async src="//cdn.rawgit.com/scottjehl/picturefill/master/dist/picturefill.min.js")
+    script(async src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+    script(async src="/js/main.min.js" type="text/javascript")
+    script. 
+      hljs.initHighlightingOnLoad();
+    != scripts

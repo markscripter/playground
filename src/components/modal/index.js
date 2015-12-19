@@ -1,7 +1,8 @@
+import velocity from 'velocity-animate';
 /**
  * Instantiate's a modal window.
  * @module modalFactory
- * @author Mark Scripter [mscripter@horizontalintegration.com]
+ * @author Mark Scripter [markscript@gmail.com]
  * @param {object} settingsObj - A settings object for a given instance of a modal.
  * @requires Velocity, R
  * @returns {modal} - A modal object.
@@ -17,18 +18,16 @@ const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) 
   *   target: document.querySelector,
   * }
   */
-  const state = settingsObj;
+  const { target } = settingsObj;
 
   /**
    * A modal object.
    * @module modal
-   * @author Mark Scripter [mscripter@horizontalintegration.com]
    * @example
    * import modalFactory from './components/modal';
    * const modal = modalFactory();
    */
   const modal = {
-
     /**
     * The open() method will open the modal by looking at state.target
     * @return {boolean} true
@@ -36,7 +35,7 @@ const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) 
     * modal.open()
     */
     open() {
-      return $(state.target).velocity('fadeIn', {duration: 350}) ? 1 : 0;
+      return velocity(target, 'fadeIn', {duration: 350}) ? 1 : 0;
     },
 
     /**
@@ -46,7 +45,8 @@ const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) 
     * modal.close()
     */
     close() {
-      return $(state.target).velocity('fadeOut', {duration: 350}) ? 1 : 0;
+      setTimeout(() => modal.renderContent(''), 500);
+      return velocity(target, 'fadeOut', {duration: 350}) ? 1 : 0;
     },
 
     /**
@@ -56,18 +56,17 @@ const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) 
     * modal.renderContent(template)
     */
     renderContent(content) {
-      state.target.querySelector('.content').innerHTML = content;
-      return true;
+      return new Promise((resolve, reject) => {
+        try {
+          target.querySelector('.content').innerHTML = content;
+          resolve();
+        } catch (e) {
+          console.log('renderContent Error', e);
+          reject(e);
+        }
+      });
     },
   };
-
-  // events for closing the modal window
-  // - close button
-  state.target.querySelector('.close').addEventListener('click', () => modal.close());
-  state.target.querySelector('.close').addEventListener('touch', () => modal.close());
-  // - overlay container
-  state.target.querySelector('.overlay').addEventListener('click', () => modal.close());
-  state.target.querySelector('.overlay').addEventListener('touch', () => modal.close());
 
   return modal;
 };

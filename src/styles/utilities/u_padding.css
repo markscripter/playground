@@ -1,0 +1,128 @@
+/*
+Padding
+
+Padding classes that use the settings variables
+
+.u-p        - Base padding (vertical & horizontal) | var(--pv);
+.u-p-s      - Small padding (vertical & horizontal) | var(--pv-s);
+.u-p-l      - Large padding (vertical & horizontal) | var(--pv-l);
+.u-pv       - Base padding (vertical) | var(--pv);
+.u-pv-s     - Small padding (vertical) | var(--pv-s);
+.u-pv-l     - Large padding (vertical) | var(--pv-l);
+.u-ph       - Base padding (horizontal) | var(--ph);
+.u-ph-s     - Small padding (horizontal) | var(--ph-s);
+.u-ph-l     - Large padding (horizontal) | var(--ph-l);
+.u-pt0      - padding-top: var(--pv);
+.u-pt1      - padding-top: var(--pv-s);
+.u-pt2      - padding-top: var(--pv-l);
+.u-pb0      - padding-bottom: var(--pv);
+.u-pb1      - padding-bottom: var(--pv-s);
+.u-pb2      - padding-bottom: var(--pv-l);
+.u-pl0      - padding-left: var(--ph);
+.u-pl1      - padding-left: var(--ph-s);
+.u-pl2      - padding-left: var(--ph-l);
+.u-pr0      - padding-right: var(--ph);
+.u-pr1      - padding-right: var(--ph-s);
+.u-pr2      - padding-right: var(--ph-l);
+
+Markup: div(class="#{modifier_class}" title="#{modifier_class}") #{modifier_description}
+
+Styleguide: 7.6
+*/
+.u-p {
+  padding-top: var(--pv);
+  padding-bottom: var(--pv);
+  padding-left: var(--ph);
+  padding-right: var(--ph);
+}
+
+.u-p-s {
+  padding-top: var(--pv-s);
+  padding-bottom: var(--pv-s);
+  padding-left: var(--ph-s);
+  padding-right: var(--ph-s);
+}
+
+.u-p-l {
+  padding-top: var(--pv-l);
+  padding-bottom: var(--pv-l);
+  padding-left: var(--ph-l);
+  padding-right: var(--ph-l);
+}
+
+.u-pv {
+  padding-top: var(--pv);
+  padding-bottom: var(--pv);
+}
+
+.u-pv-s {
+  padding-top: var(--pv-s);
+  padding-bottom: var(--pv-s);
+}
+
+.u-pv-l {
+  padding-top: var(--pv-l);
+  padding-bottom: var(--pv-l);
+}
+
+.u-ph {
+  padding-left: var(--ph);
+  padding-right: var(--ph);
+}
+
+.u-ph-s {
+  padding-left: var(--ph-s);
+  padding-right: var(--ph-s);
+}
+
+.u-ph-l {
+  padding-left: var(--ph-l);
+  padding-right: var(--ph-l);
+}
+
+.u-pt0 {
+  padding-top: var(--pv);
+}
+
+.u-pt1 {
+  padding-top: var(--pv-s);
+}
+
+.u-pt2 {
+  padding-top: var(--pv-l);
+}
+
+.u-pb0 {
+  padding-bottom: var(--pv);
+}
+.u-pb1 {
+  padding-bottom: var(--pv-s);
+}
+
+.u-pb2 {
+  padding-bottom: var(--pv-l);
+}
+
+.u-pl0 {
+  padding-left: var(--ph);
+}
+
+.u-pl1 {
+  padding-left: var(--ph-s);
+}
+
+.u-pl2 {
+  padding-left: var(--ph-l);
+}
+
+.u-pr0 {
+  padding-right: var(--ph);
+}
+
+.u-pr1 {
+  padding-right: var(--ph-s);
+}
+
+.u-pr2 {
+  padding-right: var(--ph-l);
+}

@@ -1,0 +1,44 @@
+/*
+Tables Elements
+
+Base styles for the tables elements.
+
+Styleguide: 4.8
+*/
+caption {}
+
+col {}
+
+colgroup {}
+
+table {
+  border: 1px solid var(--black);
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+tbody {}
+
+td {
+  border: 1px solid var(--grey);
+  box-sizing: border-box;
+  padding: var(--pv-s);
+  text-align: left;
+}
+
+tfoot {}
+
+th {
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  background-color: var(--light-grey);
+  color: var(--black);
+  padding: var(--ph-s);
+  text-align: left;
+}
+
+thead {}
+
+tr {}

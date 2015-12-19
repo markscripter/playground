@@ -1,0 +1,39 @@
+/*
+Display
+
+Display classes
+
+.u-inline            - display: inline;
+.u-inline-block      - display: inline-block;
+.u-block             - display: block;
+.u-none              - display: none;
+.u-table             - display: table;
+.u-table-row         - display: table-row;
+.u-table-cell        - display: table-cell;
+
+Markup: div(class="#{modifier_class}" title="#{modifier_class}") #{modifier_description}
+
+Styleguide: 7.2
+*/
+
+.u-inline {
+  display: inline;
+}
+.u-inline-block {
+  display: inline-block;
+}
+.u-block {
+  display: block;
+}
+.u-none {
+  display: none;
+}
+.u-table {
+  display: table;
+}
+.u-table-row {
+  display: table-row;
+}
+.u-table-cell {
+  display: table-cell;
+}

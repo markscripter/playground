@@ -1,93 +1,47 @@
-import Promise from 'bluebird';  // our Promises library
-
 /**
- * @module schemaExtractor Object
- * @classdesc
- * @author Mark Scripter [mscripter@horizontalintegration.com]
- * @requires bluebird
+ * A schema extraction function, given a schema and data.
+ * @module schemaExtractor
+ * @author Mark Scripter [markscript@gmail.com]
+ * @param {function} extractFn - A function that returns a destructured schema
+ * @param {object} data - A JSON object typically returned from a JSON endpoint
+ * @requires R
+ * @returns {function} R.curry(schemaExtractor);
  * @example
- * import schemaExtractor from './schemaExtractor';
+ *  import schemaExtractor from './schemaExtractor';
+ *
+ *  const schemaExtraction = (data) => {
+ *    const {introduction, videos, fail, pass} = data;
+ *    return [introduction, videos, fail, pass];
+ *  };
+ *
+ *  const data = {
+ *    introduction: "intro text",
+ *    videos: [
+ *      {
+ *        id: 0,
+ *        src: "/url/to/src"
+ *      },
+ *      {
+ *        id: 1,
+ *        src: "/url/to/src"
+ *      }
+ *    ],
+ *    fail: "fail text",
+ *    pass: "pass text"
+ *  }
+ *
+ *  const runExtraction = schemaExtractor(schemaExtraction);
+ *  const results = runExtraction(data);
+ *  results.then((res)=>{
+ *    console.log(res); // outputs: ["intro text", [{id: 0, src: "/url/to/src"}, {id: 1, src: "/url/to/src"}], "fail text", "pass text"]
+ *  });
  */
-const schemaExtractor = {
-  /**
-  * extract()
-  * @desc
-  * @param {object} data - a JSON data object to go through
-  * @param {array} schema - An array of schema objects to use.
-  * @return {array} - An array of items from 'data' that adhears to the given 'schema'
-  * @example
-  * import schemaExtractor from './schemaExtractor';
-  * const data = {
-  *   introduction: {
-  *     text: "some text"
-  *   },
-  *   videos: [
-  *     {
-  *       url: "/path/to/src"
-  *     }.
-  *     {
-  *       url: "/path/to/src"
-  *     },
-  *     {
-  *       url: "/path/to/src"
-  *     }
-  *   ],
-  *   fail: {
-  *     text: "some text"
-  *   }
-  * };
-  * const schema = [
-  *   {
-  *     order: 1,
-  *     key: 'introduction',
-  *     value: 'first',
-  *     type: 'object',
-  *   },
-  *   {
-  *     order: 2,
-  *     key: 'videos',
-  *     value: 'sequence',
-  *     type: 'array',
-  *   },
-  *   {
-  *     order: 3,
-  *     key: 'fail',
-  *     value: 'last',
-  *     type: 'object',
-  *   },
-  * ];
-  * const results = schemaExtractor.extract(data, schema);
-  * console.log(results); // outputs: [
-  *   {
-  *     text: "some text"
-  *   },
-  *   [
-  *     {
-  *       url: "/path/to/src"
-  *     }.
-  *     {
-  *       url: "/path/to/src"
-  *     },
-  *     {
-  *       url: "/path/to/src"
-  *     }
-  *   ],
-  *   {
-  *     text: "some text"
-  *   }
-  * ]
-  */
-  extract(data, schema = []) {
-    const schemaArr = [];
-    schema.sort((a, b) => {
-      return a.order < b.order ? -1 :
-             a.order > b.order ?  1 : 0;
-    });
-
-    schema.map((curr) => typeof data[curr.key] === curr.type || Array.isArray(data[curr.key]) ? schemaArr.push(data[curr.key]) : 0);
-
-    return schemaArr;
-  },
-};
+const schemaExtractor =
+  xfn =>
+    data =>
+      new Promise((resolve, reject) => {
+        const res = xfn(data);
+        return res.length ? resolve(res) : reject(new Error('schema Extractor issue'));
+      });
 
 export default schemaExtractor;

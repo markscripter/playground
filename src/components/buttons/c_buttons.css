@@ -1,0 +1,39 @@
+/*
+c-btn
+
+.c-btn Description
+
+.c-btn-purple       - a purple button
+.c-btn-red          - a red button
+
+Markup:
+button(class="c-btn #{modifier_class}") #{modifier_description}
+
+Example: true
+
+Styleguide: 6.2
+*/
+
+.c-btn {
+  display: inline-block;
+  padding: var(--pv-s) var(--pv-s);
+  text-decoration: none;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: var(--radius);
+  transition: background-color 0.2s;
+}
+
+.c-btn:hover,
+.c-btn:focus {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.c-btn-purple {
+  background-color: purple;
+}
+
+.c-btn-red {
+  background-color: red;
+}

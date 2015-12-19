@@ -1,0 +1,79 @@
+/*
+Position
+
+Position classes
+
+.u-static       -  position: static;
+.u-relative     -  position: relative;
+.u-absolute     -  position: absolute;
+.u-fixed        -  position: fixed;
+.u-sticky       -  position: sticky;
+.u-t0           -  top: 0;
+.u-b0           -  bottom: 0;
+.u-l0           -  left: 0;
+.u-r0           -  right: 0;
+.u-t1           -  top: var(--mv-s);
+.u-b1           -  bottom: var(--mv-s);
+.u-l1           -  left: var(--mh-s);
+.u-r1           -  right: var(--mh-s);
+.u-t2           -  top: var(--mv-l);
+.u-b2           -  bottom: var(--mv-l);
+.u-l2           -  left: var(--mh-l);
+.u-r2           -  right: var(--mh-l);
+
+Markup: div(class="#{modifier_class}" title="#{modifier_class}") #{modifier_description}
+
+Styleguide: 7.7
+*/
+
+.u-static {
+  position: static;
+}
+.u-relative {
+  position: relative;
+}
+.u-absolute {
+  position: absolute;
+}
+.u-fixed {
+  position: fixed;
+}
+.u-sticky {
+  position: sticky;
+}
+.u-t0 {
+  top: 0;
+}
+.u-b0 {
+  bottom: 0;
+}
+.u-l0 {
+  left: 0;
+}
+.u-r0 {
+  right: 0;
+}
+.u-t1 {
+  top: var(--mv-s);
+}
+.u-b1 {
+  bottom: var(--mv-s);
+}
+.u-l1 {
+  left: var(--mh-s);
+}
+.u-r1 {
+  right: var(--mh-s);
+}
+.u-t2 {
+  top: var(--mv-l);
+}
+.u-b2 {
+  bottom: var(--mv-l);
+}
+.u-l2 {
+  left: var(--mh-l);
+}
+.u-r2 {
+  right: var(--mh-l);
+}

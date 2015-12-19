@@ -1,0 +1,16 @@
+/*
+Error Objects
+
+Error variables & definitions.
+
+.o-error    - The Error object.
+
+Markup:
+| div(class="#{modifier_class}")
+
+Styleguide: 5.1
+*/
+
+.o-error {
+  color: var(--error);
+}

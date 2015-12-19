@@ -1,0 +1,14 @@
+/*
+Global Settings
+
+The list of global variables available for use.
+
+--base-spacing-unit   - the base spacing unit for the website.
+--radius         - the base radius for the website.
+
+Styleguide: 3.7
+*/
+:root {
+  --base-spacing-unit: var(--line-height);
+  --radius: 3px;
+}

@@ -1,0 +1,21 @@
+/*
+Links Elements
+
+Base styles for the links elements.
+
+Styleguide: 4.3
+*/
+
+a {
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--black);
+}
+
+a:active,
+a:focus {
+  color: var(--blue);
+}

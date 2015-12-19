@@ -1,0 +1,30 @@
+/*
+c-page-title
+
+.c-page-title class
+
+__main   - Main page title.
+__sub    - Secondary page title.
+
+Styleguide: 6.8
+*/
+
+.c-page-title {
+  margin-bottom:  var(--base-spacing-unit);
+  border-bottom: 1px solid var(--grey);
+}
+
+.c-page-title__main {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+.c-page-title__sub {
+  font-size: 1.5em;
+  line-height: 1.25em;
+}
+
+.c-page-title__main,
+.c-page-title__sub {
+  font-weight: normal;
+  margin-bottom: 0;
+}

@@ -1,0 +1,161 @@
+/*
+hinge
+
+hinge animations using keyframes
+
+.hinge-top - class
+.hinge-bottom - class
+.hinge-right - class
+.hinge-left - class
+.hinge-middle-bottom - class
+.hinge-middle-top - class
+.hinge-middle-left - class
+.hinge-middle-right - class
+
+Markup: div(class="#{modifier_class}")
+
+Styleguide: 2.2
+*/
+@keyframes hinge-top {
+  from {
+    transform: perspective(2000px) rotateX(-90deg);
+    transform-origin: top;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: top;
+  }
+}
+
+.hinge-top {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-top;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-bottom {
+  from {
+    transform: perspective(2000px) rotateX(90deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: bottom;
+  }
+}
+
+.hinge-bottom {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-bottom;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-right {
+  from {
+    transform: perspective(2000px) rotateY(90deg);
+    transform-origin: right;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: right;
+  }
+}
+
+.hinge-right {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-right;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-left {
+  from {
+    transform: perspective(2000px) rotateY(-90deg);
+    transform-origin: left;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: left;
+  }
+}
+
+.hinge-left {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-left;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-middle-bottom {
+  from {
+    transform: perspective(2000px) rotateX(-90deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: center;
+  }
+}
+
+.hinge-middle-bottom {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-middle-bottom;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-middle-top {
+  from {
+    transform: perspective(2000px) rotateX(90deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: center;
+  }
+}
+
+.hinge-middle-top {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-middle-top;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-middle-left {
+  from {
+    transform: perspective(2000px) rotateY(-90deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: center;
+  }
+}
+
+.hinge-middle-left {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-middle-left;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hinge-middle-right {
+  from {
+    transform: perspective(2000px) rotateY(90deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform: perspective(2000px) rotate(0deg);
+    transform-origin: center;
+  }
+}
+
+.hinge-middle-right {
+  animation-duration: var(--animation-speed);
+  animation-name: fade-in, hinge-middle-right;
+  animation-timing-function: ease-in;
+}

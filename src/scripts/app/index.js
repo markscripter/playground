@@ -1,55 +1,92 @@
-// import R from 'ramda';
-import guid from './utils/guid';
+import R from 'ramda';
+import riot from 'riot';
 import dispatcher from './utils/dispatcher';
+import APP_EVENTS from './events/appEvents';
+
+// cache is for an internal cache of modules.
+// This is used to restore a module if needed.
+const cache = {};
+
+// registeredModules holds all modules that have been registered
+// with the application.
+const registeredModules = {};
 
 /**
- * @class Hi
- * @classdesc The main application for HI Projects.
- * @author Mark Scripter [mscripter@horizontalintegration.com]
+* Takes an key and checks to see if it is registered within our registeredModules.
+* @param {string} key - The name of the module you want to verify.
+* @returns {boolean} boolean - Returns true if found, otherwise false.
+*/
+function objectContains(object) {
+  return R.curry((obj, name) => R.has(name, obj))(object);
+}
+
+/**
+* Takes an key and checks to see if it is registered within our registeredModules.
+* @param {string} key - The name of the module you want to verify.
+* @returns {boolean} boolean - Returns true if registered, otherwise false.
+*/
+function isRegistered(key) {
+  return objectContains(registeredModules || {})(key);
+}
+
+/**
+* Takes an key and checks to see if it is cached  within our application.
+* @param {string} key - The name of the module you want to verify.
+* @returns {boolean} boolean - Returns true if registered, otherwise false.
+*/
+function isCached(key) {
+  return objectContains(cache || {})(key);
+}
+
+/**
+* Takes a module that's referenced on the DOM, verifies the module is registered and instantiates it.
+* @param {object} module - The DOM element to instantiate a module from.
+* @returns
+*/
+function instantiateModules(module) {
+  const moduleName = module.getAttribute('data-module');
+  isRegistered(moduleName) ?
+    registeredModules[moduleName]({target: module}) :
+    0;
+}
+
+/**
+* A method that get's an array of modules, by name, from the DOM, iterates through the array and calls instantiateModules for each item.
+* @param {string} key - The name of the module you want to wireup.
+* @returns
+*/
+function wireupModule(key) {
+  // run handlers and enhancers
+  R.forEach(instantiateModules, document.querySelectorAll('[data-module="' + key + '"]'));
+}
+
+/**
+ * The main application for HI Projects.
+ * @module Hi
+ * @author Mark Scripter [markscript@gmail.com]
  * @requires 'ramda'
- * @requires './utils/guid'
+ * @requires './utils/dispatcher'
  */
-class Hi {
-
-  /**
-  * This is the constructor method for the Hi class.
-  */
-  constructor() {
-    // this.cache is for an internal cache of modules.
-    // This is used to restore a module if needed.
-    this.cache = {};
-    this.channels = {};
-
-    // this.registeredModules holds all modules that have been registered with the application.
-    this.registeredModules = {};
-
-    // this.dispatch is the main dispatch used throughout the application.
-    // it allows us to send messages (subscribe/publish) and pass data along with it.
-    this.dispatcher = dispatcher;
-  }
-
-  /**
-  * This method takes a module, registers it if it doesn't exist and then wires up any DOM item that references the module.
-  * @param {object} module - The module we want to register.
-  * @returns
-  */
+const app = {
   registerModule(module) {
     const name = module.name.toLowerCase();
-    if (!this.isRegistered(name)) {
-      this.registeredModules[name] = module;
 
+    if (!isRegistered(name)) {
       // if our module is not cached,
-      // Cache it,
-      // otherwise continue.
-      !this.isCached(name) ? this.cache[name] = module : 1;
+      if (!isCached(name)) {
+        // Cache it,
+        cache[name] = module;
 
-      this.wireupModule(name);
-    } else {
-      // module is registered
-      // wireup any new instances that were added to the DOM
-      this.wireupModule(name);
+        // register module
+        registeredModules[name] = module;
+      } else {
+        // otherwise if it is cached, use cached module.
+        registeredModules[name] = cache[name];
+      }
     }
-  }
+
+    wireupModule(name);
+  },
 
   /**
   * This method takes a module, and unregisters it from the application.
@@ -58,87 +95,16 @@ class Hi {
   */
   unregisterModule(module) {
     const name = module.name.toLowerCase();
-    if (this.isRegistered(name)) {
-      delete this.registeredModules[name];
-    }
-  }
+    isRegistered(name) ?
+      (delete registeredModules[name], 1) :
+      0;
+  },
+};
 
-  /**
-  * Takes an key and checks to see if it is registered within our registeredModules.
-  * @param {string} key - The name of the module you want to verify.
-  * @returns {boolean} boolean - Returns true if registered, otherwise false.
-  */
-  isRegistered(key) {
-    return R.curry((registered, item) => {
-      return R.has(item, registered);
-    })(this.registeredModules || {})(key);
-  }
+window.onload = () => {
+  dispatcher.trigger(APP_EVENTS.APP_STARTED);
+  riot.route('/', () => console.log('homepage'));
+  riot.route.start(true);
+};
 
-  /**
-  * Takes an key and checks to see if it is cached  within our application.
-  * @param {string} key - The name of the module you want to verify.
-  * @returns {boolean} boolean - Returns true if registered, otherwise false.
-  */
-  isCached(key) {
-    return R.curry((registered, item) => {
-      return R.has(item, registered);
-    })(this.cache || {})(key);
-  }
-
-  /**
-  * Takes a module that's referenced on the DOM, verifies the module is registered and instantiates it.
-  * @param {object} module - The DOM element to instantiate a module from.
-  * @returns
-  */
-  instantiateModules(module) {
-    const moduleName = module.getAttribute('data-module');
-    if (this.isRegistered(moduleName)) {
-      this.registeredModules[moduleName]({target: module, id: guid()});
-    }
-  }
-
-  /**
-  * A method that get's an array of modules, by name, from the DOM, iterates through the array and calls instantiateModules for each item.
-  * @param {string} key - The name of the module you want to wireup.
-  * @returns
-  */
-  wireupModule(key) {
-    // run handlers and enhancers
-    R.forEach(this.instantiateModules.bind(this), document.querySelectorAll('[data-module="' + key + '"]'));
-  }
-
-  /**
-  *
-  * @param {object} module -
-  * @returns
-  */
-  installTo(obj) {
-    obj.subscribe = this.subscribe;
-    obj.publish = this.publish;
-  }
-
-  /**
-  * :
-  * @param {object} module -
-  * @returns
-  */
-  subscribe(channel, callback) {
-    if (!this.channels[channel]) this.channels[channel] = [];
-    this.channels[channel].push({context: this, receive: callback});
-    return this;
-  }
-
-  /**
-  * :
-  * @param {object} module -
-  * @returns
-  */
-  publish(channel, data) {
-    if (!this.channels[channel]) return false;
-    this.channels[channel].forEach((subscriber) => {
-      subscriber.receive(subscriber.context, data);
-    });
-  }
-}
-
-export default Hi;
+export default app;

@@ -1,0 +1,28 @@
+/*
+Paddings
+
+The list of padding variables available for use.
+
+--pv         - Base vertical padding
+--pv-s       - Small vertical padding
+--pv-l       - Large vertical padding
+--ph         - Base horizontal padding
+--ph-s       - Small horizontal padding
+--ph-l       - Large horizontal padding
+
+Markup:
+| padding: var(--pv) var(--ph)
+| padding: var(--pv-s) var(--ph-s)
+| padding: var(--pv-l) var(--ph-l)
+
+Styleguide: 3.6
+*/
+:root {
+  --pv: 0px;
+  --pv-s: 15px;
+  --pv-l: 45px;
+
+  --ph: 2.5%;
+  --ph-s: 1%;
+  --ph-l: 5%;
+}

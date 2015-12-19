@@ -1,0 +1,40 @@
+/*
+Sectioning Elements
+
+Base styles for the sectioning elements.
+
+Styleguide: 4.6
+*/
+address {}
+
+article {}
+
+body {
+  background-color: var(--white);
+  color: var(--grey);
+  font-family: var(--sans-serif);
+  font-size: var(--font-size);
+  font-weight: normal;
+  line-height: 1.5em;
+  margin: 0px;
+  overflow-x: hidden;
+  padding: 0px;
+  text-rendering: optimizeLegibility;
+  width: 100vw;
+}
+
+footer {}
+
+header {}
+
+html {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  padding-bottom: 0;
+  background-color: var(--white);
+  color: var(--grey);
+}
+
+nav {}
+
+section {}
