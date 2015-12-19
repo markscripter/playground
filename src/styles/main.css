@@ -76,9 +76,6 @@ Styleguide: 6
 */
 @import '../components/buttons/c_buttons.css';
 @import '../components/card/c_card.css';
-@import '../components/carousel/c_carousel.css';
-@import '../components/media/c_media.css';
-@import '../components/menu/c_menu.css';
 @import '../components/page-title/c_page-title.css';
 @import '../components/swatch/c_swatch.css';
 

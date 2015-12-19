@@ -100,13 +100,13 @@ gulp.task('jade-index', () => {
 });
 
 gulp.task('js-docs', () => {
-  const jspages = glob(PATHS.javascript + '/app/**/*.js', (err, pages) => err ? [] : pages);
+  const jspages = glob(PATHS.javascript + 'app/**/*.js', (err, pages) => err ? [] : pages);
 
   return gulp.src([
     PATHS.javascript + 'main.js',
     ...jspages,
   ])
-    .pipe(documentation({format: 'html'}))
+    // .pipe(documentation({format: 'html'}))
     .pipe(gulp.dest(PATHS.public + 'jsdocs/'));
 });
 
