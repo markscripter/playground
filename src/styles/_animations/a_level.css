@@ -1,0 +1,79 @@
+/*
+level
+
+.level        - level class
+.level1       - level1 class
+.level2       - level2 class
+.level3       - level3 class
+.level4       - level4 class
+.level5       - level5 class
+.level-up     - level-up class
+.level-down   - level-down class
+
+Markup: div(class="c-swatch #{modifier_class}")
+
+Styleguide: 2.3
+*/
+.level {
+  box-shadow: 0;
+  transition: var(--animation-speed) box-shadow;
+}
+
+.level1 {
+  box-shadow: 0 0 2px 1px var(--light-grey);
+  transition: var(--animation-speed) box-shadow;
+}
+
+.level2 {
+  box-shadow: 0 0 4px 1px var(--light-grey);
+  transition: var(--animation-speed) box-shadow;
+}
+
+.level3 {
+  box-shadow: 0 0 6px 1px var(--light-grey);
+  transition: var(--animation-speed) box-shadow;
+}
+
+.level4 {
+  box-shadow: 0 0 8px 1.5px var(--light-grey);
+  transition: var(--animation-speed) box-shadow;
+}
+
+.level5 {
+  box-shadow: 0 0 10px 2px var(--light-grey);
+  transition: var(--animation-speed) box-shadow;
+}
+
+@keyframes level-up {
+  from {
+    box-shadow: 0 0 2px 1px var(--light-grey);
+  }
+
+  to {
+    box-shadow: 0 0 10px 2px var(--light-grey);
+  }
+}
+
+.level-up {
+  animation-duration: var(--animation-speed);
+  animation-name: level-up;
+  animation-timing-function: ease-in;
+  box-shadow: 0 0 10px 2px var(--light-grey);
+}
+
+@keyframes level-down {
+  from {
+    box-shadow: 0 0 10px 2px var(--light-grey);
+  }
+
+  to {
+    box-shadow: 0 0 2px 1px var(--light-grey);
+  }
+}
+
+.level-down{
+  animation-duration: var(--animation-speed);
+  animation-name: level-down;
+  animation-timing-function: ease-in;
+  box-shadow: 0 0 2px 1px var(--light-grey);
+}

@@ -1,0 +1,14 @@
+/*
+m-align-center
+
+.m-align-center   - a class that centers an element.
+
+Markup: div(class="#{modifier_class}" title="#{modifier_class}") #{modifier_description}
+
+Styleguide: 7.1
+*/
+.m-align-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

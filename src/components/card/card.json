@@ -1,17 +1,1 @@
-[
-  {
-    "type" : "paragraph",
-    "content" : {
-      "paragraph" : "test"
-    }
-  },
-  {
-    "type" : "image",
-    "content" : {
-      "image" : {
-        "src" : "",
-        "alt" : ""
-      }
-    }
-  }
-]
+{}

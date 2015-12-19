@@ -1,0 +1,70 @@
+/*
+Colors
+
+Text and background colors
+
+.v-white            - #ffffff
+.v-bg-white         - #ffffff
+.v-black            - #000000
+.v-bg-black         - #000000
+.v-grey             - #575757
+.v-bg-grey          - #575757
+.v-light-grey       - #e4e4e4
+.v-bg-light-grey    - #e4e4e4
+.v-blue             - #0598B2
+.v-bg-blue          - #0598B2
+.v-pink             - #d51167
+.v-bg-pink          - #d51167
+
+Markup: div(class="c-swatch #{modifier_class}" title="#{modifier_class}: #{modifier_description}")
+
+Styleguide: 8.2
+*/
+
+.v-white {
+  color: var(--white);
+}
+
+.v-bg-white {
+  background-color: var(--white);
+}
+
+.v-black {
+  color: var(--black);
+}
+
+.v-bg-black {
+  background-color: var(--black);
+}
+
+.v-grey {
+  color: var(--grey);
+}
+
+.v-bg-grey {
+  background-color: var(--grey);
+}
+
+.v-light-grey {
+  color: var(--light-grey);
+}
+
+.v-bg-light-grey {
+  background-color: var(--light-grey);
+}
+
+.v-blue {
+  color: var(--blue);
+}
+
+.v-bg-blue  {
+  background-color: var(--blue);
+}
+
+.v-pink {
+  color: var(--pink);
+}
+
+.v-bg-pink  {
+  background-color: var(--pink);
+}

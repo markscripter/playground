@@ -1,0 +1,39 @@
+/*
+Z-Index
+
+Z-Index Layers
+
+.v-zn1           - Z-index level = -1
+.v-z             - Z-index level = 0
+.v-z1            - Z-index level = 1
+.v-z2            - Z-index level = 2
+.v-z3            - Z-index level = 3
+.v-z4            - Z-index level = 4
+.v-z5            - Z-index level = 5
+
+Markup: div(href="#" class="#{modifier_class}") #{modifier_description}
+
+Styleguide: 8.5
+*/
+
+.v-zn1 {
+  z-index: -1;
+}
+.v-z {
+  z-index: 0;
+}
+.v-z1 {
+  z-index: 1;
+}
+.v-z2 {
+  z-index: 2;
+}
+.v-z3 {
+  z-index: 3;
+}
+.v-z4 {
+  z-index: 4;
+}
+.v-z5 {
+  z-index: 5;
+}

@@ -1,0 +1,73 @@
+/*
+Heading Elements
+
+Base styles for the heading elements.
+
+Markup:
+<h1>h1</h1>
+<div class="heading-one">.heading-one</div>
+<h2>h2</h2>
+<div class="heading-two">.heading-two</div>
+<h3>h3</h3>
+<div class="heading-three">.heading-three</div>
+<h4>h4</h4>
+<div class="heading-four">.heading-four</div>
+<h5>h5</h5>
+<div class="heading-five">.heading-five</div>
+<h6>h6</h6>
+<div class="heading-six">.heading-six</div>
+
+Styleguide: 4.2
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: var(--sans-serif);
+  padding: 0;
+  line-height: 1.5em;
+  text-rendering: optimizeLegibility;
+  vertical-align: middle;
+}
+
+h1,
+.heading-one {
+  font-size: 2em;
+  font-family: RalewayBlack;
+}
+
+h2,
+.heading-two {
+  font-size: 1.5em;
+  font-family: RalewayBlack;
+}
+
+h3,
+.heading-three {
+  font-size: 1.25em;
+  font-family: RalewayMedium;
+}
+
+h4,
+.heading-four {
+  font-size: 1.125em;
+}
+
+h5,
+.heading-five {
+  font-size: 1em;
+}
+
+h6,
+.heading-six {
+  font-size: 1em;
+}
+
+hgroup {
+  margin: 0;
+  padding: 0;
+}

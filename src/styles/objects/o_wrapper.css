@@ -1,0 +1,14 @@
+/*
+Wrapper Object
+
+A generic wrapper
+
+Styleguide: 5.4
+*/
+.o-wrapper {
+    max-width: 940px;
+    margin-right: auto;
+    margin-left:  auto;
+    padding-right: 10px;
+    padding-left:  10px;
+}

@@ -1,0 +1,20 @@
+/*
+Float
+
+Float classes
+
+.u-float-left        -  float: left;
+.u-float-right       -  float: right;
+
+Markup: div(class="#{modifier_class}" title="#{modifier_class}") #{modifier_description}
+
+Styleguide: 7.2
+*/
+
+.u-float-left {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
+}

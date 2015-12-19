@@ -1,0 +1,28 @@
+/*
+Colors
+
+The list of colors available for use.
+
+--white       - #ffffff
+--black       - #000000
+--grey        - #575757
+--light-grey  - #e4e4e4
+--blue        - #0598B2
+--pink        - #d51167
+--error       - #e33b29
+
+Markup: div(class="c-swatch" style="background-color: #{modifier_description}" title="#{modifier_class}: #{modifier_description}")
+
+Example: true
+
+Styleguide: 3.3
+*/
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey: #575757;
+  --light-grey: #e4e4e4;
+  --blue: #0598B2;
+  --pink: #d51167;
+  --error: #e33b29;
+}

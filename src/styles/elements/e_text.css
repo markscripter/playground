@@ -1,0 +1,52 @@
+/*
+Text Elements
+
+Base styles for the text elements.
+
+Styleguide: 4.9
+*/
+abbr {}
+cite {}
+code {
+  background-color: var(--light-grey);
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: var(--black);
+  display: block;
+  margin-top: var(--mv-s);
+  padding: 3px 5px;
+}
+data {}
+dd {}
+dfn {}
+div {}
+dl {}
+dt {}
+em {}
+hr {}
+i {}
+kbd {
+  background-color: var(--light-grey);
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: var(--black);
+  padding: 2px 4px;
+}
+
+kbd:before {
+  content: "\203A";
+  display: inline;
+  margin-right: 5px;
+}
+main {}
+mark {}
+p {
+  margin: var(--mv-s) 0;
+}
+pre {}
+q {}
+rt {}
+span {}
+sup {}
+time {}

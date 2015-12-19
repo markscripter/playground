@@ -1,0 +1,34 @@
+/*
+Media Object
+
+A media object based on stubbornella's: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+
+__img      - an image wrapper for the media object
+__img img  - the actual image in the media object
+__body     - the main content of the media object
+
+Styleguide: 5.3
+*/
+.o-media {
+  display: table;
+  width: 100%;
+}
+
+.o-media__img {
+  padding-right: var(--base-spacing-unit);
+}
+
+.o-media__img img {
+  display: block;
+  max-width: none;
+}
+
+.o-media__body {
+  width: 100%;
+}
+
+.o-media__img,
+.o-media__body {
+  display: table-cell;
+  vertical-align: top;
+}

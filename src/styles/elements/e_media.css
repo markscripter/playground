@@ -1,0 +1,28 @@
+/*
+Media Elements
+
+Base styles for the media elements.
+
+Styleguide: 4.5
+*/
+area {}
+
+audio {}
+
+figure {
+  position: relative;
+}
+
+figcaption {}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+map {}
+
+track {}
+
+video {}

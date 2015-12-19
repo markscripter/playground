@@ -1,0 +1,26 @@
+/*
+SVG Elements
+
+Base styles for the svg elements.
+
+Styleguide: 4.7
+*/
+.svg-store {
+  display: none;
+}
+
+svg {}
+
+svg.logo {}
+
+.logo .top {
+  fill: blue;
+}
+
+.logo .middle {
+  fill: green;
+}
+
+.logo .bottom {
+  fill: purple;
+}

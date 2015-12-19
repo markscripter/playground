@@ -1,0 +1,20 @@
+/*
+Typography
+
+The list of typography variables available for use.
+
+--serif               - Serif variable
+--sans-serif          - Sans-serif variable
+--monospace           - monospace variable
+--font-size           - the base font size for the website (16px)
+--line-height         - the base line height for the website.
+
+Styleguide: 3.8
+*/
+:root {
+  --serif: Noto, 'Bitter', 'Times New Roman', Times, serif;
+  --sans-serif: Helvetica, Arial, sans-serif;
+  --monospace: 'Source Code Pro', 'Courier New', Courier, monospace;
+  --font-size: 1em;
+  --line-height: 1.5em;
+}

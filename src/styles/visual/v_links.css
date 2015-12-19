@@ -1,0 +1,25 @@
+/*
+Links
+
+Overriding link styles
+
+.v-link-bare      - A link with no decoration.
+.v-link-natural   - A natural link with decoration and inheritted colors.
+.v-link-obvious   - A link that is underlined.
+
+Markup: a(href="#" class="#{modifier_class}") #{modifier_description}
+
+Styleguide: 8.3
+*/
+.v-link-bare {
+  text-decoration: none !important;
+}
+
+.v-link-natural {
+  text-decoration: underline !important;
+  color: inherit !important;
+}
+
+.v-link-obvious {
+  text-decoration: underline !important;
+}

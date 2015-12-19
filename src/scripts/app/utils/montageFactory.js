@@ -1,11 +1,9 @@
-import fetch from 'isomorphic-fetch';
-import getJSONResponse from './getJSONResponse';
 import schemaExtractor from './schemaExtractor';
 
 /**
  * A factory object that returns a Montage object.
  * @module montageFactory
- * @author Mark Scripter [mscripter@horizontalintegration.com]
+ * @author Mark Scripter [markscript@gmail.com]
  * @requires fetch, workflowFactory, schemaExtractor
  * @returns {montage}
  * @example
@@ -19,21 +17,21 @@ function montageFactory() {
    * @namespace montage
    * @param {function} extractFn - A function that returns a destructured schema
    * @param {string} endpoint - the endpoint you want to hit for JSON data
-   * @author Mark Scripter [mscripter@horizontalintegration.com]
    * @example
    * import montageFactory from './montageFactory';
    * const montageRunner = montageFactory(schema);
    * montageRunner.init(settings)
    */
-  const Montage = (extractFn, endpoint = '') => {
+  const montage = (extractFn, endpoint = '') => {
+    const schemaFunction = schemaExtractor(extractFn);
+
     return endpoint.length ?
       fetch(endpoint)
-      .then(getJSONResponse)
-      .then(schemaExtractor(extractFn))
+      .then(schemaFunction)
       : 0;
   };
 
-  return Montage;
+  return montage;
 }
 
 export default montageFactory;

@@ -1,5 +1,3 @@
-import path from 'path';
-
 module.exports = {
   entry: './src/scripts/main.js',
   output: {

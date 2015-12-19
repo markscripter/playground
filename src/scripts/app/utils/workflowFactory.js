@@ -3,7 +3,7 @@ import Promise from 'bluebird';  // our Promises library
 /**
  * This object creates a workflow, using Promises.
  * @module workflowFactory
- * @author Mark Scripter [mscripter@horizontalintegration.com]
+ * @author Mark Scripter [markscript@gmail.com]
  * @requires bluebird
  * @returns {workflow} - A workflow object
  * @example
@@ -13,7 +13,6 @@ function workflowFactory() {
   /**
    * This object creates a workflow, using Promises.
    * @module workflow
-   * @author Mark Scripter [mscripter@horizontalintegration.com]
    * @example
    * import workflowFactory from './workflowFactory';
    * const workflow = workFlowFactory();

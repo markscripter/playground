@@ -1,0 +1,25 @@
+/*
+Layout Object
+
+A layout object that defines a layout.
+
+.o-layout__item  - An item within a layout.
+
+Markup:
+| div(class="o-layout")
+|   div(class="o-layout__item")
+
+Styleguide: 5.2
+*/
+
+.o-layout {
+  margin:  0;
+  padding: 0;
+  list-style: none;
+  margin-left: -var(--mh-s);
+}
+
+.o-layout__item {
+  display: inline-block;
+  padding-left: var(--ph-s);
+}

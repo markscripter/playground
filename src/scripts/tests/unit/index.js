@@ -1,11 +1,9 @@
 import dispatcherTest from './dispatcher';
-import workflowTest from './workflow';
-import guidTest from './guid';
+import workflowTest from './workflowFactory';
 
 const unit = () => {
   dispatcherTest();
   workflowTest();
-  guidTest();
 };
 
 export default unit;
