@@ -8,6 +8,7 @@
     "url": "https://github.com/markscripter/playground/issues"
   },
   "dependencies": {
+    "promise-workflow": "0.0.3",
     "riot": "^2.2.4"
   },
   "description": "An environment for front end development.",
@@ -55,7 +56,7 @@
     "kss-jade-generator": "^1.0.0",
     "mirrorkey": "^1.2.0",
     "postcss-reporter": "^1.3.0",
-    "promise-workflow": "0.0.2",
+    "promise-workflow": "0.0.3",
     "ramda": "^0.18.0",
     "slick-carousel": "^1.5.9",
     "stream-combiner2": "^1.0.2",
