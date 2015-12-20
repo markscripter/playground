@@ -8,26 +8,26 @@ Styleguide: 4.1
 
 button {
   background-color: var(--grey);
-  border:none;
-  box-sizing:border-box;
+  border: none;
+  box-sizing: border-box;
   color: var(--white);
   font-family: var(--sans-serif);
   overflow: visible;
-  padding: 13px 0px;
+  padding: 13px 0;
   text-transform: uppercase;
-  width:100%;
+  width: 100%;
   outline: none;
 }
 
-datalist {}
+/*datalist {}*/
 
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: .35em .625em .75em;
 }
 
-form {}
+/*form {}*/
 
 input {
   border: 1px solid var(--light-grey);
@@ -39,48 +39,48 @@ input {
   line-height: 1.25em;
   margin: 15px auto;
   padding: 5px 10px;
-  width:100%;
+  width: 100%;
 }
 
 input:focus {
   outline: none;
 }
 
-input[type="button"] {}
+/*input[type='button'] {}*/
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   box-sizing: border-box;
   padding: 0;
 }
 
-input[type="color"] {}
-input[type="date"] {}
-input[type="datetime"] {}
-input[type="date-time-local"] {}
-input[type="email"] {}
-input[type="file"] {}
-input[type="hidden"] {}
-input[type="image"] {}
-input[type="month"] {}
-input[type="number"] {}
-input[type="password"] {}
+/*input[type='color'] {}*/
+/*input[type='date'] {}*/
+/*input[type='datetime'] {}*/
+/*input[type='date-time-local'] {}*/
+/*input[type='email'] {}*/
+/*input[type='file'] {}*/
+/*input[type='hidden'] {}*/
+/*input[type='image'] {}*/
+/*input[type='month'] {}*/
+/*input[type='number'] {}*/
+/*input[type='password'] {}*/
 
-input[type="radio"] {
+input[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
 
-input[type="range"] {}
-input[type="reset"] {}
-input[type="search"] {}
-input[type="submit"] {}
-input[type="tel"] {}
-input[type="text"] {}
-input[type="time"] {}
-input[type="url"] {}
-input[type="week"] {}
+/*input[type='range'] {}*/
+/*input[type='reset'] {}*/
+/*input[type='search'] {}*/
+/*input[type='submit'] {}*/
+/*input[type='tel'] {}*/
+/*input[type='text'] {}*/
+/*input[type='time'] {}*/
+/*input[type='url'] {}*/
+/*input[type='week'] {}*/
 
-keygen {}
+/*keygen {}*/
 
 label {
   font-family: var(--sans-serif);
@@ -95,17 +95,15 @@ legend {
   padding: 0;
 }
 
-meter {}
+/*meter {}*/
 
 optgroup {
   font-weight: bold;
 }
 
-option {}
-
-output {}
-
-progress {}
+/*option {}*/
+/*output {}*/
+/*progress {}*/
 
 textarea {
   overflow: auto;

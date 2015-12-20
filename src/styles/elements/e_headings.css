@@ -4,18 +4,20 @@ Heading Elements
 Base styles for the heading elements.
 
 Markup:
-<h1>h1</h1>
-<div class="heading-one">.heading-one</div>
-<h2>h2</h2>
-<div class="heading-two">.heading-two</div>
-<h3>h3</h3>
-<div class="heading-three">.heading-three</div>
-<h4>h4</h4>
-<div class="heading-four">.heading-four</div>
-<h5>h5</h5>
-<div class="heading-five">.heading-five</div>
-<h6>h6</h6>
-<div class="heading-six">.heading-six</div>
+h1 heading-one
+.heading-one heading-one
+h2 heading-two
+.heading-two heading-two
+h3 heading-three
+.heading-three heading-three
+h4 heading-four
+.heading-four heading-four
+h5 heading-five
+.heading-five heading-five
+h6 heading-six
+.heading-six heading-six
+
+Example: true
 
 Styleguide: 4.2
 */
@@ -28,6 +30,7 @@ h5,
 h6,
 .heading {
   font-family: var(--sans-serif);
+  font-weight: normal;
   padding: 0;
   line-height: 1.5em;
   text-rendering: optimizeLegibility;
