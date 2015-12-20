@@ -6,7 +6,7 @@ Error variables & definitions.
 .o-error    - The Error object.
 
 Markup:
-| div(class="#{modifier_class}")
+div(class="#{modifier_class}")
 
 Styleguide: 5.1
 */

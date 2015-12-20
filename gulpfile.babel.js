@@ -172,7 +172,7 @@ gulp.task('styles-documentation', () => {
       homepage: 'homepage.md',
       source: [
         'src/components',
-        'src/styleguide',
+        'src/pages/styleguide',
       ],
       destination: PATHS.public + 'style-docs/',
       custom: [
@@ -180,10 +180,10 @@ gulp.task('styles-documentation', () => {
         'License',
       ],
       css: [
-        '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/obsidian.min.css',
+        '/assets/prismjs/prismjs.css',
       ],
       js: [
-        '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js',
+        '/assets/prismjs/prismjs.js',
       ],
     }));
 });

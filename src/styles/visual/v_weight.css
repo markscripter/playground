@@ -1,0 +1,46 @@
+/*
+Font Weight
+
+Font weights available to use.
+
+.v-weight-100           - font-weight: 100
+.v-weight-200           - font-weight: 200
+.v-weight-300           - font-weight: 300
+.v-weight-400           - font-weight: 400
+.v-weight-500           - font-weight: 500
+.v-weight-600           - font-weight: 600
+.v-weight-700           - font-weight: 700
+.v-weight-800           - font-weight: 800
+.v-weight-900           - font-weight: 900
+
+Markup: p(class="#{modifier_class}") #{modifier_description}
+
+Styleguide: 8.5
+*/
+.v-weight-100 {
+  font-weight: 100;
+}
+.v-weight-200 {
+  font-weight: 200;
+}
+.v-weight-300 {
+  font-weight: 300;
+}
+.v-weight-400 {
+  font-weight: 400;
+}
+.v-weight-500 {
+  font-weight: 500;
+}
+.v-weight-600 {
+  font-weight: 600;
+}
+.v-weight-700 {
+  font-weight: 700;
+}
+.v-weight-800 {
+  font-weight: 800;
+}
+.v-weight-900 {
+  font-weight: 900;
+}

@@ -79,3 +79,51 @@ Styleguide: 7.5
   margin-left: var(--mh-l);
   margin-right: var(--mh-l);
 }
+
+
+.u-mt0 {
+  margin-top: var(--mv);
+}
+
+.u-mt1 {
+  margin-top: var(--mv-s);
+}
+
+.u-mt2 {
+  margin-top: var(--mv-l);
+}
+
+.u-mb0 {
+  margin-bottom: var(--mv);
+}
+.u-mb1 {
+  margin-bottom: var(--mv-s);
+}
+
+.u-mb2 {
+  margin-bottom: var(--mv-l);
+}
+
+.u-ml0 {
+  margin-left: var(--mh);
+}
+
+.u-ml1 {
+  margin-left: var(--mh-s);
+}
+
+.u-ml2 {
+  margin-left: var(--mh-l);
+}
+
+.u-mr0 {
+  margin-right: var(--mh);
+}
+
+.u-mr1 {
+  margin-right: var(--mh-s);
+}
+
+.u-mr2 {
+  margin-right: var(--mh-l);
+}

@@ -6,8 +6,8 @@ A layout object that defines a layout.
 .o-layout__item  - An item within a layout.
 
 Markup:
-| div(class="o-layout")
-|   div(class="o-layout__item")
+div(class="o-layout")
+  div(class="o-layout__item")
 
 Styleguide: 5.2
 */

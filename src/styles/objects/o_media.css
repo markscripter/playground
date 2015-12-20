@@ -3,9 +3,19 @@ Media Object
 
 A media object based on stubbornella's: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 
-__img      - an image wrapper for the media object
-__img img  - the actual image in the media object
-__body     - the main content of the media object
+.o-media           - the parent element for a media object
+.o-media__img      - an image wrapper for the media object
+.o-media__img img  - the actual image in the media object
+.o-media__body     - the main content of the media object
+
+Markup:
+.o-media
+  .o-media__img
+    img(src="" alt="" title="")
+  .o-media__body
+    p some content
+
+Example: true
 
 Styleguide: 5.3
 */

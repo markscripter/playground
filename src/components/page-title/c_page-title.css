@@ -3,23 +3,31 @@ c-page-title
 
 .c-page-title class
 
-__main   - Main page title.
-__sub    - Secondary page title.
+.c-page-title__main   - Main page title.
+.c-page-title__sub    - Secondary page title.
+
+Markup:
+| hgroup.c-page-title
+|   h1(class="#{modifier_class}") #{modifier_description}
+
+Example: true
 
 Styleguide: 6.8
 */
 
 .c-page-title {
-  margin-bottom:  var(--base-spacing-unit);
   border-bottom: 1px solid var(--grey);
+  font-family: var(--serif);
+  margin-bottom:  var(--base-spacing-unit);
 }
 
 .c-page-title__main {
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1.5em;
 }
+
 .c-page-title__sub {
-  font-size: 1.5em;
+  font-size: 1.75em;
   line-height: 1.25em;
 }
 

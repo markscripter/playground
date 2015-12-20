@@ -3,14 +3,6 @@ c-btn
 
 .c-btn Description
 
-.c-btn-purple       - a purple button
-.c-btn-red          - a red button
-
-Markup:
-button(class="c-btn #{modifier_class}") #{modifier_description}
-
-Example: true
-
 Styleguide: 6.2
 */
 
@@ -28,12 +20,4 @@ Styleguide: 6.2
 .c-btn:focus {
   background-color: var(--blue);
   color: var(--white);
-}
-
-.c-btn-purple {
-  background-color: purple;
-}
-
-.c-btn-red {
-  background-color: red;
 }

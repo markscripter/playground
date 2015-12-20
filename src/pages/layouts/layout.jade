@@ -20,23 +20,20 @@ html(lang="en")
       script(async type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
 
   body
-    .svg-store
+    .svg-store.u-none
       include ../../svg/svg.min.jade
 
-    <!-- HEADER -->
-    header.container
+    header.o-wrapper
       svg.logo
         use(xlink:href="#logo")
-    <!-- /HEADER -->
+      block header
+    
+    block menu
 
-    <!-- CONTENT -->
     block content
-    <!-- /CONTENT -->
 
-    <!-- FOOTER -->
-    footer.container
+    footer.o-wrapper
       p footer
-    <!-- /FOOTER -->
     
     block scripts
       script(async type="text/javascript" src="/js/main.min.js")

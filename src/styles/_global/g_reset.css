@@ -6,13 +6,28 @@ A general all purpose reset. This can be swapped out with any reset styles that 
 Styleguide: 1.2
 */
 body,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, ol, ul,
-form, fieldset, legend,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
 figure,
-table, th, td, caption,
+table,
+th,
+td,
+caption,
 hr {
-    margin:  0;
+    margin: 0;
     padding: 0;
 }

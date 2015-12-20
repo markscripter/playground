@@ -3,12 +3,18 @@ Wrapper Object
 
 A generic wrapper
 
+.o-wrapper         - A wrapper object
+
+Markup:
+article.o-wrapper
+
 Styleguide: 5.4
 */
 .o-wrapper {
-    max-width: 940px;
-    margin-right: auto;
-    margin-left:  auto;
-    padding-right: 10px;
-    padding-left:  10px;
+  width: 95%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--ph);
+  padding-left: var(--ph);
 }

@@ -11,8 +11,8 @@
     "styleguide": {
       "data": "src/styleguide-data.json",
       "styles": "src/styles/_themes/styleguide.css",
-      "templates": "src/styleguide/index.jade",
-      "generator": "src/styleguide/"
+      "templates": "src/pages/styleguide/index.jade",
+      "generator": "src/pages/styleguide/"
     },
     "styles": "src/styles/",
     "svg": "src/svg/"

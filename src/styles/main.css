@@ -107,6 +107,7 @@ Styleguide: 8
 @import './visual/v_colors.css';
 @import './visual/v_links.css';
 @import './visual/v_text.css';
+@import './visual/v_weight.css';
 @import './visual/v_zIndex.css';
 
 /*

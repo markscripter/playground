@@ -1,0 +1,74 @@
+//-
+//- @layout: Styleguide
+//- @group: Styleguide
+//- @type:
+//- @description:
+//- @author: Mark Scripter
+//- @comments:
+//-
+extend ../layouts/layout.jade
+
+append links
+  != styles
+  link(media="all" href="/css/styleguide.css" type="text/css" rel="stylesheet")
+  
+append menu
+  .menu.o-wrapper(data-module="menu" data-settings='')
+    .trigger
+      svg.menu-icon
+        rect.top(y="0" x="0")
+        rect.middle(y="10" x="0")
+        rect.bottom(y="20" x="0")
+    .menu-wrapper
+      .menu-overflow
+        nav.menu-list
+          ul.list
+            each root in helpers.eachRoot()
+              li
+                a(href="section-#{root.referenceURI}.html")
+                  | #{root.header}
+                //- if helpers.hasChildren(root.reference)
+                //-   ul.list
+                //-     each section in helpers.eachSection(root.reference)
+                //-       if helpers.ifDepth(2, section)
+                //-         li
+                //-           a(href='section-#{root.referenceURI}.html#ref-#{section.referenceURI}')
+                //-             | #{section.header}
+
+append header
+  h1.title style guide
+
+append content
+  article.o-wrapper
+    if homepage
+      section.u-mv-l.u-ph-s(id="section-0") !{homepage}
+    else
+      each section in helpers.eachSection(rootName)
+        section.u-mv-l.u-ph-s(id="ref-#{section.referenceURI}")
+          h2 #{section.header}
+
+          if section.description
+            | !{section.description}
+          
+          if section.license
+            span.v-text-callout.u-block !{section.license}
+            
+          if section.modifiers.length
+            .v-b1.u-p-s
+              p Options:
+              ul
+                each modifier in helpers.eachModifier(section)
+                  li.u-mv-s
+                    span.u-pr1.u-mr1.v-br1.v-text-bold #{modifier.name}
+                    | #{modifier.description}
+          
+          if section.markup
+            pre
+              code.language-jade!= section.markup
+            if section.example
+              p Example
+              .live-example
+                != helpers.markup(section)
+
+append scripts
+  != scripts
