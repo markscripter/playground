@@ -18,7 +18,7 @@ Markup:
 Styleguide: 3.5
 */
 :root {
-  --mv: 0px;
+  --mv: 0;
   --mv-s: 15px;
   --mv-l: 45px;
 

@@ -2,18 +2,11 @@
   "paths": {
     "assets": "src/assets/",
     "components": "src/components/",
-    "componentsData": "src/components/**/**.json",
     "data": "src/site-data.json",
-    "index": "src/pages/index.jade",
     "javascript": "src/scripts/",
-    "templates": "src/pages/templates/**.*",
+    "pages": "src/pages/*.*",
     "public": "public/",
-    "styleguide": {
-      "data": "src/styleguide-data.json",
-      "styles": "src/styles/_themes/styleguide.css",
-      "templates": "src/pages/styleguide/index.jade",
-      "generator": "src/pages/styleguide/"
-    },
+    "styleguide": "src/pages/styleguide/",
     "styles": "src/styles/",
     "svg": "src/svg/"
   }

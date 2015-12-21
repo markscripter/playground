@@ -12,10 +12,10 @@ li {
 ol,
 ul {
   list-style: none;
-  margin-left: 0px;
+  margin-left: 0;
 }
-ol {}
-ul {}
+/*ol {}*/
+/*ul {}*/
 ul ul {
   margin-left: var(--mh);
 }

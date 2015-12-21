@@ -12,14 +12,14 @@ Markup: a(href="#" class="#{modifier_class}") #{modifier_description}
 Styleguide: 8.3
 */
 .v-link-bare {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .v-link-natural {
-  text-decoration: underline !important;
-  color: inherit !important;
+  text-decoration: underline;
+  color: inherit;
 }
 
 .v-link-obvious {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }

@@ -54,19 +54,43 @@ const report = () => {
     }));
 };
 
-gulp.task('default', ['build', 'documentation', 'test', 'serve']);
+gulp.task('default', ['package', 'documentation', 'test', 'serve']);
 
-gulp.task('build', ['javascript', 'assets', 'templates', 'style']);
+gulp.task('documentation', ['js-docs', 'css-documentation']);
+gulp.task('package', ['javascript', 'assets', 'jade', 'styles']);
 gulp.task('test', ['js-test']);
-gulp.task('documentation', ['js-docs', 'styles-documentation']);
-
-gulp.task('javascript', ['js-global']);
-gulp.task('style', ['styles', 'styleguide-styles']);
-gulp.task('templates', ['jade-templates', 'jade-index']);
 
 gulp.task('assets', ['svg'], () => {
   return gulp.src(PATHS.assets + '**')
     .pipe(gulp.dest(PATHS.public + 'assets/'));
+});
+
+gulp.task('css-documentation', () => {
+  return gulp.src([
+    PATHS.components + '**/*.css',
+    PATHS.styles + '*.css',
+    PATHS.styles + '**/*.css',
+  ])
+    .pipe(kss({
+      templatePath: './' + PATHS.styleguide,
+      template: 'index.jade',
+      homepage: 'homepage.md',
+      source: [
+        'src/components',
+        'src/pages/styleguide',
+      ],
+      destination: PATHS.public + 'style-docs/',
+      custom: [
+        'Example',
+        'License',
+      ],
+      css: [
+        '/assets/prismjs/prismjs.css',
+      ],
+      js: [
+        '/assets/prismjs/prismjs.js',
+      ],
+    }));
 });
 
 gulp.task('clean', () => {
@@ -76,41 +100,16 @@ gulp.task('clean', () => {
     }));
 });
 
-gulp.task('jade-templates', () => {
-  return glob(PATHS.templates, {}, (err, pages) => {
-    if (err) return;
-
-    pages.forEach((page) => {
-      gulp.src(page)
-        .pipe(templates({
-          locals: require('./' + PATHS.data),
-          pretty: true,
-        }))
-        .pipe(gulp.dest(PATHS.public));
-    });
-  });
-});
-
-gulp.task('jade-index', () => {
-  return gulp.src(PATHS.index)
+gulp.task('jade', () => {
+  return gulp.src(PATHS.pages)
     .pipe(templates({
+      locals: require('./' + PATHS.data),
       pretty: true,
     }))
     .pipe(gulp.dest(PATHS.public));
 });
 
-gulp.task('js-docs', () => {
-  const jspages = glob(PATHS.javascript + 'app/**/*.js', (err, pages) => err ? [] : pages);
-
-  return gulp.src([
-    PATHS.javascript + 'main.js',
-    ...jspages,
-  ])
-    // .pipe(documentation({format: 'html'}))
-    .pipe(gulp.dest(PATHS.public + 'jsdocs/'));
-});
-
-gulp.task('js-global', () => {
+gulp.task('javascript', () => {
   return combiner.obj([
     gulp.src(PATHS.javascript + 'main.js'),
     webpack(require('./webpack.config.js')),
@@ -130,6 +129,19 @@ gulp.task('js-global', () => {
     rename('main.min.js'),
     gulp.dest(PATHS.public + 'js/'),
   ]);
+});
+
+gulp.task('js-docs', () => {
+  const appJsFiles = glob(PATHS.javascript + 'app/**/*.js', (err, pages) => err ? [] : pages);
+  const componentJsFiles = glob(PATHS.components + '**/*.js', (err, pages) => err ? [] : pages);
+
+  return gulp.src([
+    PATHS.javascript + 'main.js',
+    ...appJsFiles,
+    ...componentJsFiles,
+  ])
+    .pipe(documentation({format: 'html'}))
+    .pipe(gulp.dest(PATHS.public + 'jsdocs/'));
 });
 
 gulp.task('js-test', callbackSequence(instrument, test, report));
@@ -160,51 +172,6 @@ gulp.task('serve', ['watch'], () => {
   });
 });
 
-gulp.task('styles-documentation', () => {
-  return gulp.src([
-    PATHS.components + '**/*.css',
-    PATHS.styles + '*.css',
-    PATHS.styles + '**/*.css',
-  ])
-    .pipe(kss({
-      templatePath: './' + PATHS.styleguide.generator,
-      template: 'index.jade',
-      homepage: 'homepage.md',
-      source: [
-        'src/components',
-        'src/pages/styleguide',
-      ],
-      destination: PATHS.public + 'style-docs/',
-      custom: [
-        'Example',
-        'License',
-      ],
-      css: [
-        '/assets/prismjs/prismjs.css',
-      ],
-      js: [
-        '/assets/prismjs/prismjs.js',
-      ],
-    }));
-});
-
-gulp.task('styleguide-styles', () => {
-  return gulp.src(PATHS.styleguide.styles)
-    .pipe(postcss([
-      stylelint({
-        rules: CSS_RULES,
-      }),
-      reporter({
-        clearMessages: true,
-      }),
-    ]))
-    .pipe(cssnext())
-    .pipe(gulp.dest(PATHS.public + 'css/'))
-    .pipe(cssMinify())
-    .pipe(rename('styleguide.min.css'))
-    .pipe(gulp.dest(PATHS.public + 'css/'));
-});
-
 gulp.task('svg', () => {
   return gulp.src(PATHS.svg + '*.svg')
     .pipe(svgmin())
@@ -218,21 +185,17 @@ gulp.task('watch', () => {
   gulp.watch([
     PATHS.assets + '**',
     PATHS.svg + '*.svg',
-  ], ['assets'])
+  ],
+  ['assets'])
   .on('change', browserSync.reload);
 
   gulp.watch([
+    PATHS.styleguide + 'index.jade',
     PATHS.styles + '*.css',
     PATHS.styles + '**/*.css',
     PATHS.components + '**/*.css',
-    PATHS.styleguide.styles,
-  ], ['style'])
-  .on('change', browserSync.reload);
-
-  gulp.watch([
-    PATHS.styleguide.styles,
-    PATHS.styleguide.templates,
-  ], ['styles-documentation'])
+  ],
+  ['styles', 'css-documentation'])
   .on('change', browserSync.reload);
 
   gulp.watch([
@@ -241,7 +204,8 @@ gulp.task('watch', () => {
     PATHS.components + '/**/**.jade',
     PATHS.componentsData,
     PATHS.data,
-  ], ['templates'])
+  ],
+  ['templates'])
   .on('change', browserSync.reload);
 
   gulp.watch([
@@ -249,6 +213,7 @@ gulp.task('watch', () => {
     PATHS.javascript + '**/*.js',
     PATHS.javascript + '**/**/*.js',
     PATHS.components + '**/*.js',
-  ], ['javascript'])
+  ],
+  ['javascript'])
   .on('change', browserSync.reload);
 });

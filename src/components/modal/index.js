@@ -1,15 +1,15 @@
 import velocity from 'velocity-animate';
 /**
  * Instantiate's a modal window.
- * @module modalFactory
+ * @module modal
  * @author Mark Scripter [markscript@gmail.com]
  * @param {object} settingsObj - A settings object for a given instance of a modal.
  * @requires Velocity, R
  * @returns {modal} - A modal object.
  * @example
- * import modalFactory from './components/modal';
+ * import modal from './components/modal';
  */
-const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) => {
+const modal = (settingsObj = {target: document.querySelector('.modal')}) => {
   /**
   * Our state object.
   * @private
@@ -27,7 +27,7 @@ const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) 
    * import modalFactory from './components/modal';
    * const modal = modalFactory();
    */
-  const modal = {
+  return {
     /**
     * The open() method will open the modal by looking at state.target
     * @return {boolean} true
@@ -67,8 +67,6 @@ const modalFactory = (settingsObj = {target: document.querySelector('.modal')}) 
       });
     },
   };
-
-  return modal;
 };
 
-export default modalFactory;
+export default modal;

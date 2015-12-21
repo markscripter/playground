@@ -18,7 +18,7 @@ Markup:
 Styleguide: 3.6
 */
 :root {
-  --pv: 0px;
+  --pv: 0;
   --pv-s: 15px;
   --pv-l: 45px;
 

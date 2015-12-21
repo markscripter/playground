@@ -22,7 +22,7 @@
   background-image: linear-gradient(0deg, #0070be, #003f75);
   border: 1px solid #003f75;
   border-radius: 3px;
-  color: #fff;
+  color: #ffffff;
   display: block;
   font-size: 18px;
   margin: 50px auto 75px;
@@ -48,7 +48,7 @@
 }
 
 .modal .overlay {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, .35);
   height: 100vh;
   position: absolute;
   right: 0;

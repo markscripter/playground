@@ -5,11 +5,11 @@ Base styles for the tables elements.
 
 Styleguide: 4.8
 */
-caption {}
+/*caption {}*/
 
-col {}
+/*col {}*/
 
-colgroup {}
+/*colgroup {}*/
 
 table {
   border: 1px solid var(--black);
@@ -19,7 +19,7 @@ table {
   width: 100%;
 }
 
-tbody {}
+/*tbody {}*/
 
 td {
   border: 1px solid var(--grey);
@@ -28,7 +28,7 @@ td {
   text-align: left;
 }
 
-tfoot {}
+/*tfoot {}*/
 
 th {
   border: 1px solid var(--black);
@@ -39,6 +39,6 @@ th {
   text-align: left;
 }
 
-thead {}
+/*thead {}*/
 
-tr {}
+/*tr {}*/

@@ -12,19 +12,19 @@ Markup: p(class="#{modifier_class}") #{modifier_description}
 Styleguide: 8.4
 */
 .v-text-natural {
-  font-weight: normal !important;
+  font-weight: normal;
 }
 
 .v-text-callout {
-  font-weight: normal !important;
-  font-size: 0.8em;
+  font-weight: normal;
+  font-size: .8em;
   font-style: italic;
 }
 
 .v-text-bold {
-  font-weight: bold !important;
+  font-weight: bold;
 }
 
 .v-text-underline {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }

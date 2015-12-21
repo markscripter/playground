@@ -5,8 +5,8 @@ Base styles for the text elements.
 
 Styleguide: 4.9
 */
-abbr {}
-cite {}
+/*abbr {}*/
+/*cite {}*/
 code {
   background-color: var(--light-grey);
   border: 1px solid var(--black);
@@ -17,15 +17,15 @@ code {
   margin-top: var(--mv-s);
   padding: 3px 5px;
 }
-data {}
-dd {}
-dfn {}
-div {}
-dl {}
-dt {}
-em {}
-hr {}
-i {}
+/*data {}*/
+/*dd {}*/
+/*dfn {}*/
+/*div {}*/
+/*dl {}*/
+/*dt {}*/
+/*em {}*/
+/*hr {}*/
+/*i {}*/
 kbd {
   background-color: var(--light-grey);
   border-radius: 3px;
@@ -35,18 +35,18 @@ kbd {
 }
 
 kbd:before {
-  content: "\203A";
+  content: '\203A';
   display: inline;
   margin-right: 5px;
 }
-main {}
-mark {}
+/*main {}*/
+/*mark {}*/
 p {
   margin: var(--mv-s) 0;
 }
-pre {}
-q {}
-rt {}
-span {}
-sup {}
-time {}
+/*pre {}*/
+/*q {}*/
+/*rt {}*/
+/*span {}*/
+/*sup {}*/
+/*time {}*/

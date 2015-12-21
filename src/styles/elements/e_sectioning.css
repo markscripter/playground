@@ -5,9 +5,9 @@ Base styles for the sectioning elements.
 
 Styleguide: 4.6
 */
-address {}
+/*address {}*/
 
-article {}
+/*article {}*/
 
 body {
   background-color: var(--white);
@@ -16,16 +16,16 @@ body {
   font-size: var(--font-size);
   font-weight: normal;
   line-height: 1.5em;
-  margin: 0px;
+  margin: 0;
   overflow-x: hidden;
-  padding: 0px;
+  padding: 0;
   text-rendering: optimizeLegibility;
   width: 100vw;
 }
 
-footer {}
+/*footer {}*/
 
-header {}
+/*header {}*/
 
 html {
   font-size: var(--font-size);
@@ -35,6 +35,6 @@ html {
   color: var(--grey);
 }
 
-nav {}
+/*nav {}*/
 
-section {}
+/*section {}*/
