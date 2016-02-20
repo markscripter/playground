@@ -100,7 +100,7 @@ gulp.task('clean', () => {
     }));
 });
 
-gulp.task('jade', () => {
+gulp.task('jade', ['svg'], () => {
   return gulp.src(PATHS.pages)
     .pipe(templates({
       locals: require('./' + PATHS.data),
@@ -136,7 +136,7 @@ gulp.task('js-docs', () => {
   const componentJsFiles = glob(PATHS.components + '**/*.js', (err, pages) => err ? [] : pages);
 
   return gulp.src([
-    PATHS.javascript + 'main.js',
+    // PATHS.javascript + 'main.js',
     ...appJsFiles,
     ...componentJsFiles,
   ])
@@ -199,13 +199,12 @@ gulp.task('watch', () => {
   .on('change', browserSync.reload);
 
   gulp.watch([
-    PATHS.index,
-    'src/pages/**/*.jade',
+    PATHS.pages,
+    PATHS.pageComponents,
     PATHS.components + '/**/**.jade',
-    PATHS.componentsData,
     PATHS.data,
   ],
-  ['templates'])
+  ['jade'])
   .on('change', browserSync.reload);
 
   gulp.watch([

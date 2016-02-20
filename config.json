@@ -5,6 +5,7 @@
     "data": "src/site-data.json",
     "javascript": "src/scripts/",
     "pages": "src/pages/*.*",
+    "pageComponents": "src/pages/**/*.*",
     "public": "public/",
     "styleguide": "src/pages/styleguide/",
     "styles": "src/styles/",

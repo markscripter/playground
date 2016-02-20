@@ -73,7 +73,7 @@ Context-specific classes that generate distinct components of an interface (for 
 Styleguide: 6
 */
 @import '../components/buttons/c_buttons.css';
-@import '../components/card/c_card.css';
+/*@import '../components/card/c_card.css';*/
 @import '../components/page-title/c_page-title.css';
 @import '../components/swatch/c_swatch.css';
 
